@@ -16,6 +16,11 @@
 # Fortran module files
 *.mod
 
+# CBLCKS files
+*.cbp
+*.depend
+*.layout
+
 # Compiled Static libraries
 *.lai
 *.la
