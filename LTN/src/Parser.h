@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 
+
 using namespace std;
 
 class Parser
@@ -15,6 +16,7 @@ class Parser
         Parser();
         virtual ~Parser();
 		void show_options();
+		bool* parsing_options(vector<string> opts);
 
     private:
 		vector<string>* options;

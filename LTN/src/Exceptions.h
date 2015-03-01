@@ -1,5 +1,5 @@
-#ifndef EXCEPTIONS_H
-#define EXCEPTIONS_H
+#ifndef EXCEPTIONS_H_INCLUDED
+#define EXCEPTIONS_H_INCLUDED
 
 #include <exception>
 using namespace std;
@@ -19,6 +19,14 @@ class Exception_Two : public exception
     return "Not enough arguments";
   }
 } MinArgsException;
+
+class Exception_Three : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Illegal argument exception";
+  }
+} IllegalArgException;
 
 
 #endif // EXCEPTIONS_H
