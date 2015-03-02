@@ -14,10 +14,13 @@ LTN: $(OBJ)
 %.o: %.cpp
 	$(CC) -o $@ -c $< $(CFLAGS)
 
-.PHONY = clean	
+.PHONY = clean
 
 clean:
-	rm -rf src/*.o
-	rm -rf $(EXEC)
-	rm -rf $(EXECWIN)
+	rm ./src/*.o
+	rm $(EXECWIN)
+
+remake:
+	make clean
+	make
  

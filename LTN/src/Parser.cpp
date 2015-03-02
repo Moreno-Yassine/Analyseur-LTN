@@ -1,4 +1,5 @@
 #include "Parser.h"
+#include "Controler.h"
 
 Parser::Parser()
 {
@@ -25,27 +26,30 @@ void Parser::show_options()
 	cout << "help : description des options disponibles"<<endl;
 }
 
-bool* Parser::parsing_options(vector<string> opts)
+void Parser::parsing_options(vector<string> opts)
 {
-    bool* buffer = new bool[NUM_OPTIONS];
     for (unsigned int i=0; i< opts.size(); i++)
     {
-        bool authorized = false;
-        for (unsigned int j=0;j< NUM_OPTIONS;j++)
+        if (opts[i].compare(options->at(0)) == 0)
         {
-            string buff = opts[i];
-            string bug = options->at(j);
-            if (buff == bug)
-            {
-                authorized = true;
-                buffer[j] = true;
-            }
+            Controler::enable_o();
         }
-        if (!authorized)
+        else if (opts[i].compare(options->at(1)) == 0)
+        {
+            Controler::enable_a();
+        }
+        else if (opts[i].compare(options->at(2)) == 0)
+        {
+            Controler::enable_p();
+        }
+        else if (opts[i].compare(options->at(3)) == 0)
+        {
+            Controler::enable_e();
+        }
+        else
         {
             throw 0;
         }
     }
 
-    return buffer;
 }

@@ -1,12 +1,17 @@
 #include "Controler.h"
 #include "Exceptions.h"
 
+const char* HELP = "help";
+bool Controler::option_o;
+bool Controler::option_a;
+bool Controler::option_p;
+bool Controler::option_e;
+
 Controler::Controler()
 {
     input_file = new File();
     rules = new Dictionary();
 	com_parser = new Parser();
-	configuration = new bool[NUM_OPTIONS];
 }
 
 Controler::~Controler()
@@ -29,11 +34,8 @@ void Controler::configurate (int argc, char ** argv)
     // Pas d'arguments (eventuellement help)
     else if (argc == 2)
     {
-        for (int i=0; i< NUM_OPTIONS; i++)
-        {
-            configuration[i] = false;
-        }
-        if (argv[1] == "help")
+
+        if (strcmp(argv[1],HELP) == 0)
         {
             com_parser->show_options();
         }
@@ -48,18 +50,81 @@ void Controler::configurate (int argc, char ** argv)
         }
         try
         {
-             configuration = com_parser->parsing_options(opt);
+             com_parser->parsing_options(opt);
         }
         catch (int i)
         {
             throw IllegalArgException;
         }
-
-        //TEST
-        for (int i=0;i<NUM_OPTIONS;i++)
-        {
-            cout<<configuration[i]<<endl;
-        }
-
     }
+}
+
+void Controler::run()
+{
+    analyse_lexsyn();
+    memload();
+    if (option_o)
+    {
+        transformation();
+    }
+    if (option_p)
+    {
+        affichage();
+    }
+
+    if (option_a)
+    {
+        analyse_statique();
+    }
+    if (option_e)
+    {
+        execution();
+    }
+}
+
+// Private/static functions
+
+void Controler::enable_o ()
+{
+    option_o = true;
+}
+
+void Controler::enable_p ()
+{
+    option_p = true;
+}
+
+void Controler::enable_e ()
+{
+    option_e = true;
+}
+
+void Controler::enable_a ()
+{
+    option_a = true;
+}
+
+void Controler::analyse_lexsyn()
+{
+    cout<< "j'execute l'analyse lexsyn" <<endl;
+}
+void Controler::memload()
+{
+    cout<<"j'execute la mem representation" <<endl;
+}
+void Controler::transformation()
+{
+    cout<<"j'execute la transformation" <<endl;
+}
+void Controler::affichage()
+{
+    cout<<"j'execute l'affichage" <<endl;
+}
+void Controler::execution()
+{
+    cout<<"j'execute le prog" <<endl;
+}
+void Controler::analyse_statique()
+{
+    cout<<"j'execute l'analyse syn" <<endl;
 }
