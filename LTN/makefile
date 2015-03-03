@@ -16,9 +16,13 @@ LTN: $(OBJ)
 
 .PHONY = clean
 
-clean:
+cleanWin:
 	rm ./src/*.o
 	rm $(EXECWIN)
+
+clean:
+	rm ./src/*.o
+	rm $(EXEC)
 
 remake:
 	make clean

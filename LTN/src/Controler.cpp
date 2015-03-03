@@ -59,8 +59,17 @@ void Controler::configurate (int argc, char ** argv)
     }
 }
 
-void Controler::run()
+void Controler::run(char* path)
 {
+	try
+	{
+		input_file->setPath(path);
+		input_file->openParse();
+	}
+	catch (int i)
+	{
+		throw BadFileException;
+	}
     analyse_lexsyn();
     memload();
     if (option_o)

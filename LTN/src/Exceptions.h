@@ -28,5 +28,13 @@ class Exception_Three : public exception
   }
 } IllegalArgException;
 
+class Exception_Four : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Bad File";
+  }
+} BadFileException;
+
 
 #endif // EXCEPTIONS_H

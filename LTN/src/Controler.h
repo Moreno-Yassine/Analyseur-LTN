@@ -15,23 +15,22 @@ class Controler
         virtual ~Controler();
 
 		void configurate (int argc, char ** argv);
-		void run();
+		void run(char* path);
 
         // Fonctions pour activer les options
-        static void enable_o ();
-        static void enable_a ();
-        static void enable_p ();
-        static void enable_e ();
+        static void enable_o();
+        static void enable_a();
+        static void enable_p();
+        static void enable_e();
 
     private:
-
-    	// le fichier
+    	// Le fichier
         File* input_file;
-        // le dictionnaire : grammaire
+        // Le dictionnaire : grammaire
         Dictionary* rules;
-        // la parseur de ligne de commande
+        // La parseur de ligne de commande
         Parser* com_parser;
-        // les options
+        // Les options
         static bool option_o;
         static bool option_a;
         static bool option_p;
@@ -40,10 +39,10 @@ class Controler
         //Fonctions outil
         void analyse_lexsyn();
         void memload();
-        void transformation(); // Option -o
-        void affichage(); // option -p
-        void execution(); // option -e
-        void analyse_statique(); // option -a
+        void transformation();      // Option -o
+        void affichage();           // Option -p
+        void execution();           // Option -e
+        void analyse_statique();    // Option -a
 
 };
 

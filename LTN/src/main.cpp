@@ -11,7 +11,7 @@ int main(int argc, char** argv)
     try
     {
         ctr.configurate(argc,argv);
-        ctr.run();
+        ctr.run(argv[argc-1]);
     }
     catch (exception &e)
     {
