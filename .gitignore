@@ -20,6 +20,7 @@
 *.cbp
 *.depend
 *.layout
+LTN
 
 # Compiled Static libraries
 *.lai
