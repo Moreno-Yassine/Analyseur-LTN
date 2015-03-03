@@ -33,3 +33,8 @@ void File::openParse()
 		throw 0;
 	}
 }
+
+vector<vector<string> > File::getParsedFiles()
+{
+	return parsedFiles;
+}

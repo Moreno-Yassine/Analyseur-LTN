@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-W -Wall -ansi -pedantic -s -O3 -Os
+CFLAGS=-W -Wall -ansi -pedantic -s -O3 -Os -std=c++11
 LDFLAGS=
 EXEC=LTN
 EXECWIN=LTN.exe

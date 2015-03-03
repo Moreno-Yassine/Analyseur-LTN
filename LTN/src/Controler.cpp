@@ -61,6 +61,7 @@ void Controler::configurate (int argc, char ** argv)
 
 void Controler::run(char* path)
 {
+	analyse_lexsyn(); // TO DELETE
 	try
 	{
 		input_file->setPath(path);
@@ -115,7 +116,9 @@ void Controler::enable_a ()
 
 void Controler::analyse_lexsyn()
 {
-    cout<< "j'execute l'analyse lexsyn" <<endl;
+    cout<< "j'execute l'analyse lexsyn :" <<endl;
+    cout << "Test = " << rules->checkWord("var") << endl;
+    
 }
 void Controler::memload()
 {
