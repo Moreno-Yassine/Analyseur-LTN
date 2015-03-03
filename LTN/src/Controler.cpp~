@@ -63,7 +63,7 @@ void Controler::run(char* path)
 {
 	try
 	{
-		input_file->setPath(path);
+		input_file->setPath(argv[argc-1]);
 		input_file->openParse();
 	}
 	catch (int i)

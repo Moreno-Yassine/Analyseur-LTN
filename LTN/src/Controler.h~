@@ -15,7 +15,7 @@ class Controler
         virtual ~Controler();
 
 		void configurate (int argc, char ** argv);
-		void run(char* path);
+		void run();
 
         // Fonctions pour activer les options
         static void enable_o ();
