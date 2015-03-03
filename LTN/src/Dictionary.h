@@ -2,9 +2,10 @@
 #define DICTIONARY_H
 #include <map>
 #include <iostream>
-#include <regex>
+#include <boost/regex.hpp>
 
 using namespace std;
+//using namespace boost;
 
 class Dictionary
 {
@@ -14,7 +15,7 @@ class Dictionary
         bool checkWord(string word);
     protected:
     private:
-    map<string,regex> mapRegex;
+    map<string,boost::regex> mapRegex;
     
 };
 

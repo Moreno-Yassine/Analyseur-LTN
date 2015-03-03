@@ -117,7 +117,20 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "j'execute l'analyse lexsyn :" <<endl;
-    cout << "Test = " << rules->checkWord("var") << endl;
+    string s;
+    
+    for(;;)
+    {
+		cout << "Entrez une expression à tester : " << endl;
+		cin >> s;
+		
+		if(s.compare("quit") == 0)
+		{
+			break;
+		}
+		
+		cout << "Test = " << rules->checkWord(s) << endl;
+	}
     
 }
 void Controler::memload()

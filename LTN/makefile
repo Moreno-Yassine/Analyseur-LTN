@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS=-W -Wall -ansi -pedantic -s -O3 -Os -std=c++11
-LDFLAGS=
+CFLAGS=-W -Wall -ansi -pedantic -s -O3 -Os -std=c++11 
+LDFLAGS= -lboost_system -lboost_regex
 EXEC=LTN
 EXECWIN=LTN.exe
 SRC= $(wildcard src/*.cpp)
