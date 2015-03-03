@@ -28,6 +28,7 @@ void Parser::show_options()
 
 void Parser::parsing_options(vector<string> opts)
 {
+    //AJOUTER : ON NE PEUT PAS AVOIR 2 FOIS LA MEME OPTION -> booleans, exception if déjà true
     for (unsigned int i=0; i< opts.size(); i++)
     {
         if (opts[i].compare(options->at(0)) == 0)
