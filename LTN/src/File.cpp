@@ -48,8 +48,6 @@ void File::openParse()
                    array.push_back(temp); // done! now array={mot1,mot2,mot3,mot4,mot5,...}
                    parsedFiles.push_back(array);                   
                 } 
-      
-
 	    myfile.close();
 	    procTest();
 	  }
