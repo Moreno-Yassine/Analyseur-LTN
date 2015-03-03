@@ -4,7 +4,7 @@
 #include <exception>
 using namespace std;
 
-class Exception_One : public exception
+class Exception_One : public ::exception
 {
   virtual const char* what() const throw()
   {
