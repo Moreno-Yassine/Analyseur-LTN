@@ -20,7 +20,7 @@ File::~File()
 void File::openParse()
 {
 	ifstream myfile;
-	myfile.open (path.c_str());
+	myfile.open (path);
 	if (myfile.is_open())
 	  {
 		//AMINE 

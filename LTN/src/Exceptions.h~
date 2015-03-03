@@ -34,7 +34,7 @@ class Exception_Four : public exception
   {
     return "Bad File";
   }
-} BadFileException;
+} IllegalArgException;
 
 
 #endif // EXCEPTIONS_H
