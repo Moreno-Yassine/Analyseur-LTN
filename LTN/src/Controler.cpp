@@ -29,16 +29,8 @@ void Controler::configurate (int argc, char ** argv)
     // Contrôle mini
     else if (argc == 1)
     {
-        throw MinArgsException;
-    }
-    // Pas d'arguments (eventuellement help)
-    else if (argc == 2)
-    {
-
-        if (strcmp(argv[1],HELP) == 0)
-        {
-            com_parser->show_options();
-        }
+        com_parser->show_options();
+        exit(0);
     }
     //Présence d'arguments
     else
@@ -61,7 +53,6 @@ void Controler::configurate (int argc, char ** argv)
 
 void Controler::run(char* path)
 {
-	analyse_lexsyn(); // TO DELETE
 	try
 	{
 		input_file->setPath(path);
@@ -96,22 +87,50 @@ void Controler::run(char* path)
 
 void Controler::enable_o ()
 {
-    option_o = true;
+    if(!option_o)
+    {
+        option_o = true;
+    }
+    else
+    {
+        throw IllegalArgException;
+    }
 }
 
 void Controler::enable_p ()
 {
-    option_p = true;
+    if (!option_p)
+    {
+        option_p = true;
+    }
+    else
+    {
+        throw IllegalArgException;
+    }
 }
 
 void Controler::enable_e ()
 {
-    option_e = true;
+    if (!option_e)
+    {
+        option_e = true;
+    }
+    else
+    {
+        throw IllegalArgException;
+    }
 }
 
 void Controler::enable_a ()
 {
-    option_a = true;
+    if (!option_a)
+    {
+        option_a = true;
+    }
+    else
+    {
+        throw IllegalArgException;
+    }
 }
 
 void Controler::analyse_lexsyn()
