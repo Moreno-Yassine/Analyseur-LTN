@@ -16,6 +16,7 @@ class File
         virtual ~File();
 	void openParse();
 	void setPath(string link);
+	vector<vector<string> > getParsedFiles();
 
     private:
         string path;
