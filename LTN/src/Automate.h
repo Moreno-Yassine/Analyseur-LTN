@@ -28,8 +28,8 @@ class Automate
 
 
     private:
-        MapVarNameValue MapVarNameValue;
-        MapConstNameValue MapConstNameValue;
+        MapVarNameValue MapVariables;
+        MapConstNameValue MapConst;
 
 };
 
