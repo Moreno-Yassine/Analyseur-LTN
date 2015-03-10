@@ -6,6 +6,11 @@
 
 using namespace std;
 
+// typedef pour la map des variables
+typedef std::map<std::string, std::string> MapVarNameValue;
+// typedef pour la map des constantes
+typedef std::map<std::string, int> MapConstNameValue;
+
 class Automate
 {
     public:
@@ -13,9 +18,9 @@ class Automate
         virtual ~Automate();
 
     private:
-        typedef std::map<std::string, std::string> MapNomValue;
-        MapNomValue mapConst;
-        MapNomValue mapVar;
+        MapNomValue MapVarNameValue;
+        MapNomValue MapConstNameValue;
+
 
 };
 

@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+/src/*.o
 
 # Precompiled Headers
 *.gch
@@ -32,3 +33,5 @@
 *.exe
 *.out
 *.app
+
+.idea/
