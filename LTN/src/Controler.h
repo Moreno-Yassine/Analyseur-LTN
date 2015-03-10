@@ -30,6 +30,7 @@ class Controler
         Dictionary* rules;
         // La parseur de ligne de commande
         Parser* com_parser;
+        //
         // Les options
         static bool option_o;
         static bool option_a;
