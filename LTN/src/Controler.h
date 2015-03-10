@@ -4,6 +4,7 @@
 #include "File.h"
 #include "Dictionary.h"
 #include "Parser.h"
+#include "Automate.h"
 #include <cstring>
 
 using namespace std;
@@ -30,7 +31,9 @@ class Controler
         Dictionary* rules;
         // La parseur de ligne de commande
         Parser* com_parser;
-        //
+        // L'automate
+        Automate* automate;
+
         // Les options
         static bool option_o;
         static bool option_a;
@@ -44,6 +47,9 @@ class Controler
         void affichage();           // Option -p
         void execution();           // Option -e
         void analyse_statique();    // Option -a
+
+        //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+        void testsMapsMarco();
 
 };
 
