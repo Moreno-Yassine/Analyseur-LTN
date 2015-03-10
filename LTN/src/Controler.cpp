@@ -161,6 +161,7 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "j'execute l'analyse lexsyn :" <<endl;
+	
 }
 void Controler::memload()
 {
