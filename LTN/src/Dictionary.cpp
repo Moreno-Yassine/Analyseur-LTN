@@ -42,7 +42,7 @@ bool Dictionary::checkWord(string word)
 	}
 	catch(std::exception e)
 	{
-		throw DictionnaryException;
+		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
 	
