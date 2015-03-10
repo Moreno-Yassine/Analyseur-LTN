@@ -19,7 +19,6 @@ class Dictionary
 
     protected:
     private:
-	bool checkWordRegex(string word, boost::regex match);
         map<string,boost::regex> mapRegex;
     
 };
