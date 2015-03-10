@@ -31,9 +31,9 @@ bool Dictionary::checkWord(string word)
 		
 		for(it=mapRegex.begin(); it!= mapRegex.end(); it++)
 		{
-			cout << it->first << endl;
 			if(boost::regex_match(word,it->second))
 			{
+				//Pour Tester
 				cout <<"Clé = " <<  it->first << endl;
 				cout << "Result = " << boost::regex_match(word,it->second) << endl;
 				return true;
@@ -42,7 +42,8 @@ bool Dictionary::checkWord(string word)
 	}
 	catch(std::exception e)
 	{
-			cout << "dvg"<< e.what() << endl;
+		throw DictionnaryException;
+		cout << e.what() << endl;
 	}
 	
 	cout << "Nothing" << endl;
