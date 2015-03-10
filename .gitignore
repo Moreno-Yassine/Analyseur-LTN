@@ -34,4 +34,7 @@
 *.out
 *.app
 
+# Mac compilation
 .idea/
+
+LTN/LTN

@@ -140,7 +140,7 @@ void Controler::analyse_lexsyn()
     
     for(;;)
     {
-		cout << "Entrez une expression à tester : " << endl;
+		cout << "Entrez une expression a tester : " << endl;
 		cin >> s;
 		
 		if(s.compare("quit") == 0)

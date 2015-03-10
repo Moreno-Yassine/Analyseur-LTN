@@ -36,5 +36,13 @@ class Exception_Four : public exception
   }
 } BadFileException;
 
+class Exception_Five : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Erreur Regex Dictionnaire";
+  }
+} DictionnaryException;
+
 
 #endif // EXCEPTIONS_H
