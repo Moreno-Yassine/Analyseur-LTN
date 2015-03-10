@@ -1,0 +1,12 @@
+var exp;
+var s;
+
+
+
+
+
+
+
+
+const p = 2;
+s := p+exp; 
