@@ -20,7 +20,7 @@ class File
 
     private:
         string path;
-	vector<vector<string> > parsedFiles;
+	vector<vector<string>> parsedFiles;
 	void procTest();
 };
 

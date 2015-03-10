@@ -57,7 +57,7 @@ void Controler::run(char* path)
 	try
 	{
 		input_file->setPath(path);
-		input_file->openParse();
+		//input_file->openParse();
 	}
 	catch (int i)
 	{
@@ -96,17 +96,12 @@ void Controler::testsMapsMarco()
 
     for (int i=0; i<10; i++)
     {
-        automate->addVariable("marco"+std::to_string(i), "cane");
+
+        automate->addDeclaration("marco"+std::to_string(i), 0);
     }
 
-    automate->displayVar();
+    automate->displayMap();
 
-    for (int i=0; i<10; i++)
-    {
-        automate->addConstante("marco"+std::to_string(i), i);
-    }
-
-    automate->displayConst();
 }
 // Private/static functions
 
