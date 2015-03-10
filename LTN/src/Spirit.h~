@@ -1,0 +1,60 @@
+struct Syntax :
+    public boost::spirit::grammar<Syntax>
+{
+public:
+    Syntax( CParser &parser );
+    virtual ~Syntax();
+    template <typename ScannerT>
+    struct definition
+    {
+    public:
+        definition( Syntax const &self )
+        {
+            integer =
+                lexeme_d[ (+digit_p) ]
+                ;
+            factor =
+                integer |
+                vars |
+                '(' >> expression >> ')' |
+                ( '-' >> factor ) |
+                ( '+' >> factor )
+                ;
+            term =
+                factor >> *( ( '*' >> factor) | ( '/' >> factor ) )
+                ;
+            expression =
+                term >> *( ( '+' >> term ) | ( '-' >> term ) )
+                ;
+            assignment =
+                vars
+                >> '=' >> expression
+                ;
+            var_decl =
+                lexeme_d
+                [
+                    ( ( alpha_p >> *( alnum_p | '_' ) )
+                    - vars )[vars.add]
+                ]
+                ;
+            declaration =
+                "int" >> var_decl >> *( ',' >> var_decl )
+                ;
+            baseExpression =
+                str_p( "exit" )[*self.m_finishedProcessing] |
+                str_p( "mod" ) >> integer |
+                declaration |
+                assignment |
+                '?' >> expression
+                ;
+        }
+        boost::spirit::symbols<int> vars;
+        boost::spirit::rule<ScannerT> integer, factor, term,
+            expression, assignment, var_decl, declaration,
+            baseExpression;
+        const boost::spirit::rule<ScannerT> &start() const { return baseExpression; }
+    };
+    friend struct definition;
+private:
+    Private::FinishedProcessing *m_finishedProcessing;
+};

@@ -19,9 +19,9 @@ File::~File()
 
 void File::procTest()
 {
-      for (int i=0; i<parsedFiles.size();i++)
+      for (unsigned int i=0; i<parsedFiles.size();i++)
       {
-            for (int j=0; j<parsedFiles[i].size(); j++)
+            for (unsigned int j=0; j<parsedFiles[i].size(); j++)
             cout << parsedFiles[i][j] <<endl;
             
             cout << "Fin de ligne"<<endl;
