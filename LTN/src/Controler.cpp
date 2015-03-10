@@ -7,8 +7,6 @@ bool Controler::option_a;
 bool Controler::option_p;
 bool Controler::option_e;
 
-
-
 Controler::Controler()
 {
     input_file = new File();
@@ -58,17 +56,12 @@ void Controler::run(char* path)
 	try
 	{
 		input_file->setPath(path);
-		//input_file->openParse();
+		input_file->openParse();
 	}
 	catch (int i)
 	{
 		throw BadFileException;
 	}
-
-    cout << "TEST MARCO MAP" << endl;
-
-
-	/*
     analyse_lexsyn();
     memload();
     if (option_o)
@@ -88,8 +81,6 @@ void Controler::run(char* path)
     {
         execution();
     }
-    */
-
 }
 
 // Private/static functions
