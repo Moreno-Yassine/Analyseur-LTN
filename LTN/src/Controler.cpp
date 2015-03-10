@@ -12,6 +12,7 @@ Controler::Controler()
     input_file = new File();
     rules = new Dictionary();
 	com_parser = new Parser();
+	automate = new Automate();
 }
 
 Controler::~Controler()
@@ -81,8 +82,32 @@ void Controler::run(char* path)
     {
         execution();
     }
+
+
+    //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+    //this->testsMapsMarco();
+
 }
 
+//Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+void Controler::testsMapsMarco()
+{
+    cout << "TEST MARCO" << endl;
+
+    for (int i=0; i<10; i++)
+    {
+        automate->addVariable("marco"+std::to_string(i), "cane");
+    }
+
+    automate->displayVar();
+
+    for (int i=0; i<10; i++)
+    {
+        automate->addConstante("marco"+std::to_string(i), i);
+    }
+
+    automate->displayConst();
+}
 // Private/static functions
 
 void Controler::enable_o ()
