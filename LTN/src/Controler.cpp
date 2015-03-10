@@ -161,23 +161,6 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "j'execute l'analyse lexsyn :" <<endl;
-    string s;
-    string exp;
-    for(;;)
-    {
-		cout << "Entrez une expression a tester : " << endl;
-		cin >> s;
-		cout << "Entrez l'expression attendue : " << endl;
-		cin >> exp;
-		
-		if(s.compare("quit") == 0)
-		{
-			break;
-		}
-		
-		cout << "Test = " << rules->waitingFor(s,exp) << endl;
-	}
-    
 }
 void Controler::memload()
 {
