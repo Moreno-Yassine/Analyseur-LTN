@@ -54,8 +54,6 @@ bool Dictionary::checkWordRegex(string word, boost::regex match)
 	{
 			if(boost::regex_match(word,match))
 			{
-
-				cout <<"Le mot match l'expression attendue"  << endl;
 				return true;
 			}
 	}
@@ -65,7 +63,6 @@ bool Dictionary::checkWordRegex(string word, boost::regex match)
 		cout << e.what() << endl;
 	}
 	
-	cout << "Ne match pas" << endl;
 	return false;
 }
 
@@ -85,9 +82,6 @@ bool Dictionary::checkWord(string word)
 		{
 			if(boost::regex_match(word,it->second))
 			{
-				//Pour Tester
-				cout <<"Clé = " << it->first << endl;
-				cout << "Result = " << boost::regex_match(word,it->second) << endl;
 				return true;
 			}
 		}
@@ -97,6 +91,5 @@ bool Dictionary::checkWord(string word)
 		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
-	cout << "Nothing" << endl;
 	return false;
 }
