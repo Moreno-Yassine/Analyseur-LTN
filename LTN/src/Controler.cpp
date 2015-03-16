@@ -57,7 +57,7 @@ void Controler::run(char* path)
 	try
 	{
 		input_file->setPath(path);
-		//input_file->openParse();
+		input_file->openParse();
 	}
 	catch (int i)
 	{
