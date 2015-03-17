@@ -3,6 +3,10 @@
 
 #include "ID_Symboles.h"
 
+#include <vector>
+
+using namespace std;
+
 class Symbole
 {
     public:
@@ -10,9 +14,11 @@ class Symbole
         virtual ~Symbole();
 		operator int() const { return idSym; }
 
+		void ajoutSymbole(Symbole* symbole);
+
     private:
 		IdSymbole idSym;
-
+		vector<Symbole*>* symbolesContenus;
 };
 
 #endif // SYMBOLE_H

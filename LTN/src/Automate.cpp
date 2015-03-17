@@ -34,11 +34,41 @@ void Automate::reduction(int numeroRegle)
     IdSymbole idSymbole;
     int nombreADepiler;
 
-    if(numeroRegle > 0 && numeroRegle <= pileReductions->size())
+    if(numeroRegle > 0 && numeroRegle <= (int)pileReductions->size())
     {
         nombreADepiler = (pileReductions->at(numeroRegle - 1))->nbElementsADepiler;
         idSymbole = (pileReductions->at(numeroRegle - 1))->idSymbole;
-    } 
+
+        switch(idSymbole)
+        {
+            case I_Pprime : symbole = NULL; break;
+            case I_P : symbole = new Programme(); break;
+            case I_LD : symbole = new Ld(); break;
+            case I_D : symbole = new Declaration(); break;
+            case I_Idc : symbole = new Idc(); break;
+            case I_Idv : symbole = new Idv(); break;
+            default : symbole = NULL; break;
+        }
+
+        if(symbole != NULL && nombreADepiler > 0)
+        {
+            //Création du nouveau symbole avec les ancians symboles
+            for(int i=nombreADepiler; i>0; i--)
+            {
+                symbole->ajoutSymbole(pileSymboles->at(pileSymboles->size() - i ));
+            }
+
+            //Nettoyage des pileSymboles et pileEtats en supprimant nombreADepiler Elements
+            for(int i=0; i>nombreADepiler; i++)
+            {
+                pileSymboles->pop_back();
+                pileEtats->pop_back();
+            }
+
+            //Ajout du nouveau symbole dans la pileSymboles
+            pileSymboles->push_back(symbole);
+        }
+    }
     else
     {
         nombreADepiler = 0;
