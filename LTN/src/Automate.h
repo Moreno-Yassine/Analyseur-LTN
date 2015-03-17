@@ -3,15 +3,17 @@
 
 #include "symboles/Symbole.h"
 #include "symboles/Declaration.h"
-#include "etats/Etat.h"
 
 #include <string>
 #include <map>
 #include <vector>
+using namespace std;
 
 // typedef pour la map des variables
 typedef std::map<std::string, Declaration*> MapStringDeclaration;
 typedef map<std::string, Declaration*>::const_iterator StringDeclarationMapIterator;
+
+class Etat;
 
 class Automate
 {
@@ -23,12 +25,16 @@ class Automate
 
         void displayMap();
 
+		void decalage(Symbole* symbole, Etat* etat);
+		/* Permet d'empiler le symbole et l'etat dans la pile de l'automate
+		 *
+		 */
 
     private:
         MapStringDeclaration tableSymboles;
 
-        vector<Symbole>* pileSymboles;
-        vector<Etat>* pileEtats;
+        vector<Symbole*>* pileSymboles;
+        vector<Etat*>* pileEtats;
 
 };
 

@@ -2,13 +2,15 @@
 #define ETAT_H
 
 #include <iostream>
+#include "../Automate.h"
 
 using namespace std;
 
 class Etat
 {
     public:
-        Etat();
+        Etat(string nom);
+		virtual bool transition(Automate &automate, Symbole* symbole) = 0;
         virtual ~Etat();
 
     private:
