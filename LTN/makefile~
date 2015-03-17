@@ -22,6 +22,7 @@ cleanWin:
 
 clean:
 	rm ./src/*.o
+	rm ./src/symboles/.*o
 	rm $(EXEC)
 
 remake:
