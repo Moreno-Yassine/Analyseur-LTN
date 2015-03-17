@@ -96,17 +96,12 @@ void Controler::testsMapsMarco()
 
     for (int i=0; i<10; i++)
     {
-        automate->addVariable("marco"+std::to_string(i), "cane");
+
+        automate->addDeclaration("marco"+std::to_string(i), 0);
     }
 
-    automate->displayVar();
+    automate->displayMap();
 
-    for (int i=0; i<10; i++)
-    {
-        automate->addConstante("marco"+std::to_string(i), i);
-    }
-
-    automate->displayConst();
 }
 // Private/static functions
 
@@ -161,21 +156,7 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "j'execute l'analyse lexsyn :" <<endl;
-    string s;
-    
-    for(;;)
-    {
-		cout << "Entrez une expression a tester : " << endl;
-		cin >> s;
-		
-		if(s.compare("quit") == 0)
-		{
-			break;
-		}
-		
-		cout << "Test = " << rules->checkWord(s) << endl;
-	}
-    
+	
 }
 void Controler::memload()
 {

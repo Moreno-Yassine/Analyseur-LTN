@@ -51,3 +51,14 @@ vector<vector<string> > File::getParsedFiles()
 {
 	return parsedFiles;
 }
+
+void File::ParsingTest()
+{
+	for (int i = 0;i<parsedFiles.size();i++)
+	{
+		for (int j=0;j<parsedFiles[i].size();j++)
+		{
+			cout << parsedFiles[i][j] << endl;
+		}
+	}
+}
