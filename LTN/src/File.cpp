@@ -2,6 +2,8 @@
 
 using namespace std;
 
+const string tok = ";";
+
 File::File()
 {
     //ctor
@@ -35,11 +37,22 @@ void File::openParse()
                    		stringstream ss(ligne);
                   		string temp;
                    		while (ss >> temp)
-                   		array.push_back(temp); // done! now array={mot1,mot2,mot3,mot4,mot5,...}
+                   		{
+					if (temp.find(tok) == string::npos)
+					{
+						array.push_back(temp);
+					}
+					else
+					{
+						array.push_back(temp.substr(0,temp.find(tok)));
+						array.push_back(tok);
+					}
+				}
                    		parsedFiles.push_back(array);
 			}                   
                 } 
 	    myfile.close();
+	    ParsingTest();
 	  }
 	else
 	{
@@ -54,9 +67,9 @@ vector<vector<string> > File::getParsedFiles()
 
 void File::ParsingTest()
 {
-	for (int i = 0;i<parsedFiles.size();i++)
+	for (unsigned int i = 0;i<parsedFiles.size();i++)
 	{
-		for (int j=0;j<parsedFiles[i].size();j++)
+		for (unsigned int j=0;j<parsedFiles[i].size();j++)
 		{
 			cout << parsedFiles[i][j] << endl;
 		}
