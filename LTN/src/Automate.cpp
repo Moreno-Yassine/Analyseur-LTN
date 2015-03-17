@@ -92,122 +92,122 @@ void Automate::constructionPileReductions()
 {
     Reduction* reduction;
 
-    //Pour R1 :
+    //Pour R1 : P' -> P
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_Pprime;
     pileReductions->push_back(reduction);
 
-    //Pour R2 :
+    //Pour R2 : P -> Ld Li
     reduction->nbElementsADepiler = 2;
     reduction->idSymbole = I_P;
     pileReductions->push_back(reduction);
 
-    //Pour R3 :
+    //Pour R3 : Ld -> Ld D ;
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_LD;
     pileReductions->push_back(reduction);
 
-    //Pour R4 :
-    reduction->nbElementsADepiler = 1;
+    //Pour R4 : Ld -> Epsilone
+    reduction->nbElementsADepiler = 0;
     reduction->idSymbole = I_LD;
     pileReductions->push_back(reduction);
 
-    //Pour R5 :
+    //Pour R5 : D -> const Idc
     reduction->nbElementsADepiler = 2;
     reduction->idSymbole = I_D;
     pileReductions->push_back(reduction);
 
-    //Pour R6 :
+    //Pour R6 : D -> var Idv
     reduction->nbElementsADepiler = 2;
     reduction->idSymbole = I_D;
     pileReductions->push_back(reduction);
 
-    //Pour R7 :
+    //Pour R7 : Idc -> Idc , id = nb
     reduction->nbElementsADepiler = 5;
     reduction->idSymbole = I_Idc;
     pileReductions->push_back(reduction);
 
-    //Pour R8 :
+    //Pour R8 : Idc -> id = nb
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_Idc;
     pileReductions->push_back(reduction);
 
-    //Pour R9 :
+    //Pour R9 : Idv -> Idv , id
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_Idv;
     pileReductions->push_back(reduction);
 
-    //Pour R10 :
+    //Pour R10 : Idv -> id
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_Idv;
     pileReductions->push_back(reduction);
 
-    //Pour R11 :
+    //Pour R11 : Li -> Li I
     reduction->nbElementsADepiler = 2;
     reduction->idSymbole = I_Li;
     pileReductions->push_back(reduction);
 
-    //Pour R12 :
+    //Pour R12 : Li -> Epsilone
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_Li;
     pileReductions->push_back(reduction);
 
-    //Pour R13 :
+    //Pour R13 : I -> lire id
     reduction->nbElementsADepiler = 2;
     reduction->idSymbole = I_I;
     pileReductions->push_back(reduction);
 
-    //Pour R14 :
+    //Pour R14 : I -> ecrire E
     reduction->nbElementsADepiler = 2;
     reduction->idSymbole = I_I;
     pileReductions->push_back(reduction);
 
-    //Pour R15 :
+    //Pour R15 : I -> id := E
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_I;
     pileReductions->push_back(reduction);
 
-    //Pour R16 :
+    //Pour R16 : E -> id
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_E;
     pileReductions->push_back(reduction);
 
-    //Pour R17 :
+    //Pour R17 : E -> nb
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_E;
     pileReductions->push_back(reduction);
 
-    //Pour R18 :
+    //Pour R18 : E -> E opA E
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_E;
     pileReductions->push_back(reduction);
 
-    //Pour R19 :
+    //Pour R19 : E -> E opM E
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_E;
     pileReductions->push_back(reduction);
 
-    //Pour R20 :
+    //Pour R20 : E -> ( E )
     reduction->nbElementsADepiler = 3;
     reduction->idSymbole = I_E;
     pileReductions->push_back(reduction);
 
-    //Pour R21 :
+    //Pour R21 : opA -> pls
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_opA;
     pileReductions->push_back(reduction);
 
-    //Pour R22 :
+    //Pour R22 : opA -> mns
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_opA;
     pileReductions->push_back(reduction);
 
-    //Pour R23 :
+    //Pour R23 : opM -> div
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_opM;
     pileReductions->push_back(reduction);
 
-    //Pour R24 :
+    //Pour R24 : opM -> mul
     reduction->nbElementsADepiler = 1;
     reduction->idSymbole = I_opM;
     pileReductions->push_back(reduction);
