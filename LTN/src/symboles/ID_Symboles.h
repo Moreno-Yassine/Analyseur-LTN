@@ -18,10 +18,33 @@ enum IdSymbole {
 		I_ID,
 		I_NB,
 		// Declaration
-		I_VAR
+		I_VAR,
 		// Operations
-	
-	
+
+	//Autres (à adapter)
+		I_mul, 
+		I_pls,
+		I_mns,
+		I_div,
+		I_opA,
+		I_opM,
+		I_E,
+		I_I,
+		I_Pprime,
+		I_Li,
+		I_ptho,
+		I_pthf, 
+		I_ecrire,
+		I_lire,
+		I_Idc,
+		I_Idv,
+		I_nb,
+		I_vrg,
+		I_egl,
+		I_pvrg,
+		I_pegl,
+		I_const, 
+		I_NULL
 };
 
 

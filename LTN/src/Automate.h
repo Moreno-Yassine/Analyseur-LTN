@@ -3,7 +3,7 @@
 
 #include "symboles/Symbole.h"
 #include "symboles/Declaration.h"
-#include "symboles/IDSymboles.h"
+#include "symboles/ID_Symboles.h"
 
 #include <string>
 #include <map>
@@ -19,7 +19,7 @@ class Etat;
 struct Reduction
 {
 	int nbElementsADepiler;
-	IDSymboles idSymbole;
+	IdSymbole idSymbole;
 };
 
 class Automate
@@ -42,7 +42,8 @@ class Automate
 		 *
 		 */
 
-		 static void constructionPileReductions();
+		 void constructionPileReductions();
+
     private:
         MapStringDeclaration tableSymboles;
 

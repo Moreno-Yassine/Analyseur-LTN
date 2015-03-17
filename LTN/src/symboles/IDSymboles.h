@@ -12,6 +12,7 @@ enum IdSymboles {
 	I_I,
 	I_D,
 	I_P,
+	I_Pprime,
 	I_Ld,
 	I_Li,
 	I_ptho,
