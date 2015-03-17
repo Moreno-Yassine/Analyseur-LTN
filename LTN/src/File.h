@@ -17,10 +17,11 @@ class File
 	void openParse();
 	void setPath(string link);
 	vector<vector<string> > getParsedFiles();
+	void ParsingTest();
 
     private:
-        string path;
-	vector<vector<string> > parsedFiles;
+    string path;
+	vector<vector<string>> parsedFiles;
 	void procTest();
 };
 

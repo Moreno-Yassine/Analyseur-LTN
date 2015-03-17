@@ -14,10 +14,12 @@ class Dictionary
         Dictionary();
         virtual ~Dictionary();
 
-        bool checkWord(string word);
+        bool waitingFor(string word,string exp);
+	bool checkWord(string word);
 
     protected:
     private:
+	bool checkWordRegex(string word, boost::regex match);
         map<string,boost::regex> mapRegex;
     
 };

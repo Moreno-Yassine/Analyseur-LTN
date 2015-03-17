@@ -1,6 +1,6 @@
 #include "Dictionary.h"
 #include <iterator>
-
+using namespace std;
 Dictionary::Dictionary()
 {
 	
@@ -25,19 +25,65 @@ Dictionary::~Dictionary()
     //dtor
 }
 
+/*
+Methode pour checker SYNTAXIQUEMENT les mots composant une ligne
+exemple : waitingFor (mots[i],"const") on veut checker si le mot i correspond à "const"
+word : mot à tester
+exp : expression attendue
+*/
+bool Dictionary::waitingFor(string word,string exp)
+{
+	map<string,boost::regex>::iterator it;
+	it = mapRegex.find(exp);
+	if (it != mapRegex.end())
+	{
+		if (!checkWordRegex(word,it->second))
+		{
+			cout << exp +" attendue, "+ word +" trouvé" <<endl;
+			return false;		
+		}
+		return true;	
+	}
+	else
+	{
+		cout <<"exp invalide"<<endl;
+		return false;
+	}
+}
+bool Dictionary::checkWordRegex(string word, boost::regex match)
+{
+	try
+	{
+			if(boost::regex_match(word,match))
+			{
+				return true;
+			}
+	}
+	catch(std::exception e)
+	{
+		//throw DictionnaryException;
+		cout << e.what() << endl;
+	}
+	
+	return false;
+}
+
+/*
+Methode pour checker LEXICALEMENT les mots composant une ligne
+exemple : waitingFor (mots[i],"const") on veut checker si le mot i correspond à "const"
+word : mot à tester
+exp : expression attendue
+*/
+
 bool Dictionary::checkWord(string word)
 {
 	try
 	{
 		map<string, boost::regex>::iterator it;
-		
 		for(it=mapRegex.begin(); it!= mapRegex.end(); it++)
 		{
 			if(boost::regex_match(word,it->second))
 			{
-				//Pour Tester
-				cout <<"Clé = " <<  it->first << endl;
-				cout << "Result = " << boost::regex_match(word,it->second) << endl;
 				return true;
 			}
 		}
@@ -47,7 +93,5 @@ bool Dictionary::checkWord(string word)
 		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
-	
-	cout << "Nothing" << endl;
 	return false;
 }

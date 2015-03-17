@@ -17,18 +17,6 @@ File::~File()
     //dtor
 }
 
-void File::procTest()
-{
-      for (unsigned int i=0; i<parsedFiles.size();i++)
-      {
-            for (unsigned int j=0; j<parsedFiles[i].size(); j++)
-            cout << parsedFiles[i][j] <<endl;
-            
-            cout << "Fin de ligne"<<endl;
-      }
-      
-}
-
 void File::openParse()
 {
 	ifstream myfile;
@@ -52,7 +40,6 @@ void File::openParse()
 			}                   
                 } 
 	    myfile.close();
-	    procTest();
 	  }
 	else
 	{
@@ -63,4 +50,15 @@ void File::openParse()
 vector<vector<string> > File::getParsedFiles()
 {
 	return parsedFiles;
+}
+
+void File::ParsingTest()
+{
+	for (int i = 0;i<parsedFiles.size();i++)
+	{
+		for (int j=0;j<parsedFiles[i].size();j++)
+		{
+			cout << parsedFiles[i][j] << endl;
+		}
+	}
 }

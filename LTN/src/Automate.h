@@ -1,15 +1,17 @@
 #ifndef AUTOMATE_H
 #define AUTOMATE_H
 
+#include "symboles/Symbole.h"
+#include "symboles/Declaration.h"
+#include "etats/Etat.h"
+
 #include <string>
 #include <map>
-
-using namespace std;
+#include <vector>
 
 // typedef pour la map des variables
-typedef std::map<std::string, std::string> MapVarNameValue;
-// typedef pour la map des constantes
-typedef std::map<std::string, int> MapConstNameValue;
+typedef std::map<std::string, Declaration*> MapStringDeclaration;
+typedef map<std::string, Declaration*>::const_iterator StringDeclarationMapIterator;
 
 class Automate
 {
@@ -17,10 +19,16 @@ class Automate
         Automate();
         virtual ~Automate();
 
-    private:
-        MapNomValue MapVarNameValue;
-        MapNomValue MapConstNameValue;
+        bool addDeclaration(std::string name, Declaration* declaration);
 
+        void displayMap();
+
+
+    private:
+        MapStringDeclaration tableSymboles;
+
+        vector<Symbole>* pileSymboles;
+        vector<Etat>* pileEtats;
 
 };
 

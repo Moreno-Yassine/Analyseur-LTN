@@ -12,6 +12,7 @@ Controler::Controler()
     input_file = new File();
     rules = new Dictionary();
 	com_parser = new Parser();
+	automate = new Automate();
 }
 
 Controler::~Controler()
@@ -21,18 +22,18 @@ Controler::~Controler()
 
 void Controler::configurate (int argc, char ** argv)
 {
-    // Contrôle du nombre maxi d'arguments
+    // Contrï¿½le du nombre maxi d'arguments
     if (argc > MAX_ARGS)
     {
         throw MaxArgsException;
     }
-    // Contrôle mini
+    // Contrï¿½le mini
     else if (argc == 1)
     {
         com_parser->show_options();
         exit(0);
     }
-    //Présence d'arguments
+    //Prï¿½sence d'arguments
     else
     {
         vector<string> opt;
@@ -81,8 +82,27 @@ void Controler::run(char* path)
     {
         execution();
     }
+
+
+    //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+    //this->testsMapsMarco();
+
 }
 
+//Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+void Controler::testsMapsMarco()
+{
+    cout << "TEST MARCO" << endl;
+
+    for (int i=0; i<10; i++)
+    {
+
+        automate->addDeclaration("marco"+std::to_string(i), 0);
+    }
+
+    automate->displayMap();
+
+}
 // Private/static functions
 
 void Controler::enable_o ()
@@ -136,21 +156,7 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "j'execute l'analyse lexsyn :" <<endl;
-    string s;
-    
-    for(;;)
-    {
-		cout << "Entrez une expression a tester : " << endl;
-		cin >> s;
-		
-		if(s.compare("quit") == 0)
-		{
-			break;
-		}
-		
-		cout << "Test = " << rules->checkWord(s) << endl;
-	}
-    
+	
 }
 void Controler::memload()
 {

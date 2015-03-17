@@ -23,7 +23,7 @@ void Parser::show_options()
 	cout << options->at(1)+" : desc" << endl;
 	cout << options->at(2)+" : desc" << endl;
 	cout << options->at(3)+" : desc" << endl;
-	cout << "help : description des options disponibles"<<endl;
+	cout << "Sans argument : description des options disponibles"<<endl;
 }
 
 void Parser::parsing_options(vector<string> opts)

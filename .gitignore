@@ -4,6 +4,7 @@
 *.o
 *.obj
 /src/*.o
+/src/symboles/*.o
 
 # Precompiled Headers
 *.gch
