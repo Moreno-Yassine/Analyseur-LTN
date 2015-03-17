@@ -1,1 +1,1 @@
-../../LTN ./tests/files/correct.lt
+../../LTN  -p ../files/correct.lt
