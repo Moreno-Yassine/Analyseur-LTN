@@ -2,8 +2,8 @@
 #define AUTOMATE_H
 
 #include "symboles/Symbole.h"
-#include "symboles/Etat.h"
 #include "symboles/Declaration.h"
+#include "etats/Etat.h"
 
 #include <string>
 #include <map>
