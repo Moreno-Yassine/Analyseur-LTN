@@ -14,6 +14,8 @@ Dictionary::Dictionary()
     mapRegex.insert(make_pair(",", boost::regex(",")));
     mapRegex.insert(make_pair("const", boost::regex("const$")));
     mapRegex.insert(make_pair("var", boost::regex("var$")));
+    mapRegex.insert(make_pair("lire", boost::regex("lire[' ']+")));
+    mapRegex.insert(make_pair("ecrire", boost::regex("ecrire[' ']+")));
 	mapRegex.insert(make_pair("z_id", boost::regex("^[a-zA-Z][a-zA-Z0-9\\_]*")));
     mapRegex.insert(make_pair("z_val", boost::regex("^[0-9]+((,|\\.)[0-9]+)?$")));
 }
