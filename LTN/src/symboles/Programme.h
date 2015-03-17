@@ -1,5 +1,5 @@
-#ifndef Programme_H
-#define Programme_H
+#ifndef PROGRAMME_H
+#define PROGRAMME_H
 
 #include "Symbole.h"
 
@@ -13,7 +13,7 @@ class Programme : public Symbole
 
 };
 
-#endif // Programme_H
+#endif // PROGRAMME_H
 
 
 
