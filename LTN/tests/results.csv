@@ -1,12 +1,12 @@
 Test ID;Return code validation;Out result;StdErr result;File creation result;Global result
 01.NoArgument;Ok;Non testé;Non testé;Non testé;Ok
-02.FichierInexistant;Echec;Non testé;Non testé;Non testé;Echec
-03.FichierExistant;Echec;Non testé;Non testé;Non testé;Echec
-04.Affichage;Echec;Non testé;Non testé;Non testé;Echec
-05.DoubleDeclaration;Echec;Non testé;Non testé;Non testé;Echec
-06.1.AnalyseStatique;Echec;Non testé;Non testé;Non testé;Echec
-06.2.AnalyseStatique;Echec;Non testé;Non testé;Non testé;Echec
-06.3.AnalyseStatique;Echec;Non testé;Non testé;Non testé;Echec
+02.FichierInexistant;Ok;Non testé;Ok;Non testé;Ok
+03.FichierExistant;Ok;Non testé;Non testé;Non testé;Ok
+04.Affichage;Ok;Non testé;Non testé;Non testé;Ok
+05.DoubleDeclaration;Ok;Non testé;Non testé;Non testé;Ok
+06.1.AnalyseStatique;Ok;Non testé;Non testé;Non testé;Ok
+06.2.AnalyseStatique;Ok;Non testé;Non testé;Non testé;Ok
+06.3.AnalyseStatique;Ok;Non testé;Non testé;Non testé;Ok
 06.4.AnalyseStatique;Echec;Non testé;Non testé;Non testé;Echec
 07.Execution;Echec;Non testé;Non testé;Non testé;Echec
 08.1.Optimisation;Echec;Non testé;Non testé;Non testé;Echec
