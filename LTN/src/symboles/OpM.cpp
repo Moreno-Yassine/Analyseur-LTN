@@ -1,4 +1,4 @@
-#include "opM.h"
+#include "OpM.h"
 
 opM::opM()
 {

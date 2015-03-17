@@ -1,5 +1,5 @@
-#ifndef Ld_H
-#define Ld_H
+#ifndef LD_H
+#define LD_H
 
 #include "Symbole.h"
 
@@ -13,7 +13,7 @@ class Ld : public Symbole
 
 };
 
-#endif // Ld_H
+#endif // LD_H
 
 
 
