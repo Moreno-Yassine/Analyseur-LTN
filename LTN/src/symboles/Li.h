@@ -1,5 +1,5 @@
-#ifndef Li_H
-#define Li_H
+#ifndef LI_H
+#define LI_H
 
 #include "Symbole.h"
 
@@ -13,7 +13,7 @@ class Li : public Symbole
 
 };
 
-#endif // Li_H
+#endif // LI_H
 
 
 

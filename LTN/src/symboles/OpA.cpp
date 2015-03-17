@@ -1,4 +1,4 @@
-#include "opA.h"
+#include "OpA.h"
 
 opA::opA()
 {

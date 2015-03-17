@@ -1,5 +1,5 @@
-#ifndef opA_H
-#define opA_H
+#ifndef OPA_H
+#define OPA_H
 
 #include "Symbole.h"
 
@@ -13,5 +13,5 @@ class opA : public Symbole
 
 };
 
-#endif // opA_H
+#endif // OPA_H
 

@@ -1,5 +1,5 @@
-#ifndef opM_H
-#define opM_H
+#ifndef OPM_H
+#define OPM_H
 
 #include "Symbole.h"
 
@@ -13,6 +13,6 @@ class opM : public Symbole
 
 };
 
-#endif // opM_H
+#endif // OPM_H
 
 
