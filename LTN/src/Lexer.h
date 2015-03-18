@@ -1,6 +1,7 @@
 #ifndef LEXER_H
 #define LEXER_H
 #include "symboles/Symbole.h"
+#include "Dictionary.h"
 #include <vector>
 
 using namespace std;
@@ -17,8 +18,8 @@ class Lexer
 
         virtual ~Lexer();
 
-        Symbole getNext();
-		/*	Retourne le symbole terminal suivant (prochain item du flux)
+        Symbole* getNext();
+		/*	Retourne le POINTEUR SUR (????) symbole terminal suivant (prochain item du flux)
 		 *	sans passer au suivant
 		 */
 
@@ -26,6 +27,8 @@ class Lexer
 		/*	Passe au symbole suivant dans le flux
 		 *	(Peut eventuellement retourner le symbole)
 		 */
+
+		Symbole* getSymbol(string entree);
 
     private:
 		vector<string> fluxCourant;

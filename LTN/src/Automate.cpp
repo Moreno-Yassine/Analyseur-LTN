@@ -212,3 +212,24 @@ void Automate::constructionPileReductions()
     reduction->idSymbole = I_opM;
     pileReductions->push_back(reduction);
 }
+
+
+void Automate::lecture(vector<string> fluxEntrantP)
+/* Fonction lecture :
+ * 
+ */
+{
+	Lexer currentLexer = Lexer(fluxEntrantP);
+	bool expressionAcceptee = false;
+	Symbole* ptSymboleSuivant;
+
+	// Initialisation de l'automate
+	pileEtats->push_back(new E0);
+
+	//Execution de l'automate a pile
+	while(!expressionAcceptee)
+	{
+		ptSymboleSuivant = currentLexer.getNext();
+		expressionAcceptee = pileEtats->back->transition(this, ptSymboleSuivant);
+	}
+}

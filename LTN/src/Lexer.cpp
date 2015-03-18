@@ -7,13 +7,14 @@ Lexer::~Lexer()
 }
 
 //TODO
-Symbole Lexer::getNext()
-{
+Symbole* Lexer::getNext()
+{	
+	string motSuivant = fluxCourant[position];
 
 }
 
 //TODO
-void shift()
+void Lexer::shift()
 {
-
+	position++;
 }
