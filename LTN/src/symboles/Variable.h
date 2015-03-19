@@ -7,10 +7,11 @@ class Variable : public E
 {
     public:
         Variable();
+        Variable(string nom);
         virtual ~Variable();
 
     private:
-
+    	string nom;
 };
 
 #endif // VARIABLE_H

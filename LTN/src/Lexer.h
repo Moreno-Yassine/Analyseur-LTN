@@ -1,7 +1,13 @@
 #ifndef LEXER_H
 #define LEXER_H
+
 #include "symboles/Symbole.h"
 #include "Dictionary.h"
+#include "symboles/ID_Symboles.h"
+#include "symboles/symboles_elementaires/SymbolesElementaires.h"
+#include "symboles/Variable.h"
+#include "symboles/Valeur.h"
+
 #include <vector>
 
 using namespace std;
@@ -20,7 +26,7 @@ class Lexer
 
         Symbole* getNext();
 		/*	Retourne le POINTEUR SUR (????) symbole terminal suivant (prochain item du flux)
-		 *	sans passer au suivant
+		 *	sans passer au suivant => la lecture n'est pas consommatrice d'un symbole
 		 */
 
 		void shift();
@@ -32,6 +38,7 @@ class Lexer
 
     private:
 		vector<string> fluxCourant;
+		Dictionary rulesDictionary;
 		int position;
 };
 

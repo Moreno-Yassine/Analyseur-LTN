@@ -1,0 +1,17 @@
+#ifndef ECRIRE_H
+#define ECRIRE_H
+
+#include "../Symbole.h"
+
+class Ecrire : public Symbole
+{
+    public:
+        Ecrire();
+        virtual ~Ecrire();
+
+    private:
+    	string mot;
+
+};
+
+#endif // ECRIRE_H

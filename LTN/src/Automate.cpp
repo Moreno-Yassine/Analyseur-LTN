@@ -1,5 +1,6 @@
 #include "Automate.h"
 #include "etats/Etat.h"
+#include "etats/Etats.h"
 
 #include <vector>
 using namespace std;
