@@ -38,7 +38,7 @@ class Lexer
 
     private:
 		vector<string> fluxCourant;
-		Dictionary rulesDictionary;
+		Dictionary* rulesDictionary;
 		int position;
 };
 

@@ -17,6 +17,7 @@ class File
 	void openParse();
 	void setPath(string link);
 	vector<vector<string> > getParsedFiles();
+	vector<string> getContinueParsedFile();
 	void ParsingTest();
 
     private:

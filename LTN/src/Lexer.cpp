@@ -1,5 +1,6 @@
 #include "Lexer.h"
-
+#include <string>
+using namespace std;
 
 Lexer::~Lexer()
 {
@@ -16,7 +17,7 @@ Symbole* Lexer::getNext()
 	while(idSymbole == I_NULL && position != fluxCourant.size())
 	{
 		motSuivant = fluxCourant[position];
-		idSymbole = rulesDictionary.checkWord(string word);
+		idSymbole = rulesDictionary->checkWord(string word);
 
 		if(idSymbole == I_NULL)
 		{
@@ -45,7 +46,6 @@ Symbole* Lexer::getNext()
 	}
 }
 
-//TODO
 void Lexer::shift()
 {
 	position++;

@@ -1,5 +1,5 @@
 #include "File.h"
-
+#include <vector>
 using namespace std;
 
 const string tok = ";";
@@ -58,6 +58,19 @@ void File::openParse()
 	{
 		throw 0;
 	}
+}
+
+vector<string> File::getContinueParsedFile()
+{
+	vector<string> continueParsedFile;
+	for(int i=0; i<parsedFiles.size(); i++)
+	{
+		for(int j=0; j<parsedFiles[i].size(); j++)
+		{
+			continueParsedFile.push_back(parsedFiles[i][j]);
+		}
+	}
+	return continueParsedFile;
 }
 
 vector<vector<string> > File::getParsedFiles()
