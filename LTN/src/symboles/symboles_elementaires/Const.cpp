@@ -1,6 +1,6 @@
 #include "Const.h"
 
-Const::Const()
+Const::Const() : Symbole(I_const)
 {
 	mot = "const";
 }

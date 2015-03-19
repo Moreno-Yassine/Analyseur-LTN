@@ -1,6 +1,6 @@
 #include "Idc.h"
 
-Idc::Idc()
+Idc::Idc() : Symbole(I_Idc)
 {
 
 }

@@ -1,6 +1,6 @@
 #include "Idv.h"
 
-Idv::Idv()
+Idv::Idv() : Symbole(I_Idv)
 {
 
 }

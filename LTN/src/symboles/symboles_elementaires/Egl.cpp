@@ -1,6 +1,6 @@
 #include "Egl.h"
 
-Egl::Egl()
+Egl::Egl() : Symbole(I_egl)
 {
 	mot = "=";
 }

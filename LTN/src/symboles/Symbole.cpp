@@ -10,6 +10,11 @@ void Symbole::ajoutSymbole(Symbole* symbole)
 	symbolesContenus.push_back(symbole);
 }
 
+IdSymbole Symbole::getIdSymbole()
+{
+	return idSym;
+}
+
 
 Symbole::~Symbole()
 {

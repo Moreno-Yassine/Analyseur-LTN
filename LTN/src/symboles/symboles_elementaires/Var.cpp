@@ -1,6 +1,6 @@
 #include "Var.h"
 
-Var::Var()
+Var::Var() : Symbole(I_VAR)
 {
 	mot = "var";
 }

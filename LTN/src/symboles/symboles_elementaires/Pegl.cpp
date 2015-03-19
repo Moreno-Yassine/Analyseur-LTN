@@ -1,6 +1,6 @@
 #include "Pegl.h"
 
-Pegl::Pegl()
+Pegl::Pegl() : Symbole(I_pegl)
 {
 	mot = ":=";
 }

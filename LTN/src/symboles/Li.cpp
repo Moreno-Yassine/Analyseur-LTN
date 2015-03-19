@@ -1,6 +1,6 @@
 #include "Li.h"
 
-Li::Li()
+Li::Li() : Symbole(I_Li)
 {
 
 }

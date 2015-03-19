@@ -1,6 +1,6 @@
 #include "Pthf.h"
 
-Pthf::Pthf()
+Pthf::Pthf() : Symbole(I_pthf)
 {
 	mot = ")";
 }

@@ -1,6 +1,6 @@
 #include "Pvrg.h"
 
-Pvrg::Pvrg()
+Pvrg::Pvrg() : Symbole(I_pvrg)
 {
 	mot = ";";
 }

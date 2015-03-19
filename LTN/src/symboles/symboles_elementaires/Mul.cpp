@@ -1,6 +1,6 @@
 #include "Mul.h"
 
-Mul::Mul()
+Mul::Mul() : Symbole(I_mul)
 {
 	mot = "*";
 }

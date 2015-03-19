@@ -1,6 +1,6 @@
 #include "Mns.h"
 
-Mns::Mns()
+Mns::Mns() : Symbole(I_mns)
 {
 	mot = "-";
 }

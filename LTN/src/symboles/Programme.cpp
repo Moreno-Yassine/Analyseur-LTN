@@ -1,6 +1,6 @@
 #include "Programme.h"
 
-Programme::Programme()
+Programme::Programme() : Symbole(I_P)
 {
 
 }

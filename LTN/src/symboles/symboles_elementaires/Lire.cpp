@@ -1,6 +1,6 @@
 #include "Lire.h"
 
-Lire::Lire()
+Lire::Lire()  : Symbole(I_lire)
 {
 	mot = "lire";
 }

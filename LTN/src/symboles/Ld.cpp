@@ -1,6 +1,6 @@
 #include "Ld.h"
 
-Ld::Ld()
+Ld::Ld()  : Symbole(I_LD)
 {
 
 }

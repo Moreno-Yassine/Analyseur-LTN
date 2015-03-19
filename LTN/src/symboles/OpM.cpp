@@ -1,6 +1,6 @@
 #include "OpM.h"
 
-opM::opM()
+opM::opM() : Symbole(I_opM)
 {
 
 }

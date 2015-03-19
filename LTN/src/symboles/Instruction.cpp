@@ -1,6 +1,6 @@
 #include "Instruction.h"
 
-Instruction::Instruction()
+Instruction::Instruction() : Symbole(I_I)
 {
 
 }

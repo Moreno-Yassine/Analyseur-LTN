@@ -1,6 +1,6 @@
 #include "Pls.h"
 
-Pls::Pls()
+Pls::Pls()  : Symbole(I_pls)
 {
 	mot = "+";
 }

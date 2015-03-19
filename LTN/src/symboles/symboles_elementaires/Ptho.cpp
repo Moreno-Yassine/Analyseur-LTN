@@ -1,6 +1,6 @@
 #include "Ptho.h"
 
-Ptho::Ptho()
+Ptho::Ptho() : Symbole(I_ptho)
 {
 	mot = "(";
 }

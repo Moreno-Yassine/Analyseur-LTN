@@ -1,6 +1,6 @@
 #include "Vrg.h"
 
-Vrg::Vrg()
+Vrg::Vrg() : Symbole(I_vrg)
 {
 	mot = ",";
 }

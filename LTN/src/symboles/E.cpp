@@ -1,6 +1,6 @@
 #include "E.h"
 
-E::E()
+E::E() : Symbole(I_E)
 {
 
 }
