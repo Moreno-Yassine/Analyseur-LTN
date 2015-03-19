@@ -28,7 +28,7 @@ class Lexer
 		 *	(Peut eventuellement retourner le symbole)
 		 */
 
-		Symbole* getSymbol(string entree);
+		Symbole* getSymbole(string entree);
 
     private:
 		vector<string> fluxCourant;

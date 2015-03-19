@@ -50,12 +50,12 @@ void Automate::reduction(int numeroRegle)
             default : symbole = NULL; break;
         }
 
-        if(symbole != NULL && nombreADepiler > 0)
+        if(symbole != NULL)
         {
             //Création du nouveau symbole avec les ancians symboles
             for(int i=nombreADepiler; i>0; i--)
             {
-                symbole->ajoutSymbole(pileSymboles->at(pileSymboles->size() - i ));
+                symbole->ajoutSymbole(pileSymboles->at(pileSymboles->size() - i));
             }
 
             //Nettoyage des pileSymboles et pileEtats en supprimant nombreADepiler Elements
