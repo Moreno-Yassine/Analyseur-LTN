@@ -9,6 +9,7 @@
 #include "symboles/Declaration.h"
 #include "symboles/Idc.h"
 #include "symboles/Idv.h"
+#include "Lexer.h"
 
 #include <string>
 #include <map>
