@@ -17,7 +17,7 @@ class Dictionary
         virtual ~Dictionary();
 
         bool waitingFor(string word,string exp);
-		bool checkWord(string word);
+		IdSymbole checkWord(string word);
 
     protected:
     private:

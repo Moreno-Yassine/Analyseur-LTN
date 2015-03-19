@@ -17,7 +17,7 @@ Symbole* Lexer::getNext()
 	while(idSymbole == I_NULL && position != fluxCourant.size())
 	{
 		motSuivant = fluxCourant[position];
-		idSymbole = rulesDictionary->checkWord(string word);
+		idSymbole = rulesDictionary->checkWord(motSuivant);
 
 		if(idSymbole == I_NULL)
 		{
