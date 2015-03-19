@@ -2,6 +2,7 @@
 #define VALEUR_H
 
 #include "E.h"
+#include <string>
 
 using namespace std;
 

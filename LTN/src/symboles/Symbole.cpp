@@ -7,7 +7,7 @@ Symbole::Symbole()
 
 void Symbole::ajoutSymbole(Symbole* symbole)
 {
-	symbolesContenus.push_back(symbole);
+	symbolesContenus->push_back(symbole);
 }
 
 IdSymbole Symbole::getIdSymbole()

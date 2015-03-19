@@ -99,7 +99,7 @@ IdSymbole Dictionary::checkWord(string word)
 		{
 			if(boost::regex_match(word,it->second))
 			{
-				return mapStringIdSymbole.find(it->first);
+				return mapStringIdSymbole.find(it->first)->second;
 			}
 		}
 	}
@@ -108,5 +108,5 @@ IdSymbole Dictionary::checkWord(string word)
 		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
-	return IdSymbole.I_NULL;
+	return IdSymbole::I_NULL;
 }

@@ -231,6 +231,6 @@ void Automate::lecture(vector<string> fluxEntrantP)
 	while(!expressionAcceptee)
 	{
 		ptSymboleSuivant = currentLexer.getNext();
-		expressionAcceptee = pileEtats->back->transition(this, ptSymboleSuivant);
+		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 }

@@ -1,6 +1,7 @@
 #include "Valeur.h"
 #include <iostream>
 #include <string> 
+using namespace std;
 
 Valeur::Valeur()
 {

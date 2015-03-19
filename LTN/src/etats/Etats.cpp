@@ -108,7 +108,7 @@ bool E3::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E14);
 			break;
 		case I_Idc:
-			a.a.decalage(s, new E9);
+			a.decalage(s, new E9);
 			break;
 		default:
 			break;
@@ -128,8 +128,8 @@ bool E4::transition(Automate &a, Symbole* s)
 		case I_ID:
 			a.decalage(s, new E5);
 			break;
-		case I_Idcv:
-			a.a.decalage(s, new E6);
+		case I_Idv:
+			a.decalage(s, new E6);
 			break;
 		default:
 			break;
