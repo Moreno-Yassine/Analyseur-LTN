@@ -163,7 +163,7 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "je debute l'execution de l'analyse lexsyn :" <<endl;
-	automate->lecture(input_file->getParsedFiles);
+	automate->lecture(input_file->getContinueParsedFile());
 	cout<< "lexsyn termine" <<endl;
 }
 void Controler::memload()

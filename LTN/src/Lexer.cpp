@@ -1,5 +1,6 @@
 #include "Lexer.h"
-
+#include <string>
+using namespace std;
 
 Lexer::~Lexer()
 {
@@ -45,7 +46,6 @@ Symbole* Lexer::getNext()
 	}
 }
 
-//TODO
 void Lexer::shift()
 {
 	position++;
