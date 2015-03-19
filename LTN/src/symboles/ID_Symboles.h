@@ -39,12 +39,13 @@ enum IdSymbole {
 		I_pvrg,
 		I_pegl,
 		// Declaration
-		I_VAR,
-		I_const, 
+		I_VAR, //mot clé
+		I_const, //mot clé
 		// Operations
 
 	//Autres (à adapter)		
-		I_NULL
+		I_NULL,
+		I_DOLLAR
 };
 
 
