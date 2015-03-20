@@ -1,6 +1,6 @@
 #include "Ecrire.h"
 
-Ecrire::Ecrire() : Symbole(I_ecrire)
+Ecrire::Ecrire() : Symbole(I_ecrire, "I_ecrire")
 {
 	mot = "ecrire";
 }

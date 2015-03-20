@@ -9,7 +9,6 @@ using namespace std;
 
 Lexer::~Lexer()
 {
-	rulesDictionary = new Dictionary();
 }
 
 //TODO
@@ -22,8 +21,8 @@ Symbole* Lexer::getNext()
 	while(idSymbole == I_NULL && position != fluxCourant.size())
 	{
 		motSuivant = fluxCourant[position];
+		cout << "Mot Suivant = " << motSuivant << endl;
 		idSymbole = rulesDictionary->checkWord(motSuivant);
-
 
 		if(idSymbole == I_NULL)
 		{

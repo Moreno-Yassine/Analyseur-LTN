@@ -6,7 +6,7 @@
 class opM : public Symbole
 {
     public:
-		opM() : Symbole(I_opM) {};
+		opM() : Symbole(I_opM, "I_opM") {};
 		virtual ~opM() {};
 
     private:

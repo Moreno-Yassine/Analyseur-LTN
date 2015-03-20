@@ -5,9 +5,10 @@ Symbole::Symbole()
 	symbolesContenus = new vector<Symbole*>();
 }
 
-Symbole::Symbole(IdSymbole id)
+Symbole::Symbole(IdSymbole id, string idStr)
 {
 	idSym = id;
+	stringID = idStr;
 }
 
 void Symbole::ajoutSymbole(Symbole* symbole)
@@ -18,6 +19,11 @@ void Symbole::ajoutSymbole(Symbole* symbole)
 IdSymbole Symbole::getIdSymbole()
 {
 	return idSym;
+}
+
+string Symbole::toString()
+{
+	return stringID;
 }
 
 Symbole::~Symbole()

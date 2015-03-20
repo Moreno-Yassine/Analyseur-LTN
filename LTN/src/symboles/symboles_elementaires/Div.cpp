@@ -1,6 +1,6 @@
 #include "Div.h"
 
-Div::Div() : Symbole(I_div)
+Div::Div() : Symbole(I_div, "I_div")
 {
 	mot = "/";
 }

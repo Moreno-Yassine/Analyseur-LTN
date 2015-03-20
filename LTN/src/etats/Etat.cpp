@@ -5,3 +5,7 @@ Etat::~Etat()
 	
 }
 
+string Etat::getNomEtat()
+{
+	return nom;
+}

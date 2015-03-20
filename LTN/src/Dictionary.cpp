@@ -95,6 +95,7 @@ IdSymbole Dictionary::checkWord(string word)
 	try
 	{
 		map<string, boost::regex>::iterator it;
+
 		for(it=mapRegex.begin(); it!= mapRegex.end(); it++)
 		{
 			if(boost::regex_match(word,it->second))

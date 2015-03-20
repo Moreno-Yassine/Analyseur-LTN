@@ -13,6 +13,8 @@ class Etat
 		virtual bool transition(Automate &automate, Symbole* symbole) = 0;
         virtual ~Etat();
 
+        string getNomEtat();
+
     private:
         std::string nom;
 

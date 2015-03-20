@@ -18,7 +18,9 @@ class Lexer
 		Lexer(vector<string> fluxCourantP) 
 			:	fluxCourant(fluxCourantP), 
 				position(0) 
-			{};
+			{
+				rulesDictionary = new Dictionary();
+			};
 		/* Prend en parametre le flux que l'on veut analyser
 		 */
 

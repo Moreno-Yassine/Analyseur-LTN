@@ -60,6 +60,7 @@ class Automate
 		 * @param : fluxEntrant, contient l'ensemble de l'expression a evaluer
 		 */
 
+		void affichageEtatAutomate(Symbole* symbole, bool expressionAcceptee);
 
     private:
         MapStringDeclaration tableSymboles;

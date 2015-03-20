@@ -39,7 +39,7 @@ enum IdSymbole {
 		I_pvrg,
 		I_pegl,
 		// Declaration
-		I_VAR, //mot clé
+		I_VAR , //mot clé
 		I_const, //mot clé
 		// Operations
 
@@ -48,5 +48,45 @@ enum IdSymbole {
 		I_DOLLAR
 };
 
+/*
+std::ostream& operator<<(std::ostream& out, const IdSymbole value){
+    static std::map<IdSymbole, std::string> strings;
+    if (strings.size() == 0){
+#define INSERT_ELEMENT(p) strings[p] = #p
+        INSERT_ELEMENT(I_P);     
+        INSERT_ELEMENT(I_Pprime);     
+        INSERT_ELEMENT(I_LD);
+        INSERT_ELEMENT(I_D); 
+        INSERT_ELEMENT(I_Li); 
+        INSERT_ELEMENT(I_I); 
+        INSERT_ELEMENT(I_E); 
+        INSERT_ELEMENT(I_Idc); 
+        INSERT_ELEMENT(I_Idv); 
+        INSERT_ELEMENT(I_mul); 
+        INSERT_ELEMENT(I_pls); 
+        INSERT_ELEMENT(I_mns); 
+        INSERT_ELEMENT(I_div); 
+        INSERT_ELEMENT(I_opA); 
+        INSERT_ELEMENT(I_opM); 
+        INSERT_ELEMENT(I_ID); 
+        INSERT_ELEMENT(I_NB); 
+        INSERT_ELEMENT(I_ecrire);              
+        INSERT_ELEMENT(I_lire); 
+        INSERT_ELEMENT(I_ptho); 
+        INSERT_ELEMENT(I_pthf); 
+        INSERT_ELEMENT(I_vrg); 
+        INSERT_ELEMENT(I_egl); 
+        INSERT_ELEMENT(I_pvrg); 
+        INSERT_ELEMENT(I_pegl); 
+        INSERT_ELEMENT(I_VAR);
+        INSERT_ELEMENT(I_const); 
+        INSERT_ELEMENT(I_NULL); 
+        INSERT_ELEMENT(I_DOLLAR);  
+#undef INSERT_ELEMENT
+    }   
+
+    return out << strings[value];
+}
+*/
 
 #endif // ID_SYM_H

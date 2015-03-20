@@ -3,6 +3,7 @@
 #include "etats/Etats.h"
 
 #include <vector>
+#include <cstdio>
 using namespace std;
 
 Automate::Automate()
@@ -231,6 +232,33 @@ void Automate::lecture(vector<string> fluxEntrantP)
 	while(!expressionAcceptee)
 	{
 		ptSymboleSuivant = currentLexer.getNext();
+        affichageEtatAutomate(ptSymboleSuivant, expressionAcceptee);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
+}
+
+void Automate::affichageEtatAutomate(Symbole* symbole, bool expressionAcceptee)
+{
+    cout << "Prochain Symbole à lire : " << symbole->toString() << endl;
+    
+    cout << "Pile Etats : ";
+    for (int i=0; i<(int)pileEtats->size(); i++)
+    {
+        cout << (pileEtats->at(i))->getNomEtat() << " ";
+    }
+    cout << endl;
+
+    cout << "Pile Symboles : ";
+
+    for (int i=0; i<(int)pileSymboles->size(); i++)
+    {
+        cout << (pileSymboles->at(i))->toString() << " ";
+    }
+    cout << endl;
+    string tampon;
+    cout << "Appuyez sur Entrée pour continuer....";
+    getchar();
+
+    cout << "\n" << endl;
+
 }
