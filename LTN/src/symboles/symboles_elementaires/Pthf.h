@@ -2,6 +2,7 @@
 #define PTHF_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Pthf : public Symbole
 {

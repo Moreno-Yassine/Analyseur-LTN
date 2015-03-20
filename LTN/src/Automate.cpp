@@ -91,7 +91,7 @@ void Automate::displayMap()
 
 void Automate::constructionPileReductions()
 {
-    Reduction* reduction;
+	Reduction* reduction;
 
     //Pour R1 : P' -> P
     reduction->nbElementsADepiler = 1;

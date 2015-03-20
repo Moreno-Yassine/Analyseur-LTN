@@ -6,8 +6,9 @@
 class opA : public Symbole
 {
     public:
-        opA();
-        virtual ~opA();
+		opA() : Symbole(I_opA) {};
+		virtual ~opA() {};
+		bool fonctionBidon();
 
     private:
 

@@ -2,6 +2,7 @@
 #define DIV_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Div : public Symbole
 {

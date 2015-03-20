@@ -2,6 +2,7 @@
 #define LIRE_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Lire : public Symbole
 {

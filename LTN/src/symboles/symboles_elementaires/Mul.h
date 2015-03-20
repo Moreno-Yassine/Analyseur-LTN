@@ -2,6 +2,7 @@
 #define MUL_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Mul : public Symbole
 {

@@ -3,13 +3,13 @@
 
 #include <iostream>
 #include "../Automate.h"
-
+#include <string>
 using namespace std;
 
 class Etat
 {
     public:
-        Etat(string nom);
+		Etat(string nomP) : nom(nomP) {};
 		virtual bool transition(Automate &automate, Symbole* symbole) = 0;
         virtual ~Etat();
 

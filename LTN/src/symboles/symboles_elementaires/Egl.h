@@ -2,6 +2,7 @@
 #define EGL_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Egl : public Symbole
 {

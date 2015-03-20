@@ -2,6 +2,7 @@
 #define PVRG_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Pvrg : public Symbole
 {

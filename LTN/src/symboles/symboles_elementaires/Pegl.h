@@ -2,6 +2,7 @@
 #define PEGL_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Pegl : public Symbole
 {

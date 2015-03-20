@@ -2,6 +2,7 @@
 #define VRG_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Vrg : public Symbole
 {

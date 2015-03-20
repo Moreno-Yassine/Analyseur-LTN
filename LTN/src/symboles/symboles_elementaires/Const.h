@@ -2,6 +2,7 @@
 #define CONST_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Const : public Symbole
 {

@@ -2,6 +2,7 @@
 #define PLS_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Pls : public Symbole
 {

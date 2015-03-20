@@ -2,6 +2,7 @@
 #define MNS_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Mns : public Symbole
 {

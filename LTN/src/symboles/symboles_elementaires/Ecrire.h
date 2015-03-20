@@ -2,6 +2,7 @@
 #define ECRIRE_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Ecrire : public Symbole
 {

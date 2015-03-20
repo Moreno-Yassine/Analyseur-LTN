@@ -6,8 +6,8 @@
 class opM : public Symbole
 {
     public:
-        opM();
-        virtual ~opM();
+		opM() : Symbole(I_opM) {};
+		virtual ~opM() {};
 
     private:
 

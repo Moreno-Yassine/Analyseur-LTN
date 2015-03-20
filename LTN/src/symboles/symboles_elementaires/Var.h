@@ -2,6 +2,7 @@
 #define VAR_H
 
 #include "../Symbole.h"
+#include <string>
 
 class Var : public Symbole
 {
