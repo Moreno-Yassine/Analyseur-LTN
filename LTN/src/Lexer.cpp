@@ -19,6 +19,7 @@ Symbole* Lexer::getNext()
 		motSuivant = fluxCourant[position];
 		idSymbole = rulesDictionary->checkWord(motSuivant);
 
+
 		if(idSymbole == I_NULL)
 		{
 			position++;
