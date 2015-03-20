@@ -67,7 +67,7 @@ class Automate
 
         vector<Symbole*>* pileSymboles;
         vector<Etat*>* pileEtats;
-        vector<Reduction*>* pileReductions;
+        vector<Reduction>* pileReductions;
 
 };
 

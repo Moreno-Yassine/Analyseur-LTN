@@ -20,6 +20,7 @@ bool E0::transition(Automate &a, Symbole* s)
 			a.reduction(4);
 			break;
 		case I_VAR:
+			cout << "Détecté" << endl;
 			a.reduction(4);
 			break;
 		case I_ID:
