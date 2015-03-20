@@ -1,12 +1,12 @@
 #ifndef VALEUR_H
 #define VALEUR_H
 
-#include "E.h"
+#include "Symbole.h"
 #include <string>
 
 using namespace std;
 
-class Valeur : public E
+class Valeur : public Symbole
 {
     public:
         Valeur();

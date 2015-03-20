@@ -1,11 +1,11 @@
 #include "Variable.h"
 
-Variable::Variable()
+Variable::Variable(): Symbole(I_ID, "I_ID")
 {
 
 }
 
-Variable::Variable(string mot)
+Variable::Variable(string mot): Symbole(I_ID, "I_ID")
 {
 	nom = mot;
 }

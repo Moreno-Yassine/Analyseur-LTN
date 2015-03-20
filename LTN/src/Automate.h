@@ -46,6 +46,7 @@ class Automate
 		 * @return : N/A
 		 */
 
+		void reductionEmpile(int numeroRegle, Etat* etat);
 
 		void reduction(int numeroRegle);
 		/* Permet de réduire une règle est d'empiler le symbole et l'etat dans la pile de l'automate
@@ -68,6 +69,7 @@ class Automate
         vector<Symbole*>* pileSymboles;
         vector<Etat*>* pileEtats;
         vector<Reduction>* pileReductions;
+        Lexer currentLexer;
 
 };
 

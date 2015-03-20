@@ -11,6 +11,7 @@ Automate::Automate()
     pileSymboles = new vector<Symbole*>();
     pileEtats = new vector<Etat*>();
     pileReductions = new vector<Reduction>();
+    currentLexer = Lexer();
     cout << "coucou" << endl;
     this->constructionPileReductions();
     cout << "coucou2" << endl;
@@ -31,7 +32,16 @@ void Automate::decalage(Symbole* symbole, Etat* etat)
 {
 	pileSymboles->push_back(symbole);
 	pileEtats->push_back(etat);
+    currentLexer.shift();
 }
+
+
+void Automate::reductionEmpile(int numeroRegle, Etat* etat)
+{
+    this->reduction(numeroRegle);
+    pileEtats->push_back(etat);
+}
+
 
 void Automate::reduction(int numeroRegle)
 {
@@ -226,7 +236,7 @@ void Automate::lecture(vector<string> fluxEntrantP)
  * 
  */
 {
-	Lexer currentLexer = Lexer(fluxEntrantP);
+	currentLexer = Lexer(fluxEntrantP);
 	bool expressionAcceptee = false;
 	Symbole* ptSymboleSuivant;
 
@@ -237,7 +247,7 @@ void Automate::lecture(vector<string> fluxEntrantP)
 	while(!expressionAcceptee)
 	{
 		ptSymboleSuivant = currentLexer.getNext();
-        affichageEtatAutomate(ptSymboleSuivant, expressionAcceptee);
+        this->affichageEtatAutomate(ptSymboleSuivant, expressionAcceptee);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 }

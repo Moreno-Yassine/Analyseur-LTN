@@ -1,11 +1,11 @@
 #ifndef VARIABLE_H
 #define VARIABLE_H
 #include <string>
-#include "E.h"
+#include "Symbole.h"
 
 using namespace std;
 
-class Variable : public E
+class Variable : public Symbole
 {
     public:
         Variable();

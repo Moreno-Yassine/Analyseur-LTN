@@ -17,23 +17,23 @@ bool E0::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E2);
 			break;
 		case I_const:
-			a.reduction(4);
+			a.reductionEmpile(4, new E2);
 			break;
 		case I_VAR:
-			cout << "Détecté" << endl;
-			a.reduction(4);
+			cout << "VAR Détecté" << endl;
+			a.reductionEmpile(4, new E2);
 			break;
 		case I_ID:
-			a.reduction(4);
+			a.reductionEmpile(4, new E2);
 			break;
 		case I_lire:
-			a.reduction(4);
+			a.reductionEmpile(4, new E2);
 			break;
 		case I_ecrire:
-			a.reduction(4);
+			a.reductionEmpile(4, new E2);
 			break;
 		case I_DOLLAR:
-			a.reduction(4);
+			a.reductionEmpile(4, new E2);
 			break;
 		default:
 			break;

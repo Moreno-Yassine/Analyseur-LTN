@@ -15,6 +15,7 @@ using namespace std;
 class Lexer
 {
     public:
+    	Lexer();
 		Lexer(vector<string> fluxCourantP) 
 			:	fluxCourant(fluxCourantP), 
 				position(0) 

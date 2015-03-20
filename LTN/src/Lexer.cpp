@@ -7,6 +7,11 @@
 #include <string>
 using namespace std;
 
+Lexer::Lexer()
+{
+
+}
+
 Lexer::~Lexer()
 {
 }
