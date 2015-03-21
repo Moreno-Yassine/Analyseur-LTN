@@ -9,6 +9,7 @@ Symbole::Symbole(IdSymbole id, string idStr)
 {
 	idSym = id;
 	stringID = idStr;
+	symbolesContenus = new vector<Symbole*>();
 }
 
 void Symbole::ajoutSymbole(Symbole* symbole)

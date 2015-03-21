@@ -20,7 +20,6 @@ bool E0::transition(Automate &a, Symbole* s)
 			a.reductionEmpile(4, new E2);
 			break;
 		case I_VAR:
-			cout << "VAR Détecté" << endl;
 			a.reductionEmpile(4, new E2);
 			break;
 		case I_ID:
@@ -86,13 +85,13 @@ bool E2::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E4);
 			break;
 		case I_ID:
-			a.reduction(12);
+			//a.reduction(12); !!!!!!!!!!!!!!Commenté car on en gère pas les Li encore
 			break;
 		case I_lire:
-			a.reduction(12);
+			//a.reduction(12);
 			break;
 		case I_ecrire:
-			a.reduction(12);
+			//a.reduction(12);
 			break;
 		case I_Li:
 			//a.decalage(s, new E17); //Non implémenté pour l patie déclarative
@@ -170,10 +169,10 @@ bool E5::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reduction(10);
+			a.reductionEmpile(10, new E6);
 			break;
 		case I_vrg:
-			a.reduction(10);
+			a.reductionEmpile(10, new E6);
 			break;
 		default:
 			break;
@@ -195,7 +194,7 @@ bool E6::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reduction(6);
+			a.reductionEmpile(6, new E38);
 			break;
 		case I_vrg:
 			a.decalage(s, new E7);
@@ -242,7 +241,7 @@ bool E8::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reduction(9);
+			a.reductionEmpile(9, new E6);
 			break;
 		default:
 			break;
@@ -264,7 +263,7 @@ bool E9::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reduction(5);
+			a.reductionEmpile(5, new E38);
 			break;
 		case I_vrg:
 			a.decalage(s, new E10);
@@ -355,7 +354,7 @@ bool E13::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reduction(7);
+			a.reductionEmpile(7, new E9);
 			break;
 		case I_vrg:
 			a.reduction(7);
@@ -424,10 +423,10 @@ bool E16::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reduction(8);
+			a.reductionEmpile(8, new E9);
 			break;
 		case I_vrg:
-			a.reduction(8);
+			a.reductionEmpile(8, new E9);
 			break;
 		default:
 			break;
@@ -471,22 +470,22 @@ bool E39::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_const:
-			a.reduction(3);
+			a.reductionEmpile(3, new E2);
 			break;
 		case I_VAR:
-			a.reduction(3);
+			a.reductionEmpile(3, new E2);
 			break;
 		case I_ID:
-			a.reduction(3);
+			a.reductionEmpile(3, new E2);
 			break;
 		case I_lire:
-			a.reduction(3);
+			a.reductionEmpile(3, new E2);
 			break;
 		case I_ecrire:
-			a.reduction(3);
+			a.reductionEmpile(3, new E2);
 			break;
 		case I_DOLLAR:
-			a.reduction(3);
+			a.reductionEmpile(3, new E2);
 			break;
 		default:
 			break;

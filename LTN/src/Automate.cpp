@@ -48,7 +48,6 @@ void Automate::reduction(int numeroRegle)
     Symbole* symbole;
     IdSymbole idSymbole;
     int nombreADepiler;
-
     if(numeroRegle > 0 && numeroRegle <= pileReductions->size())
     {
         nombreADepiler = (pileReductions->at(numeroRegle - 1)).nbElementsADepiler;
@@ -74,7 +73,7 @@ void Automate::reduction(int numeroRegle)
             }
 
             //Nettoyage des pileSymboles et pileEtats en supprimant nombreADepiler Elements
-            for(int i=0; i>nombreADepiler; i++)
+            for(int i=0; i<nombreADepiler; i++)
             {
                 pileSymboles->pop_back();
                 pileEtats->pop_back();
