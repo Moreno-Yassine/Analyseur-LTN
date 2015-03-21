@@ -85,13 +85,13 @@ bool E2::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E4);
 			break;
 		case I_ID:
-			a.reduction(12);
+			a.reductionEmpile(12, new E17);
 			break;
 		case I_lire:
-			a.reduction(12);
+			a.reductionEmpile(12, new E17);
 			break;
 		case I_ecrire:
-			a.reduction(12);
+			a.reductionEmpile(12, new E17);
 			break;
 		case I_Li:
 			a.decalage(s, new E17);
