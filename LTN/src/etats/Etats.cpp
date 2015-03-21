@@ -85,16 +85,16 @@ bool E2::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E4);
 			break;
 		case I_ID:
-			//a.reduction(12); !!!!!!!!!!!!!!Commenté car on en gère pas les Li encore
+			a.reduction(12);
 			break;
 		case I_lire:
-			//a.reduction(12);
+			a.reduction(12);
 			break;
 		case I_ecrire:
-			//a.reduction(12);
+			a.reduction(12);
 			break;
 		case I_Li:
-			//a.decalage(s, new E17); //Non implémenté pour l patie déclarative
+			a.decalage(s, new E17);
 			break;
 		case I_D:
 			a.decalage(s, new E38);
@@ -439,6 +439,682 @@ E16::~E16()
 {
 
 }
+
+/* --------------- ETAT 17 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E17::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E15);
+			break;
+		case I_lire:
+			a.decalage(s,new E18);
+			break;
+		case I_ecrire:
+			a.decalage(s,new E35);
+			break;
+		case I_DOLLAR:
+			a.reductionEmpile(2,new E1);
+			break;
+		case I_I:
+			a.decalage(s,new E40);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E17::~E17()
+{
+
+}
+
+/* --------------- ETAT 18 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E18::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E19);
+			break;
+		case I_E:
+			a.decalage(s,new E19);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E18::~E18()
+{
+
+}
+
+/* --------------- ETAT 19 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E19::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pvrg:
+			a.reductionEmpile(13,new E40);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E19::~E19()
+{
+
+}
+
+/* --------------- ETAT 20 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E20::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pegl:
+			a.decalage(s,new E21);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E20::~E20()
+{
+
+}
+
+/* --------------- ETAT 21 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E21::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E21);
+			break;
+		case I_NB:
+			a.decalage(s,new E22);
+			break;
+		case I_ptho:
+			a.decalage(s,new E24);
+			break;
+		case I_E:
+			a.decalage(s,new E27);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E21::~E21()
+{
+
+}
+
+
+/* --------------- ETAT 22 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E22::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.reductionEmpile(17,new E27);
+			break;
+		case I_mul:
+			a.reductionEmpile(17,new E27);
+			break;
+		case I_mns:
+			a.reductionEmpile(17,new E27);
+			break;
+		case I_pvrg:
+			a.reductionEmpile(17,new E27);
+			break;
+		case I_div:
+			a.reductionEmpile(17,new E27);
+			break;
+		case I_pthf:
+			a.reductionEmpile(17,new E27);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E22::~E22()
+{
+
+}
+
+/* --------------- ETAT 23 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E23::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.reductionEmpile(16,new E25);
+			break;
+		case I_mul:
+			a.reductionEmpile(16,new E25);
+			break;
+		case I_mns:
+			a.reductionEmpile(16,new E25);
+			break;
+		case I_pvrg:
+			a.reductionEmpile(16,new E25);
+			break;
+		case I_div:
+			a.reductionEmpile(16,new E25);
+			break;
+		case I_pthf:
+			a.reductionEmpile(16,new E25);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E23::~E23()
+{
+
+}
+
+
+/* --------------- ETAT 24 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E24::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E23);
+			break;
+		case I_NB:
+			a.decalage(s,new E22);
+			break;
+		case I_ptho:
+			a.decalage(s,new E24);
+			break;
+		case I_E:
+			a.decalage(s,new E25);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E24::~E24()
+{
+
+}
+
+
+/* --------------- ETAT 25 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E25::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.decalage(s,new E31);
+			break;
+		case I_mul:
+			a.decalage(s,new E29);
+			break;
+		case I_mns:
+			a.decalage(s,new E30);
+			break;
+		case I_div:
+			a.decalage(s,new E28);
+			break;
+		case I_pthf:
+			a.decalage(s,new E26);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E25::~E25()
+{
+
+}
+
+/* --------------- ETAT 26 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E26::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.reductionEmpile(20,new E25);
+			break;
+		case I_mul:
+			a.reductionEmpile(20,new E25);
+			break;
+		case I_mns:
+			a.reductionEmpile(20,new E25);
+			break;
+		case I_pvrg:
+			a.reductionEmpile(20,new E25);
+			break;
+		case I_div:
+			a.reductionEmpile(20,new E25);
+			break;
+		case I_pthf:
+			a.reductionEmpile(20,new E25);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E26::~E26()
+{
+
+}
+
+
+/* --------------- ETAT 27 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E27::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.decalage(s,new E31);
+			break;
+		case I_mul:
+			a.decalage(s,new E29);
+			break;
+		case I_mns:
+			a.decalage(s,new E30);
+			break;
+		case I_div:
+			a.decalage(s,new E28);
+			break;
+		case I_pvrg:
+			a.reductionEmpile(15,new E40);
+			break;
+
+		case I_opA:
+			a.decalage(s,new E32);
+			break;
+		case I_opM:
+			a.decalage(s,new E33);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E27::~E27()
+{
+
+}
+
+/* --------------- ETAT 28 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E28::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.reductionEmpile(23,new E32);		//A VERIFIER !!!!!
+			break;
+		case I_NB:
+			a.reductionEmpile(23,new E32);
+			break;
+		case I_ptho:
+			a.reductionEmpile(23,new E32);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E28::~E28()
+{
+
+}
+
+/* --------------- ETAT 29 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E29::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.reductionEmpile(24,new E32);
+			break;
+		case I_NB:
+			a.reductionEmpile(24,new E32);
+			break;
+		case I_ptho:
+			a.reductionEmpile(24,new E32);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E29::~E29()
+{
+
+}
+
+/* --------------- ETAT 30 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E30::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.reductionEmpile(22,new E33);
+			break;
+		case I_NB:
+			a.reductionEmpile(22,new E33);
+			break;
+		case I_ptho:
+			a.reductionEmpile(22,new E33);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E30::~E30()
+{
+
+}
+
+/* --------------- ETAT 31 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E31::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.reductionEmpile(21,new E33);
+			break;
+		case I_NB:
+			a.reductionEmpile(21,new E33);
+			break;
+		case I_ptho:
+			a.reductionEmpile(21,new E33);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E31::~E31()
+{
+
+}
+
+/* --------------- ETAT 32 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E32::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E23);
+			break;
+		case I_NB:
+			a.decalage(s,new E22);
+			break;
+		case I_E:
+			a.decalage(s,new E34);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E32::~E32()
+{
+
+}
+
+/* --------------- ETAT 33 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E33::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E23);
+			break;
+		case I_NB:
+			a.decalage(s,new E22);
+			break;
+		case I_E:
+			a.decalage(s,new E37);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E33::~E33()
+{
+
+}
+
+
+/* --------------- ETAT 34 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E34::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.reductionEmpile(18,new E32);
+		case I_mul:
+			a.decalage(s,new E29);
+		case I_mns:
+			a.reductionEmpile(18,new E32);
+		case I_div:
+			a.decalage(s,new E28);
+		case I_pvrg:
+			a.reductionEmpile(18,new E40);
+
+		case I_opA:
+			a.decalage(s,new E32);
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E34::~E34()
+{
+
+}
+
+
+/* --------------- ETAT 35 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E35::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.decalage(s,new E23);
+			break;
+		case I_NB:
+			a.decalage(s,new E22);
+			break;
+		case I_E:
+			a.decalage(s,new E36);
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E35::~E35()
+{
+
+}
+
+/* --------------- ETAT 36 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E36::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.decalage(s,new E31);
+		case I_mul:
+			a.decalage(s,new E29);
+		case I_mns:
+			a.decalage(s,new E30);
+		case I_div:
+			a.decalage(s,new E28);
+		case I_pvrg:
+			a.reductionEmpile(14,new E40);
+
+		case I_opA:
+			a.decalage(s,new E32);
+		case I_opM:
+			a.decalage(s,new E33);
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E36::~E36()
+{
+
+}
+
+/* --------------- ETAT 37 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E37::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pls:
+			a.decalage(s,new E31);
+		case I_mul:
+			a.decalage(s,new E29);
+		case I_mns:
+			a.decalage(s,new E30);
+		case I_div:
+			a.decalage(s,new E28);
+		case I_pvrg:
+			a.reductionEmpile(15,new E40);
+
+		case I_opA:
+			a.decalage(s,new E32);
+		case I_opM:
+			a.decalage(s,new E33);
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E37::~E37()
+{
+
+}
+
+
 /* --------------- ETAT 38 ------------------
  *
  * -----------------------------------------
@@ -495,6 +1171,61 @@ bool E39::transition(Automate &a, Symbole* s)
 }
 
 E39::~E39()
+{
+
+}
+
+
+/* --------------- ETAT 40 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E40::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_pvrg:
+			a.decalage(s,new E41);
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E40::~E40()
+{
+
+}
+
+/* --------------- ETAT 41 ------------------
+ *
+ * -----------------------------------------
+ */
+bool E41::transition(Automate &a, Symbole* s)
+{
+	switch(s->getIdSymbole())
+	 {
+		case I_ID:
+			a.reductionEmpile(11, new E20);
+			break;
+		case I_lire:
+			a.reductionEmpile(11, new E18);
+			break;
+		case I_ecrire:
+			a.reductionEmpile(11, new E35);
+			break;
+		case I_DOLLAR:
+			a.reductionEmpile(11, new E1);		//A VERIFIER !!!!!!!!!!!
+			break;
+		default:
+			break;
+	}
+	
+	return false;
+}
+
+E41::~E41()
 {
 
 }
