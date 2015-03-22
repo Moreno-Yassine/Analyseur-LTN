@@ -1,6 +1,16 @@
 #include "Automate.h"
 #include "etats/Etat.h"
 #include "etats/Etats.h"
+#include "symboles/OpM.h"
+#include "symboles/OpA.h"
+#include "symboles/Instruction.h"
+#include "symboles/Li.h"
+#include "symboles/E.h"
+#include "symboles/Idc.h"
+#include "symboles/Idv.h"
+#include "symboles/Declaration.h"
+#include "symboles/Ld.h"
+#include "symboles/Programme.h"
 
 #include <vector>
 #include <cstdio>

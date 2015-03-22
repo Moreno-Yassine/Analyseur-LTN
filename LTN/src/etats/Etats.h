@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include "Etat.h"
-//#include "../Automate.h"
-#include "../symboles/SymbolesComplexes.h"
 
 
 using namespace std;
