@@ -1,9 +1,5 @@
 #include "Lexer.h"
 
-#include "symboles/symboles_elementaires/SymbolesElementaires.h"
-#include "symboles/Variable.h"
-#include "symboles/Valeur.h"
-
 #include <string>
 using namespace std;
 

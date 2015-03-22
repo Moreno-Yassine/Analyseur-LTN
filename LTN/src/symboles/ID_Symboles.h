@@ -17,10 +17,6 @@ enum IdSymbole {
 		I_E,
 		I_Idc,
 		I_Idv,
-		I_mul, 
-		I_pls,
-		I_mns,
-		I_div,
 		// Operations
 		I_opA,
 		I_opM,
@@ -38,6 +34,11 @@ enum IdSymbole {
 		I_egl,
 		I_pvrg,
 		I_pegl,
+		I_mul, 
+		I_pls,
+		I_mns,
+		I_div,
+		
 		// Declaration
 		I_VAR , //mot clé
 		I_const, //mot clé

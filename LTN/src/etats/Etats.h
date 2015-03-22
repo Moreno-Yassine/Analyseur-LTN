@@ -4,8 +4,8 @@
 #include <iostream>
 #include "Etat.h"
 //#include "../Automate.h"
-#include "../symboles/Programme.h"
-#include "../symboles/Ld.h"
+#include "../symboles/SymbolesComplexes.h"
+
 
 using namespace std;
 class Automate;

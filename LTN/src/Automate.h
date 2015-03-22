@@ -2,13 +2,7 @@
 #define AUTOMATE_H
 
 #include "symboles/Symbole.h"
-#include "symboles/Declaration.h"
-#include "symboles/ID_Symboles.h"
-#include "symboles/Programme.h"
-#include "symboles/Ld.h"
-#include "symboles/Declaration.h"
-#include "symboles/Idc.h"
-#include "symboles/Idv.h"
+#include "symboles/SymbolesComplexes.h"
 #include "Lexer.h"
 
 #include <string>

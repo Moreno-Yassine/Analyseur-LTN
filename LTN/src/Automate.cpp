@@ -12,9 +12,7 @@ Automate::Automate()
     pileEtats = new vector<Etat*>();
     pileReductions = new vector<Reduction>();
     currentLexer = Lexer();
-    cout << "coucou" << endl;
     this->constructionPileReductions();
-    cout << "coucou2" << endl;
 }
 
 Automate::~Automate()
@@ -61,6 +59,11 @@ void Automate::reduction(int numeroRegle)
             case I_D : symbole = new Declaration(); break;
             case I_Idc : symbole = new Idc(); break;
             case I_Idv : symbole = new Idv(); break;
+            case I_E : symbole = new E(); break;
+            case I_Li : symbole = new Li(); break;
+            case I_I : symbole = new Instruction(); break;
+            case I_opA : symbole = new opA(); break;
+            case I_opM : symbole = new opM(); break;
             default : symbole = NULL; break;
         }
 

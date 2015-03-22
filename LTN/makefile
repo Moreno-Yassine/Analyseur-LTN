@@ -23,6 +23,7 @@ cleanWin:
 clean:
 	rm ./src/*.o
 	rm ./src/*/*.o
+	rm ./src/*/*/*.o
 	rm $(EXEC)
 
 remake:

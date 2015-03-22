@@ -169,6 +169,7 @@ bool E5::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
+			cout << "coucou point virgule" << endl;
 			a.reductionEmpile(10, new E6);
 			break;
 		case I_vrg:
@@ -376,6 +377,10 @@ E13::~E13()
  */
 bool E14::transition(Automate &a, Symbole* s)
 {
+	cout << "Symbole ID = " << s->toString() << endl;
+	IdSymbole id = I_pvrg;
+	cout << "Testeur = " << I_egl << endl;
+	cout << "Testé = " << s->getIdSymbole() << endl;
 	switch(s->getIdSymbole())
 	 {
 		case I_egl:
