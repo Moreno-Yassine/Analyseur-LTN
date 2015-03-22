@@ -24,20 +24,19 @@ void File::openParse()
 	ifstream myfile;
 	myfile.open (path.c_str());
 	if (myfile.is_open())
-	  {
-		//AMINE    
-		    string ligne; // variable contenant chaque ligne lue 
+	  {  
+		string ligne; //variable contenant chaque ligne lue 
             
-                // cette boucle s'arrête dès qu'une erreur de lecture survient 
-                while ( getline( myfile, ligne ) ) 
-                { 
+        //cette boucle s'arrête dès qu'une erreur de lecture survient 
+        while ( getline( myfile, ligne ) ) 
+        { 
 			if(ligne != "")
 			{
 				vector<string> array;
-                   		stringstream ss(ligne);
-                  		string temp;
-                   		while (ss >> temp)
-                   		{
+                stringstream ss(ligne);
+                string temp;
+                while (ss >> temp)
+                {
 					if (temp.find(tok) == string::npos)
 					{
 						array.push_back(temp);
@@ -48,9 +47,9 @@ void File::openParse()
 						array.push_back(tok);
 					}
 				}
-                   		parsedFiles.push_back(array);
+                parsedFiles.push_back(array);
 			}                   
-                } 
+        } 
 	    myfile.close();
 	    ParsingTest();
 	  }

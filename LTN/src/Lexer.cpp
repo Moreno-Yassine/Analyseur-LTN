@@ -24,7 +24,7 @@ Symbole* Lexer::getNext()
 		motSuivant = fluxCourant[position];
 		cout << "Mot Suivant = " << motSuivant << endl;
 		idSymbole = rulesDictionary->checkWord(motSuivant);
-
+		cout << "Id Symbole = " << idSymbole <<endl;
 		if(idSymbole == I_NULL)
 		{
 			position++;

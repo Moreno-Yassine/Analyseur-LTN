@@ -454,7 +454,7 @@ bool E17::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.decalage(s,new E15);
+			a.decalage(s,new E20);
 			break;
 		case I_lire:
 			a.decalage(s,new E18);
