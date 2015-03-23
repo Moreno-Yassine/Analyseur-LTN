@@ -20,6 +20,11 @@ Automate::~Automate()
 
 }
 
+vector<Etat*>* Automate::getPileEtats()
+{
+    return pileEtats;
+}
+
 // Add declaration
 bool Automate::addDeclaration(std::string name, Declaration* declaration)
 {

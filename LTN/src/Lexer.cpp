@@ -18,6 +18,11 @@ Symbole* Lexer::getNext()
 	string motSuivant = "";
 	IdSymbole idSymbole = I_NULL;
 
+	if(position == fluxCourant.size())
+	{
+		return new Dollar();
+	}
+
 	//On essaye de reconnaitre le Symbole actuellement lu
 	while(idSymbole == I_NULL && position != fluxCourant.size())
 	{

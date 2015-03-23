@@ -28,6 +28,8 @@ class Automate
         Automate();
         virtual ~Automate();
 
+        vector<Etat*>* getPileEtats();
+
         bool addDeclaration(std::string name, Declaration* declaration);
 
         void displayMap();

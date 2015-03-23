@@ -15,6 +15,7 @@
 #include "Ecrire.h"
 #include "Ptho.h"
 #include "Pthf.h"
+#include "Dollar.h"
 
 
 #endif // SYMBOLESELEMENTAIRES_H
