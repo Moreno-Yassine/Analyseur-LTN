@@ -24,6 +24,7 @@ class File
     string path;
 	vector<vector<string>> parsedFiles;
 	void procTest();
+	void cleaning();
 };
 
 #endif // FILE_H
