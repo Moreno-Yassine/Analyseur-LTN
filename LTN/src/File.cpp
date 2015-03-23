@@ -8,6 +8,10 @@ const string consts = "const";
 const string minitok = ",";
 const string equals = "=";
 const string affct = ":=";
+const string plusLut = "+";
+const string minusLut = "-";
+const string multiplyLut = "*";
+const string divideLut = "/";
 
 File::File()
 {
@@ -61,7 +65,7 @@ void File::openParse()
 	                		size_t sub = temp.find(minitok)+1;
 	                		temp = temp.substr(sub);
 	                	}
-						// On a détecté =
+						// On a détecté = || * || + || / || - 
 						if (temp.find(equals) != string::npos)
 	                	{
 	                		array.push_back(temp.substr(0,temp.find(equals)));
@@ -69,7 +73,34 @@ void File::openParse()
 	                		size_t sub = temp.find(equals)+1;
 	                		temp = temp.substr(sub);
 	                	}
-
+						if (temp.find(plusLut) != string::npos)
+	                	{
+	                		array.push_back(temp.substr(0,temp.find(plusLut)));
+	                		array.push_back(plusLut);
+	                		size_t sub = temp.find(plusLut)+1;
+	                		temp = temp.substr(sub);
+	                	}
+						if (temp.find(minusLut) != string::npos)
+	                	{
+	                		array.push_back(temp.substr(0,temp.find(minusLut)));
+	                		array.push_back(minusLut);
+	                		size_t sub = temp.find(minusLut)+1;
+	                		temp = temp.substr(sub);
+	                	}
+						if (temp.find(multiplyLut) != string::npos)
+	                	{
+	                		array.push_back(temp.substr(0,temp.find(multiplyLut)));
+	                		array.push_back(multiplyLut);
+	                		size_t sub = temp.find(multiplyLut)+1;
+	                		temp = temp.substr(sub);
+	                	}
+						if (temp.find(divideLut) != string::npos)
+	                	{
+	                		array.push_back(temp.substr(0,temp.find(divideLut)));
+	                		array.push_back(divideLut);
+	                		size_t sub = temp.find(divideLut)+1;
+	                		temp = temp.substr(sub);
+	                	}
 	                	// On a détecté ;
 						if (temp.find(tok) == string::npos)
 						{
@@ -89,6 +120,7 @@ void File::openParse()
         } 
 	    myfile.close();
 		cleaning();
+		ParsingTest();
 	  }
 	else
 	{
