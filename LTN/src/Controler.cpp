@@ -92,24 +92,8 @@ void Controler::run(char* path)
     {
         execution();
     }
-    //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
-    //this->testsMapsMarco();
 }
 
-//Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
-void Controler::testsMapsMarco()
-{
-    cout << "TEST MARCO" << endl;
-
-    for (int i=0; i<10; i++)
-    {
-
-        automate->addDeclaration("marco"+std::to_string(i), 0);
-    }
-
-    automate->displayMap();
-
-}
 //<<<<<<<<<< Private/static functions >>>>>>>>>>>>>>>>
 
 void Controler::enable_o ()

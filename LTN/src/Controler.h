@@ -48,9 +48,6 @@ class Controler
         void execution();           // Option -e
         void analyse_statique();    // Option -a
 
-        //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
-        void testsMapsMarco();
-
 };
 
 #endif // CONTROLER_H
