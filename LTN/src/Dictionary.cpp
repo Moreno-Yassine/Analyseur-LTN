@@ -1,9 +1,9 @@
 #include "Dictionary.h"
+
 #include <iterator>
 using namespace std;
 Dictionary::Dictionary()
 {
-	
     mapRegex.insert(make_pair("+", boost::regex("\\+")));
     mapRegex.insert(make_pair("-", boost::regex("-")));
     mapRegex.insert(make_pair("*", boost::regex("\\*")));
@@ -14,8 +14,25 @@ Dictionary::Dictionary()
     mapRegex.insert(make_pair(",", boost::regex(",")));
     mapRegex.insert(make_pair("const", boost::regex("const$")));
     mapRegex.insert(make_pair("var", boost::regex("var$")));
+    mapRegex.insert(make_pair("lire", boost::regex("lire[' ']+")));
+    mapRegex.insert(make_pair("ecrire", boost::regex("ecrire[' ']+")));
 	mapRegex.insert(make_pair("z_id", boost::regex("^[a-zA-Z][a-zA-Z0-9\\_]*")));
     mapRegex.insert(make_pair("z_val", boost::regex("^[0-9]+((,|\\.)[0-9]+)?$")));
+
+    mapStringIdSymbole.insert(make_pair("+", I_pls));
+    mapStringIdSymbole.insert(make_pair("-", I_mns));
+    mapStringIdSymbole.insert(make_pair("*", I_mul));
+    mapStringIdSymbole.insert(make_pair("/", I_div));
+    mapStringIdSymbole.insert(make_pair("=", I_egl));
+    mapStringIdSymbole.insert(make_pair(":=", I_pegl));
+    mapStringIdSymbole.insert(make_pair(";", I_pvrg));
+    mapStringIdSymbole.insert(make_pair(",", I_vrg));
+    mapStringIdSymbole.insert(make_pair("const", I_const));
+    mapStringIdSymbole.insert(make_pair("var", I_VAR));
+    mapStringIdSymbole.insert(make_pair("lire", I_lire));
+    mapStringIdSymbole.insert(make_pair("ecrire", I_ecrire));
+	mapStringIdSymbole.insert(make_pair("z_id", I_ID));
+    mapStringIdSymbole.insert(make_pair("z_val", I_NB));
 }
 
 Dictionary::~Dictionary()
@@ -52,12 +69,10 @@ bool Dictionary::checkWordRegex(string word, boost::regex match)
 {
 	try
 	{
-			if(boost::regex_match(word,match))
-			{
-
-				cout <<"Le mot match l'expression attendue"  << endl;
-				return true;
-			}
+		if(boost::regex_match(word,match))
+		{
+			return true;
+		}
 	}
 	catch(std::exception e)
 	{
@@ -65,7 +80,6 @@ bool Dictionary::checkWordRegex(string word, boost::regex match)
 		cout << e.what() << endl;
 	}
 	
-	cout << "Ne match pas" << endl;
 	return false;
 }
 
@@ -76,19 +90,17 @@ word : mot à tester
 exp : expression attendue
 */
 
-bool Dictionary::checkWord(string word)
+IdSymbole Dictionary::checkWord(string word)
 {
 	try
 	{
 		map<string, boost::regex>::iterator it;
+
 		for(it=mapRegex.begin(); it!= mapRegex.end(); it++)
 		{
 			if(boost::regex_match(word,it->second))
 			{
-				//Pour Tester
-				cout <<"Clé = " << it->first << endl;
-				cout << "Result = " << boost::regex_match(word,it->second) << endl;
-				return true;
+				return mapStringIdSymbole.find(it->first)->second;
 			}
 		}
 	}
@@ -97,6 +109,5 @@ bool Dictionary::checkWord(string word)
 		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
-	cout << "Nothing" << endl;
-	return false;
+	return IdSymbole::I_NULL;
 }

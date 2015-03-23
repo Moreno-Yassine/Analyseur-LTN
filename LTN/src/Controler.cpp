@@ -17,9 +17,16 @@ Controler::Controler()
 
 Controler::~Controler()
 {
-
+    delete input_file;
+    delete rules;
+	delete com_parser;
+	delete automate;
 }
-
+/*
+Méthode de configuration du controleur
+argc : nombre d'arguments en ligne de commande
+argv : les arguments
+*/
 void Controler::configurate (int argc, char ** argv)
 {
     // Contr�le du nombre maxi d'arguments
@@ -51,13 +58,17 @@ void Controler::configurate (int argc, char ** argv)
         }
     }
 }
-
+/*
+Méthode principale du controleur, les actions sont executées séquentiellement 
+Lecture Fichier -> Analyse lexicale/syntaxique -> RepMémoire -> Affichage -> analyse statique -> Execution
+path : chemin du fichier lutin à analyser
+*/
 void Controler::run(char* path)
 {
 	try
 	{
 		input_file->setPath(path);
-		//input_file->openParse();
+		input_file->openParse();
 	}
 	catch (int i)
 	{
@@ -73,7 +84,6 @@ void Controler::run(char* path)
     {
         affichage();
     }
-
     if (option_a)
     {
         analyse_statique();
@@ -82,11 +92,8 @@ void Controler::run(char* path)
     {
         execution();
     }
-
-
     //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
     //this->testsMapsMarco();
-
 }
 
 //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
@@ -103,7 +110,7 @@ void Controler::testsMapsMarco()
     automate->displayMap();
 
 }
-// Private/static functions
+//<<<<<<<<<< Private/static functions >>>>>>>>>>>>>>>>
 
 void Controler::enable_o ()
 {
@@ -155,8 +162,9 @@ void Controler::enable_a ()
 
 void Controler::analyse_lexsyn()
 {
-    cout<< "j'execute l'analyse lexsyn :" <<endl;
-	
+    cout<< "je debute l'execution de l'analyse lexsyn :" <<endl;
+	automate->lecture(input_file->getContinueParsedFile());
+	cout<< "lexsyn termine" <<endl;
 }
 void Controler::memload()
 {

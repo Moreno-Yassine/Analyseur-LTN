@@ -1,6 +1,6 @@
 #include "Declaration.h"
 
-Declaration::Declaration()
+Declaration::Declaration() : Symbole(I_D, "I_D")
 {
 
 }

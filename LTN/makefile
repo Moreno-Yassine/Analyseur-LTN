@@ -3,7 +3,7 @@ CFLAGS=-W -Wall -ansi -pedantic -s -O3 -Os -std=c++11 -fpermissive
 LDFLAGS= -lboost_system -lboost_regex
 EXEC=LTN
 EXECWIN=LTN.exe
-SRC= $(wildcard src/*.cpp src/symboles/*.cpp)
+SRC= $(wildcard src/*.cpp src/symboles/*.cpp src/etats/*.cpp src/symboles/symboles_elementaires/*.cpp)
 OBJ= $(SRC:.cpp=.o)
  
 all: $(EXEC)
@@ -22,6 +22,8 @@ cleanWin:
 
 clean:
 	rm ./src/*.o
+	rm ./src/*/*.o
+	rm ./src/*/*/*.o
 	rm $(EXEC)
 
 remake:
