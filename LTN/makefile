@@ -25,7 +25,6 @@ $(SRCDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDIR)/%.h
 
 # Nettoyage des objets => Tout sera recompiler !
 clean:
-	rm $(LIBDIR)/*.o
 	rm ./src/*.o
 	rm ./src/*/*.o
 	rm ./src/*/*/*.o
