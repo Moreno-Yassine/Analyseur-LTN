@@ -17,15 +17,16 @@ Symbole* Lexer::getNext()
 {	
 	string motSuivant = "";
 	IdSymbole idSymbole = I_NULL;
-
-	if(position == (int)fluxCourant.size())
+    cout<<"position : "<<position<<endl;  
+	if(position >= (int)fluxCourant.size())
 	{
 		return new Dollar();
 	}
-
+	
 	//On essaye de reconnaitre le Symbole actuellement lu
-	while(idSymbole == I_NULL && position != (int)fluxCourant.size())
+	while(idSymbole == I_NULL && position < (int)fluxCourant.size())
 	{
+		
 		motSuivant = fluxCourant[position];
 		cout << "Mot Suivant = " << motSuivant << endl;
 		idSymbole = rulesDictionary->checkWord(motSuivant);
@@ -35,7 +36,6 @@ Symbole* Lexer::getNext()
 			position++;
 		}
 	}
-
 	//Création du symbole à partir du Symbole déterminé
 	switch(idSymbole)
 	{
