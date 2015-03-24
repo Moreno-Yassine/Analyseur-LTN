@@ -5,6 +5,7 @@
 #include "Dictionary.h"
 #include "Parser.h"
 #include "Automate.h"
+#include "ProgramManager.h"
 #include <cstring>
 
 using namespace std;
@@ -33,6 +34,8 @@ class Controler
         Parser* com_parser;
         // L'automate
         Automate* automate;
+        // Le gestionnaire du programme
+        ProgramManager* programManager;
 
         // Les options
         static bool option_o;

@@ -238,7 +238,7 @@ void Automate::constructionPileReductions()
 }
 
 
-void Automate::lecture(vector<string> fluxEntrantP)
+Programme* Automate::lecture(vector<string> fluxEntrantP)
 /* Fonction lecture :
  * 
  */
@@ -257,6 +257,9 @@ void Automate::lecture(vector<string> fluxEntrantP)
         this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
+
+	return (Programme*)pileSymboles->back();
+
 }
 
 void Automate::affichageEtatAutomate(Symbole* symbole)
