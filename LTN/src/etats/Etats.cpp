@@ -32,7 +32,7 @@ bool E0::transition(Automate &a, Symbole* s)
 			a.reductionEmpile(4, new E2);
 			break;
 		case I_DOLLAR:
-			a.reductionEmpile(4, new E2);
+			a.reductionEmpile(4, new E1);
 			break;
 		default:
 			break;
@@ -1307,7 +1307,7 @@ bool E39::transition(Automate &a, Symbole* s)
 			a.reductionEmpile(3, new E2);
 			break;
 		case I_DOLLAR:
-			a.reductionEmpile(3, new E2);
+			a.reductionEmpile(3, new E1);
 			break;
 		default:
 			break;
