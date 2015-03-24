@@ -1,5 +1,5 @@
-#include "Instruction.h"
-#include "AffectationInstr.h"
+#include "../../include/symboles/Instruction.h"
+#include "../../include/symboles/AffectationInstr.h"
 
 AffectationInstr::AffectationInstr()
 {

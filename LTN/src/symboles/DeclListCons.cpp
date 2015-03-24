@@ -1,5 +1,5 @@
-#include "DeclListCons.h"
-#include "Declaration.h"
+#include "../../include/symboles/DeclListCons.h"
+#include "../../include/symboles/Declaration.h"
 
 DeclListCons::DeclListCons()
 {

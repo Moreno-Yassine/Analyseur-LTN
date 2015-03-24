@@ -1,5 +1,5 @@
-#include "Instruction.h"
-#include "LectureInstr.h"
+#include "../../include/symboles/Instruction.h"
+#include "../../include/symboles/LectureInstr.h"
 
 LectureInstr::LectureInstr()
 {
