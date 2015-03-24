@@ -1,5 +1,5 @@
-#include "Parser.h"
-#include "Controler.h"
+#include "../include/Parser.h"
+#include "../include/Controler.h"
 
 Parser::Parser()
 {

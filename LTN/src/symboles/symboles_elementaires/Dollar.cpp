@@ -1,4 +1,4 @@
-#include "Dollar.h"
+#include "../../../include/symboles/symboles_elementaires/Dollar.h"
 
 Dollar::Dollar() : Symbole(I_DOLLAR, "I_DOLLAR")
 {

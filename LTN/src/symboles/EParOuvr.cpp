@@ -1,4 +1,4 @@
-#include "EParOuvr.h"
+#include "../../include/symboles/EParOuvr.h"
 
 EParOuvr::EParOuvr()
 {

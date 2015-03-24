@@ -1,1 +1,1 @@
-../../LTN -o -p ../files/neutres.lt
+../../bin/LTN -o -p ../files/neutres.lt

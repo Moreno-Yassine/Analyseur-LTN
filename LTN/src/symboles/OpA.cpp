@@ -1,3 +1,3 @@
-#include "OpA.h"
+#include "../../include/symboles/OpA.h"
 
 bool opA::fonctionBidon() {};

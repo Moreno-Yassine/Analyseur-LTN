@@ -1,4 +1,4 @@
-#include "DeclListVar.h"
+#include "../../include/symboles/DeclListVar.h"
 
 DeclListVar::DeclListVar()
 {

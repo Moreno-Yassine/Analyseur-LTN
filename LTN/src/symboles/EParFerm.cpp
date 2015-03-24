@@ -1,4 +1,4 @@
-#include "EParFerm.h"
+#include "../../include/symboles/EParFerm.h"
 
 EParFerm::EParFerm()
 {

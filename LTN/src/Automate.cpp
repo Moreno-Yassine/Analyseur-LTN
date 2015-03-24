@@ -1,10 +1,6 @@
-#include "Automate.h"
-#include "etats/Etat.h"
-#include "etats/Etats.h"
-
-#include <vector>
-#include <cstdio>
-using namespace std;
+#include "../include/Automate.h"
+#include "../include/etats/Etat.h"
+#include "../include/etats/Etats.h"
 
 Automate::Automate()
 {
@@ -51,7 +47,7 @@ void Automate::reduction(int numeroRegle)
     Symbole* symbole;
     IdSymbole idSymbole;
     int nombreADepiler;
-    if(numeroRegle > 0 && numeroRegle <= pileReductions->size())
+    if(numeroRegle > 0 && numeroRegle <= (int)pileReductions->size())
     {
         nombreADepiler = (pileReductions->at(numeroRegle - 1)).nbElementsADepiler;
         idSymbole = (pileReductions->at(numeroRegle - 1)).idSymbole;

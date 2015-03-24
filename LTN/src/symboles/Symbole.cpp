@@ -1,4 +1,4 @@
-#include "Symbole.h"
+#include "../../include/symboles/Symbole.h"
 
 Symbole::Symbole()
 {

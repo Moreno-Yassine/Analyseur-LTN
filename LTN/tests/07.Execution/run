@@ -1,1 +1,1 @@
-../../LTN -e ../files/correct.lt
+../../bin/LTN -e ../files/correct.lt

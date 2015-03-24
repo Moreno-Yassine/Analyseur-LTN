@@ -1,4 +1,4 @@
-#include "Idv.h"
+#include "../../include/symboles/Idv.h"
 
 Idv::Idv() : Symbole(I_Idv, "I_Idv")
 {

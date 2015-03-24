@@ -1,4 +1,4 @@
-#include "DeclListCons.h"
+#include "../../include/symboles/DeclListCons.h"
 
 DeclListCons::DeclListCons()
 {
