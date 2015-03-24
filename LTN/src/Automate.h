@@ -53,11 +53,11 @@ class Automate
 
 		void lecture(vector<string> fluxEntrant);
 		/* Permet de faire l'analyse syntaxique d'un liste de string et de
-		 * charger sa représentation en memoire
+		 * charger sa reprï¿½sentation en memoire
 		 * @param : fluxEntrant, contient l'ensemble de l'expression a evaluer
 		 */
 
-		void affichageEtatAutomate(Symbole* symbole, bool expressionAcceptee);
+		void affichageEtatAutomate(Symbole* symbole);
 
     private:
         MapStringDeclaration tableSymboles;

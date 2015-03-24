@@ -51,7 +51,7 @@ void Automate::reduction(int numeroRegle)
     Symbole* symbole;
     IdSymbole idSymbole;
     int nombreADepiler;
-    if(numeroRegle > 0 && numeroRegle <= pileReductions->size())
+    if(numeroRegle > 0 && numeroRegle <= (int)pileReductions->size())
     {
         nombreADepiler = (pileReductions->at(numeroRegle - 1)).nbElementsADepiler;
         idSymbole = (pileReductions->at(numeroRegle - 1)).idSymbole;
@@ -254,12 +254,12 @@ void Automate::lecture(vector<string> fluxEntrantP)
 	while(!expressionAcceptee)
 	{
 		ptSymboleSuivant = currentLexer.getNext();
-        this->affichageEtatAutomate(ptSymboleSuivant, expressionAcceptee);
+        this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 }
 
-void Automate::affichageEtatAutomate(Symbole* symbole, bool expressionAcceptee)
+void Automate::affichageEtatAutomate(Symbole* symbole)
 {
     cout << "Prochain Symbole à lire : " << symbole->toString() << endl;
     
