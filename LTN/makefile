@@ -18,7 +18,7 @@ LTN: $(OBJ)
 	$(CC) -o $(BINDIR)/$@ $^ $(LDFLAGS)
 
 # Création des différents *.o à partir des *.cpp
-$(LIBDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDIR)/%.h
+$(SRCDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDIR)/%.h
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 .PHONY = clean

@@ -2,7 +2,7 @@
 
 Etat::~Etat()
 {
-	
+
 }
 
 string Etat::getNomEtat()
