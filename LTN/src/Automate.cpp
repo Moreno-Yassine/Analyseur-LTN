@@ -51,7 +51,7 @@ void Automate::reduction(int numeroRegle)
     Symbole* symbole;
     IdSymbole idSymbole;
     int nombreADepiler;
-    if(numeroRegle > 0 && numeroRegle <= (int)pileReductions->size())
+    if(numeroRegle > 0 && numeroRegle <= pileReductions->size())
     {
         nombreADepiler = (pileReductions->at(numeroRegle - 1)).nbElementsADepiler;
         idSymbole = (pileReductions->at(numeroRegle - 1)).idSymbole;
