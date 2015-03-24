@@ -13,6 +13,7 @@ Controler::Controler()
     rules = new Dictionary();
 	com_parser = new Parser();
 	automate = new Automate();
+	programManager = new ProgramManager();
 }
 
 Controler::~Controler()
@@ -27,7 +28,7 @@ Méthode de configuration du controleur
 argc : nombre d'arguments en ligne de commande
 argv : les arguments
 */
-void Controler::configurate (int argc, char ** argv)
+void Controler::configurate(int argc, char ** argv)
 {
     // Contr�le du nombre maxi d'arguments
     if (argc > MAX_ARGS)
@@ -74,8 +75,10 @@ void Controler::run(char* path)
 	{
 		throw BadFileException;
 	}
+
     analyse_lexsyn();
     memload();
+
     if (option_o)
     {
         transformation();
@@ -92,8 +95,24 @@ void Controler::run(char* path)
     {
         execution();
     }
+    //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+    //this->testsMapsMarco();
 }
 
+//Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
+void Controler::testsMapsMarco()
+{
+    cout << "TEST MARCO" << endl;
+
+    for (int i=0; i<10; i++)
+    {
+
+        automate->addDeclaration("marco"+std::to_string(i), 0);
+    }
+
+    automate->displayMap();
+
+}
 //<<<<<<<<<< Private/static functions >>>>>>>>>>>>>>>>
 
 void Controler::enable_o ()
@@ -147,17 +166,20 @@ void Controler::enable_a ()
 void Controler::analyse_lexsyn()
 {
     cout<< "je debute l'execution de l'analyse lexsyn :" <<endl;
-	automate->lecture(input_file->getContinueParsedFile());
+	programManager->setProgram(automate->lecture(input_file->getContinueParsedFile()));
 	cout<< "lexsyn termine" <<endl;
 }
+
 void Controler::memload()
 {
-    cout<<"j'execute la mem representation" <<endl;
+    cout<<"j'execute la representation mémoire" <<endl;
 }
+
 void Controler::transformation()
 {
     cout<<"j'execute la transformation" <<endl;
 }
+
 void Controler::affichage()
 {
     cout<<"j'execute l'affichage" <<endl;
@@ -166,6 +188,7 @@ void Controler::execution()
 {
     cout<<"j'execute le prog" <<endl;
 }
+
 void Controler::analyse_statique()
 {
     cout<<"j'execute l'analyse syn" <<endl;

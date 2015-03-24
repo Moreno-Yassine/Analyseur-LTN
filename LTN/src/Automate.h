@@ -51,13 +51,14 @@ class Automate
 
 		void constructionPileReductions();
 
-		void lecture(vector<string> fluxEntrant);
+		Programme* lecture(vector<string> fluxEntrant);
 		/* Permet de faire l'analyse syntaxique d'un liste de string et de
-		 * charger sa repr�sentation en memoire
+		 * charger sa repr�sentation en memoire
 		 * @param : fluxEntrant, contient l'ensemble de l'expression a evaluer
+		 * @return : La répresentation mémoire du programme
 		 */
 
-		void affichageEtatAutomate(Symbole* symbole, bool expressionAcceptee);
+		void affichageEtatAutomate(Symbole* symbole);
 
     private:
         MapStringDeclaration tableSymboles;

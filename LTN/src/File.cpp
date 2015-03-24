@@ -131,9 +131,9 @@ void File::openParse()
 vector<string> File::getContinueParsedFile()
 {
 	vector<string> continueParsedFile;
-	for(int i=0; i<parsedFiles.size(); i++)
+	for(int i=0; i<(int)parsedFiles.size(); i++)
 	{
-		for(int j=0; j<parsedFiles[i].size(); j++)
+		for(int j=0; j<(int)parsedFiles[i].size(); j++)
 		{
 			continueParsedFile.push_back(parsedFiles[i][j]);
 		}
