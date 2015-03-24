@@ -1072,7 +1072,7 @@ E33::~E33()
 
 
 /* --------------- ETAT 34 ------------------
- *La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 35
+ *La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
  * -----------------------------------------
  */
 bool E34::transition(Automate &a, Symbole* s)
@@ -1092,6 +1092,10 @@ bool E34::transition(Automate &a, Symbole* s)
 	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E32") == 0)
 	{
 		etatSuivant = new E34;
+	}
+	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E33") == 0)
+	{
+		etatSuivant = new E37;
 	}
 	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E35") == 0)
 	{
@@ -1149,6 +1153,9 @@ bool E35::transition(Automate &a, Symbole* s)
 		case I_E:
 			a.decalage(s,new E36);
 			break;
+		case I_ptho:
+			a.decalage(s, new E24);
+			break;
 		default:
 			break;
 	}
@@ -1203,7 +1210,7 @@ E36::~E36()
 }
 
 /* --------------- ETAT 37 ------------------
- * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 35
+ * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
  * -----------------------------------------
  */
 bool E37::transition(Automate &a, Symbole* s)
@@ -1218,6 +1225,10 @@ bool E37::transition(Automate &a, Symbole* s)
 	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E24") == 0)
 	{
 		etatSuivant = new E25;
+	}
+	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E32") == 0)
+	{
+		etatSuivant = new E34;
 	}
 	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E33") == 0)
 	{
