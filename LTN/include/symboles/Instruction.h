@@ -8,7 +8,7 @@ class Instruction : public Symbole
     public:
         Instruction();
         virtual ~Instruction();
-
+		virtual double eval()=0;
     private:
 
 };

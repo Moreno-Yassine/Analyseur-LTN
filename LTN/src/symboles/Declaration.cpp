@@ -9,3 +9,13 @@ Declaration::~Declaration()
 {
 
 }
+
+IdSymbole Declaration::getIdSymbole()
+{
+	return this->idSym;
+}
+
+void Declaration::ajoutSymbole(Symbole * symbole)
+{
+
+}

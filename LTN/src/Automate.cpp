@@ -29,6 +29,7 @@ bool Automate::addDeclaration(std::string name, Declaration* declaration)
 
 void Automate::decalage(Symbole* symbole, Etat* etat)
 {
+
 	pileSymboles->push_back(symbole);
 	pileEtats->push_back(etat);
     currentLexer.shift();
@@ -39,6 +40,7 @@ void Automate::reductionEmpile(int numeroRegle, Etat* etat)
 {
     this->reduction(numeroRegle);
     pileEtats->push_back(etat);
+    
 }
 
 
@@ -57,12 +59,70 @@ void Automate::reduction(int numeroRegle)
             case I_Pprime : symbole = NULL; break;
             case I_P : symbole = new Programme(); break;
             case I_LD : symbole = new Ld(); break;
-            case I_D : symbole = new Declaration(); break;
+            case I_D :
+				switch(numeroRegle)
+				{
+					case 5:
+						symbole = new DeclListCons();
+						symbole->setId(I_D,"I_D");
+						break;
+					case 6:
+						symbole = new DeclListVar();
+						symbole->setId(I_D,"I_D");
+						break;
+					default:
+						break;
+				}
+				break;
             case I_Idc : symbole = new Idc(); break;
             case I_Idv : symbole = new Idv(); break;
-            case I_E : symbole = new E(); break;
+            case I_E :
+				switch(numeroRegle)
+				{
+					case 16:
+						symbole = new Variable();
+						symbole->setId(I_E,"I_E");
+						break;
+					case 17:
+						symbole = new Valeur();
+						symbole->setId(I_E,"I_E");
+						break;
+					case 18:
+						symbole = new EPlus();
+						symbole->setId(I_E,"I_E");
+						break;
+					case 19:
+						symbole = new EMult();
+						symbole->setId(I_E,"I_E");
+						break;
+					case 20:
+						symbole = new EParantheses();
+						symbole->setId(I_E,"I_E");
+						break;
+					default:
+						break;
+				}
+				break;
             case I_Li : symbole = new Li(); break;
-            case I_I : symbole = new Instruction(); break;
+            case I_I :
+				switch(numeroRegle)
+				{
+					case 13:
+						symbole = new LectureInstr();
+						symbole->setId(I_I,"I_I");
+						break;
+					case 14:
+						symbole = new EcritureInstr();
+						symbole->setId(I_I,"I_I");
+						break;
+					case 15:
+						symbole = new AffectationInstr();
+						symbole->setId(I_I,"I_I");
+						break;
+					default:
+						break;
+				}
+				break;
             case I_opA : symbole = new opA(); break;
             case I_opM : symbole = new opM(); break;
             default : symbole = NULL; break;
@@ -162,13 +222,13 @@ void Automate::constructionPileReductions()
     reduction.idSymbole = I_Idv;
     pileReductions->push_back(reduction);
 
-    //Pour R11 : Li -> Li I
-    reduction.nbElementsADepiler = 2;
+    //Pour R11 : Li -> Li I;
+    reduction.nbElementsADepiler = 3;
     reduction.idSymbole = I_Li;
     pileReductions->push_back(reduction);
 
     //Pour R12 : Li -> Epsilone
-    reduction.nbElementsADepiler = 1;
+    reduction.nbElementsADepiler = 0;
     reduction.idSymbole = I_Li;
     pileReductions->push_back(reduction);
 
@@ -248,7 +308,7 @@ Programme* Automate::lecture(vector<string> fluxEntrantP)
 
 	//Execution de l'automate a pile
 	while(!expressionAcceptee)
-	{
+	{  
 		ptSymboleSuivant = currentLexer.getNext();
         this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);

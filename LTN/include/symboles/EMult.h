@@ -8,7 +8,7 @@ class EMult : public EBin
     public:
         EMult();
         virtual ~EMult();
-
+		double eval();
     private:
 
 };

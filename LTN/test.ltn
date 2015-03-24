@@ -9,4 +9,5 @@ var s;
 
 
 const p = 2;
+exp := 3;
 s := p+exp; 

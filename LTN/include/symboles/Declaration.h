@@ -11,8 +11,10 @@ class Declaration : public Symbole
         virtual ~Declaration();
 		operator int() const { return idSym; }
 
-		void ajoutSymbole(Symbole* symbole);
-		IdSymbole getIdSymbole();
+		virtual void ajoutSymbole(Symbole* symbole);
+		//TODO virtuelle pure
+		virtual IdSymbole getIdSymbole();
+		//TODO Virtuelle pure
     private:
 
 };

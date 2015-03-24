@@ -8,7 +8,7 @@ class EParantheses : public E
     public:
         EParantheses();
         virtual ~EParantheses();
-
+		double eval();
     private:
 
 };
