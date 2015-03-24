@@ -1,1 +1,1 @@
-../lut -e ../files/correct.lt
+../../LTN -e ../files/correct.lt

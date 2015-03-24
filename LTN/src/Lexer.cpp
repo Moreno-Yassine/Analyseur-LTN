@@ -18,13 +18,13 @@ Symbole* Lexer::getNext()
 	string motSuivant = "";
 	IdSymbole idSymbole = I_NULL;
 
-	if(position == fluxCourant.size())
+	if(position == (int)fluxCourant.size())
 	{
 		return new Dollar();
 	}
 
 	//On essaye de reconnaitre le Symbole actuellement lu
-	while(idSymbole == I_NULL && position != fluxCourant.size())
+	while(idSymbole == I_NULL && position != (int)fluxCourant.size())
 	{
 		motSuivant = fluxCourant[position];
 		cout << "Mot Suivant = " << motSuivant << endl;
