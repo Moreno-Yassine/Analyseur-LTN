@@ -1,4 +1,6 @@
 #include "Symbole.h"
+#include <iostream>
+using namespace std;
 
 Symbole::Symbole()
 {
@@ -33,6 +35,11 @@ void Symbole::setId(IdSymbole idSymP, string stringIDP)
 	stringID = stringIDP;
 }
 
+bool Symbole::setParam(Symbole* symbole, int place)
+{
+	cout<<"SET PARAM par defaut"<<endl;
+	return false;
+}
 
 Symbole::~Symbole()
 {
