@@ -10,6 +10,9 @@ EMult::~EMult()
 
 }
 
+double EMult::eval()
+{
 
+}
 
 

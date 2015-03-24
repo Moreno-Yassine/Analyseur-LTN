@@ -9,3 +9,8 @@ EPlus::~EPlus()
 {
 
 }
+
+double EPlus::eval()
+{
+
+}

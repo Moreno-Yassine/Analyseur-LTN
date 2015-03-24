@@ -27,6 +27,13 @@ string Symbole::toString()
 	return stringID;
 }
 
+void Symbole::setId(IdSymbole idSymP, string stringIDP)
+{
+	idSym = idSymP;
+	stringID = stringIDP;
+}
+
+
 Symbole::~Symbole()
 {
 

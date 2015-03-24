@@ -8,7 +8,7 @@ class EPlus : public EBin
     public:
         EPlus();
         virtual ~EPlus();
-
+		double eval();
     private:
 
 };

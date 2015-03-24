@@ -19,6 +19,7 @@ class Symbole
 		void ajoutSymbole(Symbole* symbole);
 		IdSymbole getIdSymbole();
 		string toString();
+		void setId(IdSymbole idSymP, string stringIDP);
 
     protected:
 		IdSymbole idSym;

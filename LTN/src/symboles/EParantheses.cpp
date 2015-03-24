@@ -10,7 +10,10 @@ EParantheses::~EParantheses()
 
 }
 
+double EParantheses::eval()
+{
 
+}
 
 
 
