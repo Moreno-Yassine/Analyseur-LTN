@@ -5,6 +5,7 @@
 *.obj
 /src/*.o
 /src/symboles/*.o
+/build/*.o
 
 # Precompiled Headers
 *.gch
@@ -23,6 +24,7 @@
 *.depend
 *.layout
 ./LTN
+/bin/LTN
 
 # Compiled Static libraries
 *.lai
