@@ -14,17 +14,17 @@ class File
     public:
         File();
         virtual ~File();
-	void openParse();
-	void setPath(string link);
-	vector<vector<string> > getParsedFiles();
-	vector<string> getContinueParsedFile();
-	void ParsingTest();
+		void openParse();
+		void setPath(string link);
+		vector<vector<string> > getParsedFiles();
+		vector<string> getContinueParsedFile();
+		void ParsingTest();
 
     private:
-    string path;
-	vector<vector<string>> parsedFiles;
-	void procTest();
-	void cleaning();
+		string path;
+		vector<vector<string> > parsedFiles;
+		void procTest();
+		void cleaning();
 };
 
 #endif // FILE_H

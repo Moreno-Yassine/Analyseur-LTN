@@ -1,4 +1,4 @@
-#include "Dictionary.h"
+#include "../include/Dictionary.h"
 
 #include <iterator>
 using namespace std;
@@ -109,5 +109,6 @@ IdSymbole Dictionary::checkWord(string word)
 		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
-	return IdSymbole::I_NULL;
+
+	return I_NULL;
 }

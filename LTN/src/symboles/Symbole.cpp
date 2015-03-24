@@ -1,6 +1,4 @@
-#include "Symbole.h"
-#include <iostream>
-using namespace std;
+#include "../../include/symboles/Symbole.h"
 
 Symbole::Symbole()
 {

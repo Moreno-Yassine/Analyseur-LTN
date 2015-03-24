@@ -1,5 +1,5 @@
-#include "Controler.h"
-#include "Exceptions.h"
+#include "../include/Controler.h"
+#include "../include/Exceptions.h"
 
 const char* HELP = "help";
 bool Controler::option_o;

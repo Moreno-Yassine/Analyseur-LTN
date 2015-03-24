@@ -1,5 +1,5 @@
-#include "Instruction.h"
-#include "EcritureInstr.h"
+#include "../../include/symboles/Instruction.h"
+#include "../../include/symboles/EcritureInstr.h"
 
 EcritureInstr::EcritureInstr()
 {

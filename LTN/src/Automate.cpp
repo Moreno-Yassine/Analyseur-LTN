@@ -1,10 +1,6 @@
-#include "Automate.h"
-#include "etats/Etat.h"
-#include "etats/Etats.h"
-
-#include <vector>
-#include <cstdio>
-using namespace std;
+#include "../include/Automate.h"
+#include "../include/etats/Etat.h"
+#include "../include/etats/Etats.h"
 
 Automate::Automate()
 {
@@ -33,6 +29,7 @@ bool Automate::addDeclaration(std::string name, Declaration* declaration)
 
 void Automate::decalage(Symbole* symbole, Etat* etat)
 {
+
 	pileSymboles->push_back(symbole);
 	pileEtats->push_back(etat);
     currentLexer.shift();
@@ -43,6 +40,7 @@ void Automate::reductionEmpile(int numeroRegle, Etat* etat)
 {
     this->reduction(numeroRegle);
     pileEtats->push_back(etat);
+    
 }
 
 
@@ -51,7 +49,7 @@ void Automate::reduction(int numeroRegle)
     Symbole* symbole;
     IdSymbole idSymbole;
     int nombreADepiler;
-    if(numeroRegle > 0 && numeroRegle <= pileReductions->size())
+    if(numeroRegle > 0 && numeroRegle <= (int)pileReductions->size())
     {
         nombreADepiler = (pileReductions->at(numeroRegle - 1)).nbElementsADepiler;
         idSymbole = (pileReductions->at(numeroRegle - 1)).idSymbole;
@@ -224,13 +222,13 @@ void Automate::constructionPileReductions()
     reduction.idSymbole = I_Idv;
     pileReductions->push_back(reduction);
 
-    //Pour R11 : Li -> Li I
-    reduction.nbElementsADepiler = 2;
+    //Pour R11 : Li -> Li I;
+    reduction.nbElementsADepiler = 3;
     reduction.idSymbole = I_Li;
     pileReductions->push_back(reduction);
 
     //Pour R12 : Li -> Epsilone
-    reduction.nbElementsADepiler = 1;
+    reduction.nbElementsADepiler = 0;
     reduction.idSymbole = I_Li;
     pileReductions->push_back(reduction);
 
@@ -310,7 +308,7 @@ Programme* Automate::lecture(vector<string> fluxEntrantP)
 
 	//Execution de l'automate a pile
 	while(!expressionAcceptee)
-	{
+	{  
 		ptSymboleSuivant = currentLexer.getNext();
         this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);

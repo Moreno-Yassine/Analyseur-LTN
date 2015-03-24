@@ -1,6 +1,7 @@
-#include "Instruction.h"
-#include "LectureInstr.h"
-#include "Variable.h"
+#include "../../include/symboles/Instruction.h"
+#include "../../include/symboles/LectureInstr.h"
+#include "../../include/symboles/Variable.h"
+
 
 LectureInstr::LectureInstr()
 {

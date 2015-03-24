@@ -1,4 +1,4 @@
-#include "Variable.h"
+#include "../../include/symboles/Variable.h"
 
 Variable::Variable(): Symbole(I_ID, "I_ID")
 {
