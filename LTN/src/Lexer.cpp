@@ -44,6 +44,8 @@ Symbole* Lexer::getNext()
 		case I_mul: return new Mul(); break;
 		case I_div: return new Div(); break;
 		case I_egl: return new Egl(); break;
+		case I_ptho: return new Ptho(); break;
+		case I_pthf: return new Pthf(); break;
 		case I_pegl: return new Pegl(); break;
 		case I_pvrg: return new Pvrg(); break;
 		case I_vrg: return new Vrg(); break;
