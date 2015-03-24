@@ -4,6 +4,7 @@
 #include <iostream>
 #include "../Automate.h"
 #include <string>
+
 using namespace std;
 
 class Etat

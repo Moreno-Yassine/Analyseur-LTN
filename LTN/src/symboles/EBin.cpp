@@ -1,4 +1,4 @@
-#include "EBin.h"
+#include "../../include/symboles/EBin.h"
 
 EBin::EBin()
 {

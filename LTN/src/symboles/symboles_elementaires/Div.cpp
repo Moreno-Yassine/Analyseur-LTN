@@ -1,4 +1,4 @@
-#include "Div.h"
+#include "../../../include/symboles/symboles_elementaires/Div.h"
 
 Div::Div() : Symbole(I_div, "I_div")
 {

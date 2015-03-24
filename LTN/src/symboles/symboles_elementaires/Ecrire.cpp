@@ -1,4 +1,4 @@
-#include "Ecrire.h"
+#include "../../../include/symboles/symboles_elementaires/Ecrire.h"
 
 Ecrire::Ecrire() : Symbole(I_ecrire, "I_ecrire")
 {

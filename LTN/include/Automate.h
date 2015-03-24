@@ -8,6 +8,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <cstdio>
 using namespace std;
 
 // typedef pour la map des variables

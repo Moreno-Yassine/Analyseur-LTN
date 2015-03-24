@@ -1,4 +1,4 @@
-#include "Valeur.h"
+#include "../../include/symboles/Valeur.h"
 #include <iostream>
 #include <string> 
 using namespace std;

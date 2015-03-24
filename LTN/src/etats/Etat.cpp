@@ -1,8 +1,8 @@
-#include "Etat.h"
+#include "../../include/etats/Etat.h"
 
 Etat::~Etat()
 {
-	
+
 }
 
 string Etat::getNomEtat()
