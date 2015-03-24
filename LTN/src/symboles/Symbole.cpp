@@ -1,5 +1,5 @@
 #include "../../include/symboles/Symbole.h"
-
+using namespace std;
 Symbole::Symbole()
 {
 	symbolesContenus = new vector<Symbole*>();
@@ -35,7 +35,7 @@ void Symbole::setId(IdSymbole idSymP, string stringIDP)
 
 bool Symbole::setParam(Symbole* symbole, int place)
 {
-	cout<<"SET PARAM par defaut"<<endl;
+
 	return false;
 }
 
