@@ -10,3 +10,8 @@ EcritureInstr::~EcritureInstr()
 {
 
 }
+
+double EcritureInstr::eval()
+{
+
+}

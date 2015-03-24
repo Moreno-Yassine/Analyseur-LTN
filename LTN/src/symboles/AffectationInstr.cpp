@@ -10,3 +10,8 @@ AffectationInstr::~AffectationInstr()
 {
 
 }
+
+double AffectationInstr::eval()
+{
+
+}

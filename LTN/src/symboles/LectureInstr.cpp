@@ -10,3 +10,8 @@ LectureInstr::~LectureInstr()
 {
 
 }
+
+double LectureInstr::eval()
+{
+
+}
