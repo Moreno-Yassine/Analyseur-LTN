@@ -43,3 +43,10 @@ Symbole::~Symbole()
 {
 
 }
+/*
+Méthode retournant les sous symboles d'un quelconque symbole
+*/
+vector<Symbole*>* Symbole::getContenu()
+{
+	return symbolesContenus;
+}
