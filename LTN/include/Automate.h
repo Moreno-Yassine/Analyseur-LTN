@@ -43,6 +43,8 @@ class Automate
 		 * @return : N/A
 		 */
 
+		void decalageSansConsommation(Etat* etat);
+
 		void reductionEmpile(int numeroRegle, Etat* etat);
 
 		void reduction(int numeroRegle);
