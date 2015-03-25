@@ -122,14 +122,17 @@ void File::Dismantle(vector<string>* array,string* temp)
 	if((*temp).find(affct)!=string::npos)
 	{
 		size_t found = (*temp).find(affct);
-		if((*temp).substr(0,found-1) != "")
+		if((*temp).substr(0,found-1) != "" && (*temp).substr(0,found-1)!=affct)
 		{
 			(*array).push_back((*temp).substr(0,found-1));
 		}
 		(*array).push_back(affct);
 		string remaining;
 		remaining = (*temp).substr(found+2);
-		Dismantle(array,&remaining);
+		if (remaining != "")
+		{
+			Dismantle(array,&remaining);
+		}
 	}
 	else
 	{
