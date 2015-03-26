@@ -24,7 +24,7 @@
 *.depend
 *.layout
 ./LTN
-/bin/LTN
+./bin/LTN
 
 # Compiled Static libraries
 *.lai
