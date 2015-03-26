@@ -40,15 +40,6 @@ void Automate::decalageSansConsommation(Etat* etat)
     pileEtats->push_back(etat);
 }
 
-
-void Automate::reductionEmpile(int numeroRegle, Etat* etat)
-{
-    this->reduction(numeroRegle);
-    pileEtats->push_back(etat);
-    
-}
-
-
 void Automate::reduction(int numeroRegle)
 {
     Symbole* symbole;

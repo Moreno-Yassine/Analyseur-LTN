@@ -45,8 +45,6 @@ class Automate
 
 		void decalageSansConsommation(Etat* etat);
 
-		void reductionEmpile(int numeroRegle, Etat* etat);
-
 		void reduction(int numeroRegle);
 		/* Permet de réduire une règle est d'empiler le symbole et l'etat dans la pile de l'automate
 		 *
