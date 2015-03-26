@@ -5,7 +5,7 @@
 
 AffectationInstr::AffectationInstr()
 {
-	expressionAffectee = NULL;
+	expressionAffectee = new E();
 	variableSeFaisantAffecter = NULL;
 }
 

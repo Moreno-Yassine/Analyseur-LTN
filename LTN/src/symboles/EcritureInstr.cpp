@@ -5,7 +5,7 @@
 
 EcritureInstr::EcritureInstr()
 {
-	expressionAEcrire = NULL;
+	expressionAEcrire = new E();
 }
 
 EcritureInstr::~EcritureInstr()

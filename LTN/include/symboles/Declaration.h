@@ -14,11 +14,11 @@ class Declaration : public Symbole
         virtual ~Declaration();
 		operator int() const { return idSym; }
 
-		virtual void ajoutSymbole(Symbole* symbole);
-		virtual IdSymbole getIdSymbole();
+		void ajoutSymbole(Symbole* symbole);
+		IdSymbole getIdSymbole();
 
-		virtual bool executer() = 0;
-		virtual Variable* trouver(string nomVariable) = 0;
+		bool executer();
+		Variable* trouver(string nomVariable);
     
 	private:
 		
