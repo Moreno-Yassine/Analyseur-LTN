@@ -35,6 +35,11 @@ void Automate::decalage(Symbole* symbole, Etat* etat)
     currentLexer.shift();
 }
 
+void Automate::decalageSansConsommation(Etat* etat)
+{
+    pileEtats->push_back(etat);
+}
+
 
 void Automate::reductionEmpile(int numeroRegle, Etat* etat)
 {
@@ -145,6 +150,9 @@ void Automate::reduction(int numeroRegle)
 
             //Ajout du nouveau symbole dans la pileSymboles
             pileSymboles->push_back(symbole);
+
+            //On fait la transition sans consommation (correspond à un décalage sans consommation)
+            pileEtats->back()->transition(*this, pileSymboles->back());
         }
     }
     else

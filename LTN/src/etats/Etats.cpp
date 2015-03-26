@@ -11,28 +11,28 @@ bool E0::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_P:
-			a.decalage(s, new E1);
+			a.decalageSansConsommation(new E1);
 			break;
 		case I_LD:
-			a.decalage(s, new E2);
+			a.decalageSansConsommation(new E2);
 			break;
 		case I_const:
-			a.reductionEmpile(4, new E2);
+			a.reduction(4);
 			break;
 		case I_VAR:
-			a.reductionEmpile(4, new E2);
+			a.reduction(4);
 			break;
 		case I_ID:
-			a.reductionEmpile(4, new E2);
+			a.reduction(4);
 			break;
 		case I_lire:
-			a.reductionEmpile(4, new E2);
+			a.reduction(4);
 			break;
 		case I_ecrire:
-			a.reductionEmpile(4, new E2);
+			a.reduction(4);
 			break;
 		case I_DOLLAR:
-			a.reductionEmpile(4, new E1);
+			a.reduction(4);
 			break;
 		default:
 			break;
@@ -85,19 +85,19 @@ bool E2::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E4);
 			break;
 		case I_ID:
-			a.reductionEmpile(12, new E17);
+			a.reduction(12);
 			break;
 		case I_lire:
-			a.reductionEmpile(12, new E17);
+			a.reduction(12);
 			break;
 		case I_ecrire:
-			a.reductionEmpile(12, new E17);
+			a.reduction(12);
 			break;
 		case I_Li:
-			a.decalage(s, new E17);
+			a.decalageSansConsommation(new E17);
 			break;
 		case I_D:
-			a.decalage(s, new E38);
+			a.decalageSansConsommation(new E38);
 			break;
 		default:
 			break;
@@ -122,7 +122,7 @@ bool E3::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E14);
 			break;
 		case I_Idc:
-			a.decalage(s, new E9);
+			a.decalageSansConsommation(new E9);
 			break;
 		default:
 			break;
@@ -147,7 +147,7 @@ bool E4::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E5);
 			break;
 		case I_Idv:
-			a.decalage(s, new E6);
+			a.decalageSansConsommation(new E6);
 			break;
 		default:
 			break;
@@ -169,10 +169,10 @@ bool E5::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(10, new E6);
+			a.reduction(10);
 			break;
 		case I_vrg:
-			a.reductionEmpile(10, new E6);
+			a.reduction(10);
 			break;
 		default:
 			break;
@@ -194,7 +194,7 @@ bool E6::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(6, new E38);
+			a.reduction(6);
 			break;
 		case I_vrg:
 			a.decalage(s, new E7);
@@ -241,7 +241,7 @@ bool E8::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(9, new E6);
+			a.reduction(9);
 			break;
 		default:
 			break;
@@ -263,7 +263,7 @@ bool E9::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(5, new E38);
+			a.reduction(5);
 			break;
 		case I_vrg:
 			a.decalage(s, new E10);
@@ -354,7 +354,7 @@ bool E13::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(7, new E9);
+			a.reduction(7);
 			break;
 		case I_vrg:
 			a.reduction(7);
@@ -423,10 +423,10 @@ bool E16::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(8, new E9);
+			a.reduction(8);
 			break;
 		case I_vrg:
-			a.reductionEmpile(8, new E9);
+			a.reduction(8);
 			break;
 		default:
 			break;
@@ -458,10 +458,10 @@ bool E17::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E35);
 			break;
 		case I_DOLLAR:
-			a.reductionEmpile(2,new E1);
+			a.reduction(2);
 			break;
 		case I_I:
-			a.decalage(s,new E40);
+			a.decalageSansConsommation(new E40);
 			break;
 		default:
 			break;
@@ -486,10 +486,6 @@ bool E18::transition(Automate &a, Symbole* s)
 		case I_ID:
 			a.decalage(s,new E19);
 			break;
-		/* Erreur dans la Table à élimiter
-		case I_E:
-			a.decalage(s,new E19);
-			break;*/
 		default:
 			break;
 	}
@@ -511,7 +507,7 @@ bool E19::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_pvrg:
-			a.reductionEmpile(13,new E40);
+			a.reduction(13);
 			break;
 		default:
 			break;
@@ -566,7 +562,7 @@ bool E21::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E24);
 			break;
 		case I_E:
-			a.decalage(s,new E27);
+			a.decalageSansConsommation(new E27);
 			break;
 		default:
 			break;
@@ -587,54 +583,25 @@ E21::~E21()
  */
 bool E22::transition(Automate &a, Symbole* s)
 {
-	Etat* etatSuivant;
-	Etat* etatPrecedent = a.getPileEtats()->at(a.getPileEtats()->size() - 2); //A Améliorer
-
-	//On récupère l'Etat Précèdent empilé pour savoir l'Etat Suivant à choisir
-	if(etatPrecedent->getNomEtat().compare("E21") == 0)
-	{
-		etatSuivant = new E27;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E24") == 0)
-	{
-		etatSuivant = new E25;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E32") == 0)
-	{
-		etatSuivant = new E34;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E33") == 0)
-	{
-		etatSuivant = new E37;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E35") == 0)
-	{
-		etatSuivant = new E36;
-	}
-	else
-	{
-		cout << "Pas d'Etat Suivant trouvé pour E22" << endl;
-	}
-
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:
-			a.reductionEmpile(17, etatSuivant);
+			a.reduction(17);
 			break;
 		case I_mul:
-			a.reductionEmpile(17, etatSuivant);
+			a.reduction(17);
 			break;
 		case I_mns:
-			a.reductionEmpile(17, etatSuivant);
+			a.reduction(17);
 			break;
 		case I_pvrg:
-			a.reductionEmpile(17, etatSuivant);
+			a.reduction(17);
 			break;
 		case I_div:
-			a.reductionEmpile(17, etatSuivant);
+			a.reduction(17);
 			break;
 		case I_pthf:
-			a.reductionEmpile(17, etatSuivant);
+			a.reduction(17);
 			break;
 		default:
 			break;
@@ -654,54 +621,25 @@ E22::~E22()
  */ 
 bool E23::transition(Automate &a, Symbole* s)
 {
-	Etat* etatSuivant;
-	Etat* etatPrecedent = a.getPileEtats()->at(a.getPileEtats()->size() - 2); //A Améliorer
-
-	//On récupère l'Etat Précèdent empilé pour savoir l'Etat Suivant à choisir
-	if(etatPrecedent->getNomEtat().compare("E21") == 0)
-	{
-		etatSuivant = new E27;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E24") == 0)
-	{
-		etatSuivant = new E25;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E32") == 0)
-	{
-		etatSuivant = new E34;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E33") == 0)
-	{
-		etatSuivant = new E37;
-	}
-	else if(etatPrecedent->getNomEtat().compare("E35") == 0)
-	{
-		etatSuivant = new E36;
-	}
-	else
-	{
-		cout << "Pas d'Etat Suivant trouvé pour E23" << endl;
-	}
-
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:
-			a.reductionEmpile(16, etatSuivant);
+			a.reduction(16);
 			break;
 		case I_mul:
-			a.reductionEmpile(16, etatSuivant);
+			a.reduction(16);
 			break;
 		case I_mns:
-			a.reductionEmpile(16, etatSuivant);
+			a.reduction(16);
 			break;
 		case I_pvrg:
-			a.reductionEmpile(16, etatSuivant);
+			a.reduction(16);
 			break;
 		case I_div:
-			a.reductionEmpile(16, etatSuivant);
+			a.reduction(16);
 			break;
 		case I_pthf:
-			a.reductionEmpile(16, etatSuivant);
+			a.reduction(16);
 			break;
 		default:
 			break;
@@ -734,7 +672,7 @@ bool E24::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E24);
 			break;
 		case I_E:
-			a.decalage(s,new E25);
+			a.decalageSansConsommation(new E25);
 			break;
 		default:
 			break;
@@ -772,6 +710,12 @@ bool E25::transition(Automate &a, Symbole* s)
 		case I_pthf:
 			a.decalage(s,new E26);
 			break;
+		case I_opA:
+			a.decalageSansConsommation(new E32);
+			break;
+		case I_opM:
+			a.decalageSansConsommation(new E33);
+			break;
 		default:
 			break;
 	}
@@ -790,50 +734,25 @@ E25::~E25()
  */
 bool E26::transition(Automate &a, Symbole* s)
 {
-	Etat* etatSuivant;
-	Etat* etatPrecedentTroisPositionsAvant = a.getPileEtats()->at(a.getPileEtats()->size() - 4); //A Améliorer
-	//On récupère l'Etat Précèdent empilé pour savoir l'Etat Suivant à choisir
-	if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E21") == 0)
-	{
-		etatSuivant = new E27;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E32") == 0)
-	{
-		etatSuivant = new E34;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E33") == 0)
-	{
-		etatSuivant = new E37;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E35") == 0)
-	{
-		etatSuivant = new E36;
-	}
-	else
-	{
-		cout << "Pas d'Etat Suivant trouvé pour E26" << endl;
-	}
-
-
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:
-			a.reductionEmpile(20, etatSuivant);
+			a.reduction(20);
 			break;
 		case I_mul:
-			a.reductionEmpile(20, etatSuivant);
+			a.reduction(20);
 			break;
 		case I_mns:
-			a.reductionEmpile(20, etatSuivant);
+			a.reduction(20);
 			break;
 		case I_pvrg:
-			a.reductionEmpile(20, etatSuivant);
+			a.reduction(20);
 			break;
 		case I_div:
-			a.reductionEmpile(20, etatSuivant);
+			a.reduction(20);
 			break;
 		case I_pthf:
-			a.reductionEmpile(20, etatSuivant);
+			a.reduction(20);
 			break;
 		default:
 			break;
@@ -870,13 +789,13 @@ bool E27::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E28);
 			break;
 		case I_pvrg:
-			a.reductionEmpile(15,new E40);
+			a.reduction(15);
 			break;
 		case I_opA:
-			a.decalage(s,new E32);
+			a.decalageSansConsommation(new E32);
 			break;
 		case I_opM:
-			a.decalage(s,new E33);
+			a.decalageSansConsommation(new E33);
 			break;
 		default:
 			break;
@@ -899,13 +818,13 @@ bool E28::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.reductionEmpile(23,new E33);		//A VERIFIER !!!!!
+			a.reduction(23);		//A VERIFIER !!!!!
 			break;
 		case I_NB:
-			a.reductionEmpile(23,new E33);
+			a.reduction(23);
 			break;
 		case I_ptho:
-			a.reductionEmpile(23,new E33);
+			a.reduction(23);
 			break;
 		default:
 			break;
@@ -928,13 +847,13 @@ bool E29::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.reductionEmpile(24,new E33);
+			a.reduction(24);
 			break;
 		case I_NB:
-			a.reductionEmpile(24,new E33);
+			a.reduction(24);
 			break;
 		case I_ptho:
-			a.reductionEmpile(24,new E33);
+			a.reduction(24);
 			break;
 		default:
 			break;
@@ -957,13 +876,13 @@ bool E30::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.reductionEmpile(22,new E32);
+			a.reduction(22);
 			break;
 		case I_NB:
-			a.reductionEmpile(22,new E32);
+			a.reduction(22);
 			break;
 		case I_ptho:
-			a.reductionEmpile(22,new E32);
+			a.reduction(22);
 			break;
 		default:
 			break;
@@ -986,13 +905,13 @@ bool E31::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.reductionEmpile(21,new E32);
+			a.reduction(21);
 			break;
 		case I_NB:
-			a.reductionEmpile(21,new E32);
+			a.reduction(21);
 			break;
 		case I_ptho:
-			a.reductionEmpile(21,new E32);
+			a.reduction(21);
 			break;
 		default:
 			break;
@@ -1021,7 +940,7 @@ bool E32::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E22);
 			break;
 		case I_E:
-			a.decalage(s,new E34);
+			a.decalageSansConsommation(new E34);
 			break;
 		case I_ptho:
 			a.decalage(s,new E24);
@@ -1053,7 +972,7 @@ bool E33::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E22);
 			break;
 		case I_E:
-			a.decalage(s,new E37);
+			a.decalageSansConsommation(new E37);
 			break;
 		case I_ptho:
 			a.decalage(s,new E24);
@@ -1072,53 +991,37 @@ E33::~E33()
 
 
 /* --------------- ETAT 34 ------------------
- *La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 35
+ *La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
  * -----------------------------------------
  */
 bool E34::transition(Automate &a, Symbole* s)
 {
-	
-	Etat* etatSuivant;
-	Etat* etatPrecedentTroisPositionsAvant = a.getPileEtats()->at(a.getPileEtats()->size() - 4); //A Améliorer
-	//On récupère l'Etat Précèdent empilé pour savoir l'Etat Suivant à choisir
-	if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E21") == 0)
-	{
-		etatSuivant = new E27;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E24") == 0)
-	{
-		etatSuivant = new E25;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E32") == 0)
-	{
-		etatSuivant = new E34;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E35") == 0)
-	{
-		etatSuivant = new E36;
-	}
-	else
-	{
-		cout << "Pas d'Etat Suivant trouvé pour E34" << endl;
-	}
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:
-			a.reductionEmpile(18, etatSuivant);break;
+			a.reduction(18);
+			break;
 		case I_mul:
-			a.decalage(s,new E29);break;
+			a.decalage(s,new E29);
+			break;
 		case I_mns:
-			a.reductionEmpile(18, etatSuivant);break;
+			a.reduction(18);
+			break;
 		case I_div:
 			a.decalage(s,new E28);
+			break;
 		case I_pthf:
-			a.reductionEmpile(18, etatSuivant);break;
+			a.reduction(18);
+			break;
 		case I_pvrg:
-			a.reductionEmpile(18, etatSuivant);break;
+			a.reduction(18);
+			break;
 		case I_opA:
-			a.decalage(s,new E32);break;
+			a.decalageSansConsommation(new E32);
+			break;
 		case I_opM:
-			a.decalage(s,new E33);break;
+			a.decalageSansConsommation(new E33);
+			break;
 		default:
 			break;
 	}
@@ -1147,7 +1050,10 @@ bool E35::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E22);
 			break;
 		case I_E:
-			a.decalage(s,new E36);
+			a.decalageSansConsommation(new E36);
+			break;
+		case I_ptho:
+			a.decalage(s, new E24);
 			break;
 		default:
 			break;
@@ -1182,13 +1088,13 @@ bool E36::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E28);
 			break;
 		case I_pvrg:
-			a.reductionEmpile(14,new E40);
+			a.reduction(14);
 			break;
 		case I_opA:
-			a.decalage(s,new E32);
+			a.decalageSansConsommation(new E32);
 			break;
 		case I_opM:
-			a.decalage(s,new E33);
+			a.decalageSansConsommation(new E33);
 			break;
 		default:
 			break;
@@ -1203,60 +1109,36 @@ E36::~E36()
 }
 
 /* --------------- ETAT 37 ------------------
- * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 35
+ * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
  * -----------------------------------------
  */
 bool E37::transition(Automate &a, Symbole* s)
 {
-	Etat* etatSuivant;
-	Etat* etatPrecedentTroisPositionsAvant = a.getPileEtats()->at(a.getPileEtats()->size() - 4); //A Améliorer
-	//On récupère l'Etat Précèdent empilé pour savoir l'Etat Suivant à choisir
-	if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E21") == 0)
-	{
-		etatSuivant = new E27;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E24") == 0)
-	{
-		etatSuivant = new E25;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E33") == 0)
-	{
-		etatSuivant = new E37;
-	}
-	else if(etatPrecedentTroisPositionsAvant->getNomEtat().compare("E35") == 0)
-	{
-		etatSuivant = new E36;
-	}
-	else
-	{
-		cout << "Pas d'Etat Suivant trouvé pour E37" << endl;
-	}
-
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:
-			a.reductionEmpile(19, etatSuivant);
+			a.reduction(19);
 			break;
 		case I_mul:
-			a.reductionEmpile(19, etatSuivant);
+			a.reduction(19);
 			break;
 		case I_mns:
-			a.reductionEmpile(19, etatSuivant);
+			a.reduction(19);
 			break;
 		case I_div:
-			a.reductionEmpile(19, etatSuivant);
+			a.reduction(19);
 			break;
 		case I_pvrg:
-			a.reductionEmpile(19, etatSuivant);
+			a.reduction(19);
 			break;
 		case I_pthf:
-			a.reductionEmpile(19, etatSuivant);
+			a.reduction(19);
 			break;
 		case I_opA:
-			a.decalage(s,new E32);
+			a.decalageSansConsommation(new E32);
 			break;
 		case I_opM:
-			a.decalage(s,new E33);
+			a.decalageSansConsommation(new E33);
 			break;
 		default:
 			break;
@@ -1302,22 +1184,22 @@ bool E39::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_const:
-			a.reductionEmpile(3, new E2);
+			a.reduction(3);
 			break;
 		case I_VAR:
-			a.reductionEmpile(3, new E2);
+			a.reduction(3);
 			break;
 		case I_ID:
-			a.reductionEmpile(3, new E2);
+			a.reduction(3);
 			break;
 		case I_lire:
-			a.reductionEmpile(3, new E2);
+			a.reduction(3);
 			break;
 		case I_ecrire:
-			a.reductionEmpile(3, new E2);
+			a.reduction(3);
 			break;
 		case I_DOLLAR:
-			a.reductionEmpile(3, new E1);
+			a.reduction(3);
 			break;
 		default:
 			break;
@@ -1363,16 +1245,16 @@ bool E41::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.reductionEmpile(11, new E17);
+			a.reduction(11);
 			break;
 		case I_lire:
-			a.reductionEmpile(11, new E17);
+			a.reduction(11);
 			break;
 		case I_ecrire:
-			a.reductionEmpile(11, new E17);
+			a.reduction(11);
 			break;
 		case I_DOLLAR:
-			a.reductionEmpile(11, new E17);		//A VERIFIER !!!!!!!!!!!
+			a.reduction(11);
 			break;
 		default:
 			break;

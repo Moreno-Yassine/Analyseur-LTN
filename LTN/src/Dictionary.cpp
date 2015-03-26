@@ -14,10 +14,12 @@ Dictionary::Dictionary()
     mapRegex.insert(make_pair(",", boost::regex(",")));
     mapRegex.insert(make_pair("const", boost::regex("const$")));
     mapRegex.insert(make_pair("var", boost::regex("var$")));
-    mapRegex.insert(make_pair("lire", boost::regex("lire[' ']+")));
-    mapRegex.insert(make_pair("ecrire", boost::regex("ecrire[' ']+")));
+    mapRegex.insert(make_pair("lire", boost::regex("(lire)")));
+    mapRegex.insert(make_pair("ecrire", boost::regex("(ecrire)")));
 	mapRegex.insert(make_pair("z_id", boost::regex("^[a-zA-Z][a-zA-Z0-9\\_]*")));
     mapRegex.insert(make_pair("z_val", boost::regex("^[0-9]+((,|\\.)[0-9]+)?$")));
+    mapRegex.insert(make_pair("(", boost::regex("\\(")));
+    mapRegex.insert(make_pair(")", boost::regex("\\)")));
 
     mapStringIdSymbole.insert(make_pair("+", I_pls));
     mapStringIdSymbole.insert(make_pair("-", I_mns));
@@ -33,6 +35,8 @@ Dictionary::Dictionary()
     mapStringIdSymbole.insert(make_pair("ecrire", I_ecrire));
 	mapStringIdSymbole.insert(make_pair("z_id", I_ID));
     mapStringIdSymbole.insert(make_pair("z_val", I_NB));
+    mapStringIdSymbole.insert(make_pair("(", I_ptho));
+    mapStringIdSymbole.insert(make_pair(")", I_pthf));
 }
 
 Dictionary::~Dictionary()

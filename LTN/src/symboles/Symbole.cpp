@@ -1,5 +1,5 @@
 #include "../../include/symboles/Symbole.h"
-
+using namespace std;
 Symbole::Symbole()
 {
 	symbolesContenus = new vector<Symbole*>();
@@ -33,8 +33,20 @@ void Symbole::setId(IdSymbole idSymP, string stringIDP)
 	stringID = stringIDP;
 }
 
+bool Symbole::setParam(Symbole* symbole, int place)
+{
+
+	return false;
+}
 
 Symbole::~Symbole()
 {
 
+}
+/*
+Méthode retournant les sous symboles d'un quelconque symbole
+*/
+vector<Symbole*>* Symbole::getContenu()
+{
+	return symbolesContenus;
 }
