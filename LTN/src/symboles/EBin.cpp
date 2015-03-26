@@ -16,6 +16,11 @@ string EBin::print()
 
 }
 
+double EBin::eval()
+{
+
+}
+
 
 bool EBin::setParam(Symbole* symbole, int noPlace)
 {
