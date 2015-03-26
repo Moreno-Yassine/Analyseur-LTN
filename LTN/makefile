@@ -18,7 +18,7 @@ LTN: $(OBJ)
 	@[ ! -d $(BINDIR) ] & mkdir -p $(BINDIR)
 	$(CC) -o $(BINDIR)/$@ $^ $(LDFLAGS)
 
-$(LIBDIR)/%.o: $(SRCDIR)/%.cpp
+$(LIBDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDIR)/%.h
 	@[ ! -d $(dir $@) ] & mkdir -p $(dir $@)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
