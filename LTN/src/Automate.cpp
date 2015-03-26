@@ -71,7 +71,7 @@ void Automate::reduction(int numeroRegle)
 				switch(numeroRegle)
 				{
 					case 3:					
-						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
+						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
 					break;
 					case 4:
