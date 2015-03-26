@@ -10,12 +10,11 @@ class Valeur : public Symbole
 {
     public:
         Valeur();
-        Valeur(string mot);
+        Valeur(string valeur);
         virtual ~Valeur();
 		double eval();
 
     private:
-		string nom;
     	double valeur;
 };
 

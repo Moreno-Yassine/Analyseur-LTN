@@ -16,17 +16,38 @@ EMult::~EMult()
 
 double EMult::eval()
 {
-	
+	//TODO
 }
 
 string EMult::print()
 {
-
+	string valeur(exprGauche->print());
+	valeur.append(" ");
+	valeur.append(operateurMult->print());
+	valeur.append(" ");
+	valeur.append(exprDroite->print());
+	return valeur;
 }
 
 
 bool EMult::setParam(Symbole* symbole, int noPlace)
 {
+	switch(noPlace)
+	{
+	case 1:
+		exprGauche = (E*)symbole;
+		break;
+	case 2:
+		operateurMult = (opM*)symbole;
+		break;
+	case 3:
+		exprDroite = (E*)symbole;
+		break;
+	default:
+		return false;
+		break;
+	}
+	
 	return true;
 }
 

@@ -12,6 +12,7 @@ class Idc : public Symbole
         virtual ~Idc();
 		bool executer();
 		Variable* getVariable();
+		Valeur* getValeur();
 		bool setParam(Symbole* symbole, int noPlace);
 
     private:

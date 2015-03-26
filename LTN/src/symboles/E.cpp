@@ -10,12 +10,12 @@ E::~E()
 
 }
 
-double eval()
+double E::eval()
 {
-
+	//TODO
 }
 
-string print()
+string E::print()
 {
-	
+	//TODO
 }

@@ -7,9 +7,9 @@ Valeur::Valeur(): Symbole(I_NB, "I_NB")
 {
 }
 
-Valeur::Valeur(string nomP): Symbole(I_NB, "I_NB")
+Valeur::Valeur(string valeurP): Symbole(I_NB, "I_NB")
 {
-	nom = nomP;
+	valeur = stoi(valeurP);
 }
 
 

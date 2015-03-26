@@ -10,20 +10,25 @@ Idc::Idc() : Symbole(I_Idc, "I_Idc")
 
 Idc::~Idc()
 {
+	variable->vider();
 	delete variable;
-	delete valeur;
 }
 
 
 bool Idc::executer()
 {
-	//TODO
+	variable->affecter(valeur,this);
 	return true;
 }
 		
 Variable* Idc::getVariable()
 {
 	return variable;
+}
+
+Valeur* Idc::getValeur()
+{
+	return valeur;
 }
 		
 bool Idc::setParam(Symbole* symbole, int noPlace)

@@ -1,7 +1,10 @@
 #include "../../include/symboles/DeclListCons.h"
 #include "../../include/symboles/Declaration.h"
 #include "../../include/symboles/Variable.h"
+#include "../../include/symboles/Valeur.h"
 #include "../../include/symboles/Idc.h"
+
+#include <sstream>
 
 
 DeclListCons::DeclListCons()
@@ -35,3 +38,16 @@ Variable* DeclListCons::trouver(string nomConstiable)
 	return NULL;
 }
 
+string DeclListCons::print()
+{
+	stringstream valeur;
+	for(int i=0; i<listeConstDeclareesIci.size(); i++)
+	{
+		valeur<<"const ";
+		valeur<<listeConstDeclareesIci[i]->getVariable()->getNom();
+		valeur<<listeConstDeclareesIci[i]->getValeur()->eval();
+		valeur<<";";
+	}
+
+	return valeur.str(); 
+}

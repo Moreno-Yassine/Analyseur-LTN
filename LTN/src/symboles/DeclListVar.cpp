@@ -2,6 +2,7 @@
 #include "../../include/symboles/Declaration.h"
 #include "../../include/symboles/Variable.h"
 #include "../../include/symboles/Idv.h"
+#include <sstream>
 
 DeclListVar::DeclListVar()
 {
@@ -32,4 +33,17 @@ Variable* DeclListVar::trouver(string nomVariable)
 		if(listeVarDeclareesIci[i]->getVariable()->getNom() == nomVariable)
 			return listeVarDeclareesIci[i]->getVariable();
 	return NULL;
+}
+
+string DeclListVar::print()
+{
+	stringstream valeur;
+	for(int i=0; i<listeVarDeclareesIci.size(); i++)
+	{
+		valeur<<"var ";
+		valeur<<listeVarDeclareesIci[i]->getVariable()->getNom();
+		valeur<<";";
+	}
+
+	return valeur.str(); 
 }

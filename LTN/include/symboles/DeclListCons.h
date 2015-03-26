@@ -12,6 +12,7 @@ class DeclListCons : public Declaration
 		bool executer();
 		bool setParam(Symbole* symbole, int noPlace);
 		Variable* trouver(string nomVariable);
+		string print();
 
     private:
 		vector<Idc*> listeConstDeclareesIci;

@@ -2,8 +2,10 @@
 #define VARIABLE_H
 #include <string>
 #include "Symbole.h"
+#include <map>
 
 using namespace std;
+class Valeur;
 
 class Variable : public Symbole
 {
@@ -11,20 +13,18 @@ class Variable : public Symbole
         Variable();
         Variable(string nom);
 		bool setParam(Symbole* symbole, int place);
-		bool estDeclaree() { return declaree; };
-		bool estAffectee() { return affectee; };
-		void affecterVar() { affectee = true; };
-		void declarerVar() { declaree = true; };
-		string getNom() { return nom; };
+		string getNom()		{ return nom; };
+		bool estAffecte()	{ return (listeValeurs.size()>0); };
+		bool affecter(Valeur* valeur,Symbole* lieuAffectation);
+		void vider();
 		double eval();
 		string print();
         virtual ~Variable();
 
     private:
     	string nom;
-		bool declaree;
-		bool affectee;
-		double valeurCourante;
+		vector<pair<Symbole*,Valeur*>> listeValeurs;
+
 };
 
 #endif // VARIABLE_H
