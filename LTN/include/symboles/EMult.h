@@ -13,7 +13,8 @@ class EMult : public EBin
 		double eval();
 		bool setParam(Symbole* symbole, int noPlace);
     private:
-
+		E* exprGauche;
+		E* exprDroite;
 };
 
 #endif // EMULT_H

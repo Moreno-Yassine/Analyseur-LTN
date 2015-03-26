@@ -3,7 +3,8 @@
 
 EPlus::EPlus()
 {
-
+	exprGauche = new E();
+	exprDroite = new E();
 }
 
 EPlus::~EPlus()

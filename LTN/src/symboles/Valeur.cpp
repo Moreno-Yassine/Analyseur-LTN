@@ -20,7 +20,7 @@ Valeur::Valeur(string nomP, double valeurP): Symbole(I_NB, "I_NB")
 
 double Valeur::eval()
 {
-	return true;
+	return this->valeur;
 }
 
 Valeur::~Valeur()

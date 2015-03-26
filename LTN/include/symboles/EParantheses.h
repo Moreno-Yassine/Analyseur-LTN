@@ -13,6 +13,7 @@ class EParantheses : public E
 		double eval();
 		bool setParam(Symbole* symbole, int noPlace);
     private:
+		E* expression;
 
 };
 

@@ -3,7 +3,8 @@
 
 EBin::EBin()
 {
-
+	exprGauche = new E();
+	exprDroite = new E();
 }
 
 EBin::~EBin()
@@ -18,7 +19,7 @@ string EBin::print()
 
 double EBin::eval()
 {
-	return true;
+	
 }
 
 

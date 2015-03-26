@@ -14,7 +14,8 @@ class EPlus : public EBin
 		bool setParam(Symbole* symbole, int noPlace);
 
     private:
-
+		E* exprGauche;
+		E* exprDroite;
 };
 
 #endif // EPLUS_H

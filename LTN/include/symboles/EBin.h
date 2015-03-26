@@ -9,12 +9,13 @@ class EBin : public E
     public:
         EBin();
         virtual ~EBin();
-		string print();
-		double eval();
-		bool setParam(Symbole* symbole, int noPlace);
+		virtual string print();
+		virtual double eval()=0;
+		virtual bool setParam(Symbole* symbole, int noPlace);
 
     private:
-
+		E* exprGauche;
+		E* exprDroite;
 };
 
 #endif // EBIN_H

@@ -3,7 +3,8 @@
 
 EMult::EMult()
 {
-
+	exprGauche = new E();
+	exprDroite = new E();
 }
 
 EMult::~EMult()
@@ -13,6 +14,7 @@ EMult::~EMult()
 
 double EMult::eval()
 {
+	
 	return true;
 }
 
