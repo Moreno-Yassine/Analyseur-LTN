@@ -1,4 +1,5 @@
 #include "../../include/symboles/Symbole.h"
+#include <iostream>
 
 Symbole::Symbole()
 {

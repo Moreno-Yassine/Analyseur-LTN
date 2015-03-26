@@ -9,6 +9,7 @@ class E : public Symbole
         E();
         virtual ~E();
 		virtual double eval() = 0;
+		virtual string print() = 0;
 		//TODO
 
     private:

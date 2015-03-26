@@ -5,12 +5,12 @@ using namespace std;
 
 Valeur::Valeur(): Symbole(I_NB, "I_NB")
 {
-	nombre = 0;
 }
 
-Valeur::Valeur(string mot): Symbole(I_NB, "I_NB")
+Valeur::Valeur(string nomP, double valeurP): Symbole(I_NB, "I_NB")
 {
-	nombre = stoi(mot);
+	valeur = valeurP;
+	nom = nomP;
 }
 
 Valeur::~Valeur()

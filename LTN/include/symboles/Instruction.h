@@ -9,6 +9,7 @@ class Instruction : public Symbole
         Instruction();
         virtual ~Instruction();
 		virtual double eval()=0;
+		virtual bool executer() = 0;
     private:
 
 };

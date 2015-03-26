@@ -13,6 +13,7 @@ class LectureInstr : public Instruction
 		bool setParam(Symbole* symbole, int place);
 		string print();
 		double eval();
+		bool executer();
     private:
 		Variable* variableLue;
 };

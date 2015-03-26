@@ -30,3 +30,9 @@ string LectureInstr::print()
 	retour.append(variableLue->print());
 	return retour;
 }
+
+bool LectureInstr::executer()
+{
+	//TODO
+	return true;
+}
