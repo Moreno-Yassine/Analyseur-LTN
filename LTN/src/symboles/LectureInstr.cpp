@@ -5,7 +5,7 @@
 
 LectureInstr::LectureInstr()
 {
-
+	variableLue = NULL;
 }
 
 LectureInstr::~LectureInstr()
@@ -29,4 +29,10 @@ string LectureInstr::print()
 	string retour ="lire ";
 	retour.append(variableLue->print());
 	return retour;
+}
+
+bool LectureInstr::executer()
+{
+	//TODO
+	return true;
 }

@@ -1,5 +1,8 @@
 #include "../../include/symboles/Symbole.h"
+#include <iostream>
+
 using namespace std;
+
 Symbole::Symbole()
 {
 	symbolesContenus = new vector<Symbole*>();

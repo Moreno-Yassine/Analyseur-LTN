@@ -2,15 +2,20 @@
 #define EBIN_H
 
 #include "E.h"
+class Symbole;
 
 class EBin : public E
 {
     public:
         EBin();
         virtual ~EBin();
+		virtual string print();
+		double eval();
+		virtual bool setParam(Symbole* symbole, int noPlace);
 
     private:
-
+		E* exprGauche;
+		E* exprDroite;
 };
 
 #endif // EBIN_H

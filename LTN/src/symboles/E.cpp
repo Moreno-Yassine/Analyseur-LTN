@@ -9,3 +9,13 @@ E::~E()
 {
 
 }
+
+double eval()
+{
+
+}
+
+string print()
+{
+	
+}

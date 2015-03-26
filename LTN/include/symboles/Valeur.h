@@ -12,9 +12,11 @@ class Valeur : public Symbole
         Valeur();
         Valeur(string mot);
         virtual ~Valeur();
+		double eval();
 
     private:
-    	int nombre;
+		string nom;
+    	double valeur;
 };
 
 #endif // VALEUR_H

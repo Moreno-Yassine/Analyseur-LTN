@@ -53,76 +53,179 @@ void Automate::reduction(int numeroRegle)
         switch(idSymbole)
         {
             case I_Pprime : symbole = NULL; break;
-            case I_P : symbole = new Programme(); break;
-            case I_LD : symbole = new Ld(); break;
+            case I_P : 
+				symbole = new Programme(); 
+				symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
+				symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+				break;
+            case I_LD : 
+				switch(numeroRegle)
+				{
+					case 3:					
+						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
+						symbole = pileSymboles->at(pileSymboles->size() - 3);
+					break;
+					case 4:
+						symbole = new Ld(); 
+						break;
+					default:
+						break;
+				}		
+				break;
             case I_D :
 				switch(numeroRegle)
 				{
 					case 5:
 						symbole = new DeclListCons();
 						symbole->setId(I_D,"I_D");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 6:
 						symbole = new DeclListVar();
 						symbole->setId(I_D,"I_D");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					default:
 						break;
 				}
 				break;
-            case I_Idc : symbole = new Idc(); break;
-            case I_Idv : symbole = new Idv(); break;
+            case I_Idc : 
+				switch(numeroRegle)
+				{
+					case 7:						
+						pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+						symbole = pileSymboles->at(pileSymboles->size() - 5);
+						break;
+					case 8:
+						symbole = new Idc(); 
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+						break;
+					default:
+						break;
+				}						
+           case I_Idv : 
+				switch(numeroRegle)
+				{
+					case 9:												
+						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						symbole = pileSymboles->at(pileSymboles->size() - 3);
+						break;
+					case 10:
+						symbole = new Idv(); 
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						break;
+					default:
+						break;
+				}	
             case I_E :
 				switch(numeroRegle)
 				{
 					case 16:
 						symbole = new Variable();
 						symbole->setId(I_E,"I_E");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 17:
 						symbole = new Valeur();
 						symbole->setId(I_E,"I_E");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 18:
 						symbole = new EPlus();
 						symbole->setId(I_E,"I_E");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 3);					
 						break;
 					case 19:
 						symbole = new EMult();
 						symbole->setId(I_E,"I_E");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 3);
 						break;
 					case 20:
 						symbole = new EParantheses();
 						symbole->setId(I_E,"I_E");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
 						break;
 					default:
 						break;
 				}
 				break;
-            case I_Li : symbole = new Li(); break;
+            case I_Li : 
+				switch(numeroRegle)
+				{
+					case 11:
+						pileSymboles->at(pileSymboles->size() - 2)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+						symbole = pileSymboles->at(pileSymboles->size() - 2);
+						break;
+					case 12:
+						symbole = new Li();
+						break;
+					default:
+						break;
+				}
+				break;
             case I_I :
 				switch(numeroRegle)
 				{
 					case 13:
 						symbole = new LectureInstr();
 						symbole->setId(I_I,"I_I");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 14:
 						symbole = new EcritureInstr();
 						symbole->setId(I_I,"I_I");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 15:
 						symbole = new AffectationInstr();
 						symbole->setId(I_I,"I_I");
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
 						break;
 					default:
 						break;
 				}
 				break;
-            case I_opA : symbole = new opA(); break;
-            case I_opM : symbole = new opM(); break;
+            case I_opA :
+				switch(numeroRegle)
+				{
+					case 21: 
+						symbole = new opA();
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						break;
+					case 22: 
+						symbole = new opA();
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						break;
+					default:
+						break;
+				}
+				break;
+            case I_opM : 
+				switch(numeroRegle)
+				{
+					case 23: 
+						symbole = new opM(); 
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						break;
+					case 24: 
+						symbole = new opM(); 
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						break;
+					default:
+						break;
+				}
+				break;
+	
             default : symbole = NULL; break;
-        }
+        }       
+
 
         if(symbole != NULL)
         {

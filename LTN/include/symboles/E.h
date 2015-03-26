@@ -8,7 +8,8 @@ class E : public Symbole
     public:
         E();
         virtual ~E();
-		virtual double eval() = 0;
+		double eval();
+		string print();
 		//TODO
 
     private:

@@ -4,6 +4,9 @@
 #include "ID_Symboles.h"
 #include "Symbole.h"
 
+class Variable;
+
+
 class Declaration : public Symbole
 {
     public:
@@ -11,12 +14,14 @@ class Declaration : public Symbole
         virtual ~Declaration();
 		operator int() const { return idSym; }
 
-		virtual void ajoutSymbole(Symbole* symbole);
-		//TODO virtuelle pure
-		virtual IdSymbole getIdSymbole();
-		//TODO Virtuelle pure
-    private:
+		void ajoutSymbole(Symbole* symbole);
+		IdSymbole getIdSymbole();
 
+		bool executer();
+		Variable* trouver(string nomVariable);
+    
+	private:
+		
 };
 
 #endif // DECLARATION_H
