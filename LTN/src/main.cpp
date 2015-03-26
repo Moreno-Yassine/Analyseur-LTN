@@ -16,7 +16,7 @@ int main(int argc, char** argv)
     catch (exception &e)
     {
         cerr << e.what() << endl;
-	return 1;
+	    return 1;
     }
 
 return 0;

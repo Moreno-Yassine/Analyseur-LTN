@@ -18,10 +18,6 @@ Controler::Controler()
 
 Controler::~Controler()
 {
-    delete input_file;
-    delete rules;
-	delete com_parser;
-	delete automate;
 }
 /*
 Méthode de configuration du controleur
@@ -97,6 +93,7 @@ void Controler::run(char* path)
     }
     //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
     //this->testsMapsMarco();
+
 }
 
 //Test maps MARCO /!\ JE VAIS LE SUPPRIMER!!!!
