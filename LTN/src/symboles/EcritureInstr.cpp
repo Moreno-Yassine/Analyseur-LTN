@@ -5,7 +5,7 @@
 
 EcritureInstr::EcritureInstr()
 {
-
+	expressionAEcrire = NULL;
 }
 
 EcritureInstr::~EcritureInstr()
@@ -15,8 +15,9 @@ EcritureInstr::~EcritureInstr()
 
 double EcritureInstr::eval()
 {
-
+	
 }
+
 
 bool EcritureInstr::executer()
 {

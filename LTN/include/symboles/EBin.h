@@ -10,7 +10,7 @@ class EBin : public E
         EBin();
         virtual ~EBin();
 		virtual string print();
-		virtual double eval()=0;
+		double eval();
 		virtual bool setParam(Symbole* symbole, int noPlace);
 
     private:

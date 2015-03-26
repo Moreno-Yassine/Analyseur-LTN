@@ -12,7 +12,7 @@ E::~E()
 
 double eval()
 {
-	return true;
+
 }
 
 string print()

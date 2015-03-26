@@ -2,6 +2,7 @@
 #define EMULT_H
 
 #include "EBin.h"
+#include "OpM.h"
 class Symbole;
 
 class EMult : public EBin
@@ -15,6 +16,7 @@ class EMult : public EBin
     private:
 		E* exprGauche;
 		E* exprDroite;
+		opM* operateurMult;
 };
 
 #endif // EMULT_H

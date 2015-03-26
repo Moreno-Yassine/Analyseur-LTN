@@ -14,9 +14,10 @@ AffectationInstr::~AffectationInstr()
 
 }
 
+
 double AffectationInstr::eval()
 {
-
+	
 }
 
 bool AffectationInstr::executer()

@@ -5,7 +5,7 @@
 
 LectureInstr::LectureInstr()
 {
-
+	variableLue = NULL;
 }
 
 LectureInstr::~LectureInstr()

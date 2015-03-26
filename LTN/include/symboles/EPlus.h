@@ -2,6 +2,7 @@
 #define EPLUS_H
 
 #include "EBin.h"
+#include "OpA.h"
 class Symbole;
 
 class EPlus : public EBin
@@ -16,6 +17,7 @@ class EPlus : public EBin
     private:
 		E* exprGauche;
 		E* exprDroite;
+		opA* operateurArithm;
 };
 
 #endif // EPLUS_H
