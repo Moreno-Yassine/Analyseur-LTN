@@ -1,5 +1,7 @@
 #include "../include/File.h"
 #include <vector>
+#include <ctype.h>
+#include <locale>
 using namespace std;
 
 const string tok = ";";
@@ -12,6 +14,8 @@ const string plusLut = "+";
 const string minusLut = "-";
 const string multiplyLut = "*";
 const string divideLut = "/";
+const string paro = "(";
+const string parf = ")";
 
 File::File()
 {
@@ -39,82 +43,23 @@ void File::openParse()
         //cette boucle s'arrête dès qu'une erreur de lecture survient 
         while ( getline( myfile, ligne ) ) 
         { 
-			if(ligne != "")
-			{
-				vector<string> array;
+            if(ligne != "")
+            {
+                    vector<string> array;
                 stringstream ss(ligne);
                 string temp;
                 while (ss >> temp)
                 {
-                	// Tant que le mot n'a pas été consommé entièrement
-                	while (temp != "")
-                	{
-                		// On a détecté :=
-	                	if (temp.find(affct) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(affct)));
-	                		array.push_back(affct);
-	                		size_t sub = temp.find(affct)+2;
-	                		temp = temp.substr(sub);
-	                	}
-	                	// On a détecté ,
-	                	if (temp.find(minitok) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(minitok)));
-	                		array.push_back(minitok);
-	                		size_t sub = temp.find(minitok)+1;
-	                		temp = temp.substr(sub);
-	                	}
-						// On a détecté = || * || + || / || - 
-						if (temp.find(equals) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(equals)));
-	                		array.push_back(equals);
-	                		size_t sub = temp.find(equals)+1;
-	                		temp = temp.substr(sub);
-	                	}
-						if (temp.find(plusLut) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(plusLut)));
-	                		array.push_back(plusLut);
-	                		size_t sub = temp.find(plusLut)+1;
-	                		temp = temp.substr(sub);
-	                	}
-						if (temp.find(minusLut) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(minusLut)));
-	                		array.push_back(minusLut);
-	                		size_t sub = temp.find(minusLut)+1;
-	                		temp = temp.substr(sub);
-	                	}
-						if (temp.find(multiplyLut) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(multiplyLut)));
-	                		array.push_back(multiplyLut);
-	                		size_t sub = temp.find(multiplyLut)+1;
-	                		temp = temp.substr(sub);
-	                	}
-						if (temp.find(divideLut) != string::npos)
-	                	{
-	                		array.push_back(temp.substr(0,temp.find(divideLut)));
-	                		array.push_back(divideLut);
-	                		size_t sub = temp.find(divideLut)+1;
-	                		temp = temp.substr(sub);
-	                	}
-	                	// On a détecté ;
-						if (temp.find(tok) == string::npos)
-						{
-							array.push_back(temp);
-							temp = "";
-						}
-						else
-						{
-							array.push_back(temp.substr(0,temp.find(tok)));
-							array.push_back(tok);
-							temp = "";
-						}
-                	}
-				}
+                // Tant que le mot n'a pas été consommé entièrement
+                    if(cleanWord(temp))
+                    {
+                        array.push_back(temp);
+                    }
+                    else
+                    {
+                       Dismantle(&array,&temp); 
+                    }
+		}
                 parsedFiles.push_back(array);
 			}                   
         } 
@@ -131,9 +76,9 @@ void File::openParse()
 vector<string> File::getContinueParsedFile()
 {
 	vector<string> continueParsedFile;
-	for(int i=0; i<(int)parsedFiles.size(); i++)
+	for(unsigned int i=0; i<parsedFiles.size(); i++)
 	{
-		for(int j=0; j<(int)parsedFiles[i].size(); j++)
+		for(unsigned int j=0; j<parsedFiles[i].size(); j++)
 		{
 			continueParsedFile.push_back(parsedFiles[i][j]);
 		}
@@ -171,3 +116,62 @@ void File::cleaning()
 		}
 	}
 }
+
+void File::Dismantle(vector<string>* array,string* temp)
+{
+	if((*temp).find(affct)!=string::npos)
+	{
+		size_t found = (*temp).find(affct);
+		if((*temp).substr(0,found-1) != "" && (*temp).substr(0,found-1)!=affct)
+		{
+			(*array).push_back((*temp).substr(0,found-1));
+		}
+		(*array).push_back(affct);
+		string remaining;
+		remaining = (*temp).substr(found+2);
+		if (remaining != "")
+		{
+			Dismantle(array,&remaining);
+		}
+	}
+	else
+	{
+		size_t found = (*temp).find_first_of("+-*/=(),;");
+		if (found != std::string::npos)
+		{
+			string flush = "";
+			for(size_t found = 0;found<(*temp).size();found++)
+			{
+				if(!isalpha((*temp)[found])&&!isdigit((*temp)[found]))
+				{
+					if(flush!="")
+					{
+						(*array).push_back(flush);
+					}
+					flush ="";
+					(*array).push_back(string(1,(*temp)[found]));
+				}
+				else
+				{
+					flush +=(*temp)[found];
+				}
+			}
+			// On flush ce qui reste
+			(*array).push_back(flush);
+		}
+		else
+		{
+			 (*array).push_back((*temp));
+		}
+	}   
+}
+
+bool File::cleanWord(string tested)
+{
+    if (tested.find_first_of("+-*/=(),;") != string::npos || tested.find(affct) != string::npos )
+    {
+        return false;
+    }
+    return true;
+}
+

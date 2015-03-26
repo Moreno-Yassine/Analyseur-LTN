@@ -2,33 +2,31 @@ CC=g++
 CFLAGS=-W -Wall -ansi -pedantic -s -O3 -Os -std=c++11 -fpermissive
 LDFLAGS= -lboost_system -lboost_regex
 
-# Les différents répertoires contenant respectivement les fichiers : Sources *.c, Headers *.h, Objets *.o, l'exécutable
 SRCDIR=src
 HEADDIR=include
 LIBDIR=build
 BINDIR=bin
 
 BIN=LTN
-SRC= $(wildcard src/*.cpp src/symboles/*.cpp src/etats/*.cpp src/symboles/symboles_elementaires/*.cpp)
-OBJ= $(SRC:.cpp=.o)
+SRC=$(shell find . -name '*.cpp')
+TMP=$(subst $(SRCDIR),$(LIBDIR), $(SRC))
+OBJ=$(patsubst %.cpp,%.o,$(TMP))
 
 all: $(BIN)
 
 LTN: $(OBJ)
+	@[ ! -d $(BINDIR) ] & mkdir -p $(BINDIR)
 	$(CC) -o $(BINDIR)/$@ $^ $(LDFLAGS)
 
-# Création des différents *.o à partir des *.cpp
-$(SRCDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDIR)/%.h
+$(LIBDIR)/%.o: $(SRCDIR)/%.cpp $(HEADDIR)/%.h
+	@[ ! -d $(dir $@) ] & mkdir -p $(dir $@)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 .PHONY = clean
 
 # Nettoyage des objets => Tout sera recompiler !
 clean:
-	rm ./src/*.o
-	rm ./src/*/*.o
-	rm ./src/*/*/*.o
-
-# Nettoyage complet => clean + effacement du l'exécutable
-Clean: clean
+	rm $(LIBDIR)/*.o
+	rm $(LIBDIR)/*/*.o
+	rm $(LIBDIR)/*/*/*.o
 	rm $(BINDIR)/*
