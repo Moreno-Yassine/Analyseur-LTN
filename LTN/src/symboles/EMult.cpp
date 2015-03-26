@@ -13,7 +13,7 @@ EMult::~EMult()
 
 double EMult::eval()
 {
-
+	return true;
 }
 
 string EMult::print()

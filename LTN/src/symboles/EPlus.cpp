@@ -13,7 +13,7 @@ EPlus::~EPlus()
 
 double EPlus::eval()
 {
-
+	return true;
 }
 
 string EPlus::print()

@@ -18,7 +18,7 @@ string EBin::print()
 
 double EBin::eval()
 {
-
+	return true;
 }
 
 

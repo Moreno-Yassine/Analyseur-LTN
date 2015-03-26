@@ -13,7 +13,7 @@ EParantheses::~EParantheses()
 
 double EParantheses::eval()
 {
-
+	return true;
 }
 
 string EParantheses::print()
