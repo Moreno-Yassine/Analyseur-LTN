@@ -39,10 +39,13 @@ class Lexer
 
 		Symbole* getSymbole(string entree);
 
+		int getNoLigneCourant() { return noLigneCourant; };
+
     private:
 		vector<string> fluxCourant;
 		Dictionary* rulesDictionary;
 		int position;
+		int noLigneCourant;
 };
 
 #endif // LEXER_H

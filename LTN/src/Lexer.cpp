@@ -5,7 +5,7 @@ using namespace std;
 
 Lexer::Lexer()
 {
-
+	noLigneCourant = 1;
 }
 
 Lexer::~Lexer()
@@ -47,7 +47,9 @@ Symbole* Lexer::getNext()
 		case I_ptho: return new Ptho(); break;
 		case I_pthf: return new Pthf(); break;
 		case I_pegl: return new Pegl(); break;
-		case I_pvrg: return new Pvrg(); break;
+		case I_pvrg:
+			noLigneCourant++;
+			return new Pvrg(); break;
 		case I_vrg: return new Vrg(); break;
 		case I_const: return new Const(); break;
 		case I_VAR: return new Var(); break;
