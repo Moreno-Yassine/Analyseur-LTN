@@ -1,6 +1,8 @@
 #include "../include/Automate.h"
 #include "../include/etats/Etat.h"
 #include "../include/etats/Etats.h"
+#include "../include/symboles/Variable.h"
+#include "../include/symboles/Valeur.h"
 
 Automate::Automate()
 {
@@ -9,6 +11,7 @@ Automate::Automate()
     pileReductions = new vector<Reduction>();
     currentLexer = Lexer();
     this->constructionPileReductions();
+	pointeurDeclarations = NULL;
 }
 
 Automate::~Automate()
@@ -64,6 +67,8 @@ void Automate::reduction(int numeroRegle)
 					case 3:					
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
+						//La liste de declaration est le symbole courant
+						pointeurDeclarations = (Ld*)symbole;
 					break;
 					case 4:
 						symbole = new Ld(); 
@@ -123,9 +128,20 @@ void Automate::reduction(int numeroRegle)
 				switch(numeroRegle)
 				{
 					case 16:
+						//Modification Damien
+						/* ancien code
 						symbole = new Variable();
 						symbole->setId(I_E,"I_E");
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						*/
+						//On reduit un id, donc le dernier element de la pile est une variable
+						// On recupere la variable associee, qui est notre nouvelle variable
+						// donc notre nouveau symbole
+						symbole = associerIdVariable((Variable*)pileSymboles->at(pileSymboles->size()-1));
+						//On change bien l'Id du symbole de la declaration (lié à IdV ou IdC)
+						//mais comme il ne passera plus dans l'automate (à part dans notre cas)
+						//ce n'est pas grave
+						symbole->setId(I_E,"I_E");
 						break;
 					case 17:
 						symbole = new Valeur();
@@ -170,12 +186,15 @@ void Automate::reduction(int numeroRegle)
 				}
 				break;
             case I_I :
+				Variable* ptVarReelle;
 				switch(numeroRegle)
 				{
 					case 13:
+						//Modif Damien
+						ptVarReelle = associerIdVariable((Variable*)pileSymboles->at(pileSymboles->size()-1));
 						symbole = new LectureInstr();
 						symbole->setId(I_I,"I_I");
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						symbole->setParam(ptVarReelle, 1);
 						break;
 					case 14:
 						symbole = new EcritureInstr();
@@ -183,9 +202,11 @@ void Automate::reduction(int numeroRegle)
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 15:
+						//Modif Damien
+						ptVarReelle = associerIdVariable((Variable*)pileSymboles->at(pileSymboles->size()-3));
 						symbole = new AffectationInstr();
 						symbole->setId(I_I,"I_I");
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						symbole->setParam(ptVarReelle, 1);
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
 						break;
 					default:
@@ -443,4 +464,27 @@ void Automate::affichageEtatAutomate(Symbole* symbole)
 
     cout << "\n" << endl;
 
+}
+
+
+Variable* Automate::associerIdVariable(Variable* var)
+{
+	if(pointeurDeclarations==NULL)
+	{
+		//RAISE EXCEPTION
+		pointeurDeclarations = new Ld();
+		pointeurDeclarations->setLdNonPresent();
+
+		Variable* newVar = new Variable(var->getNom());
+		pointeurDeclarations->ajouterVariableNonDeclaree(newVar);
+		return ;
+	}
+
+	Variable* ptVar = pointeurDeclarations->trouver(var->getNom());
+	if(ptVar == NULL)
+	{
+		//RAISE EXCEPTION
+		return new Variable(var->getNom());
+	}
+	return ptVar;
 }

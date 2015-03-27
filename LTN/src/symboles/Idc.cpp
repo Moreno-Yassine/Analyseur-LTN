@@ -44,6 +44,7 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 				return false;
 			}
 			variable = (Variable*)symbole;
+			variable->setConst();
 			break;
 		case 2:
 			//Le second element lu est la valeur

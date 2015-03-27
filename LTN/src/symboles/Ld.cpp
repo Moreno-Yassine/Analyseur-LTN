@@ -4,7 +4,7 @@
 
 Ld::Ld()  : Symbole(I_LD, "I_LD")
 {
-
+	nonPresent = false;
 }
 
 Ld::~Ld()
@@ -32,8 +32,22 @@ bool Ld::executer()
 
 Variable* Ld::trouver(string nomVariable)
 {
+	map<string, Variable*>::iterator val = listeVariablesNonDeclarees.find(nomVariable);
+	if(val!=listeVariablesNonDeclarees.end())
+		return val->second;
+
 	for(int i=0;i<listeDeclarations.size();i++)
 		if(listeDeclarations[i]->trouver(nomVariable)!=NULL)
 			return listeDeclarations[i]->trouver(nomVariable);
 	return NULL;
+}
+
+bool Ld::ajouterVariableNonDeclaree(Variable* var)
+{
+	pair<map<string,Variable*>::iterator,bool> retour;
+	retour = listeVariablesNonDeclarees.insert(pair<string,Variable*>(var->getNom(),var));
+	if(retour.second)
+		return true;
+	else
+		return false;
 }

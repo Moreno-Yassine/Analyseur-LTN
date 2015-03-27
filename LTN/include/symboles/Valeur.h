@@ -13,6 +13,7 @@ class Valeur : public Symbole
         Valeur(string valeur);
         virtual ~Valeur();
 		double eval();
+		bool setParam(Symbole* symbole,int noPlace);
 
     private:
     	double valeur;

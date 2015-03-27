@@ -16,6 +16,7 @@ typedef std::map<std::string, Declaration*> MapStringDeclaration;
 typedef map<std::string, Declaration*>::const_iterator StringDeclarationMapIterator;
 
 class Etat;
+class Variable;
 
 struct Reduction
 {
@@ -61,6 +62,16 @@ class Automate
 
 		void affichageEtatAutomate(Symbole* symbole);
 
+		Variable* associerIdVariable(Variable* currentVar);
+		/* Permet d'associer une variable trouvee dans une expression
+		 * a une variable precedemment declaree dans le programme
+		 * @param : currentVar, la variable nouvellement creee trouvee dans E
+		 * @return: un pointeur vers la variable du programme declaree
+		 *			ou vers la nouvelle variable si celle-ci n'existait pas 
+		 *			auparavent (ceci genere un warning)
+		 */
+
+
     private:
         MapStringDeclaration tableSymboles;
 
@@ -68,6 +79,7 @@ class Automate
         vector<Etat*>* pileEtats;
         vector<Reduction>* pileReductions;
         Lexer currentLexer;
+		Ld* pointeurDeclarations;
 
 };
 

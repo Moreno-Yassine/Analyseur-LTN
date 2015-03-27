@@ -22,3 +22,9 @@ Valeur::~Valeur()
 {
 	
 }
+
+bool Valeur::setParam(Symbole* symbole,int noPlace)
+{
+	valeur = ((Valeur*)symbole)->eval();
+	return true;
+}

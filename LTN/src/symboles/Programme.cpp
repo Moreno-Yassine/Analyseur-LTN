@@ -22,3 +22,12 @@ bool Programme::setParam(Symbole* symbole, int place)
 
 	return true;
 }
+
+bool Programme::executer()
+{
+	if(!ptLd->executer())
+		return false;
+	if(!ptLi->executer())
+		return false;
+	return true;
+}
