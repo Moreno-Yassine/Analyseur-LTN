@@ -461,7 +461,11 @@ bool E17::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E35);
 			break;
 		case I_DOLLAR:
-			a.reduction(12); // A VERIFIER
+			if(a.getPileSymboles()->size() == 1)
+			{
+				a.reduction(12); // A VERIFIER
+			}
+			
 			a.reduction(2);
 			break;
 		case I_I:
