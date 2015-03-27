@@ -69,7 +69,7 @@ void Automate::reduction(int numeroRegle)
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
 						//La liste de declaration est le symbole courant
 						pointeurDeclarations = (Ld*)symbole;
-					break;
+					   break;
 					case 4:
 						symbole = new Ld(); 
 						break;
@@ -109,7 +109,8 @@ void Automate::reduction(int numeroRegle)
 						break;
 					default:
 						break;
-				}						
+				}
+                break;						
            case I_Idv : 
 				switch(numeroRegle)
 				{
@@ -123,7 +124,8 @@ void Automate::reduction(int numeroRegle)
 						break;
 					default:
 						break;
-				}	
+				}
+                break;	
             case I_E :
 				switch(numeroRegle)
 				{
@@ -174,9 +176,10 @@ void Automate::reduction(int numeroRegle)
             case I_Li : 
 				switch(numeroRegle)
 				{
+                    //A VERIFIER => Ludmila tu dois valider mais c'est bon normalement (signé Julien)
 					case 11:
-						pileSymboles->at(pileSymboles->size() - 2)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
-						symbole = pileSymboles->at(pileSymboles->size() - 2);
+						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
+						symbole = pileSymboles->at(pileSymboles->size() - 3);
 						break;
 					case 12:
 						symbole = new Li();
@@ -434,7 +437,7 @@ Programme* Automate::lecture(vector<string> fluxEntrantP)
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
 		// TEST JULIEN
-        	//this->affichageEtatAutomate(ptSymboleSuivant);
+        this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 
