@@ -22,7 +22,7 @@ void ProgramManager::analyseStatique()
 
 void ProgramManager::execute()
 {
-
+	(this->program)->executer();
 }
 
 void ProgramManager::displayProgram()

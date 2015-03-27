@@ -433,11 +433,13 @@ Programme* Automate::lecture(vector<string> fluxEntrantP)
 	while(!expressionAcceptee)
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
-        this->affichageEtatAutomate(ptSymboleSuivant);
+		// TEST JULIEN
+        	//this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 
 	return (Programme*)pileSymboles->back();
+	cout << "TERMINE" <<endl;
 
 }
 

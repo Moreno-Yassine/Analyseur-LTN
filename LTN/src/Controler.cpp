@@ -166,6 +166,7 @@ void Controler::affichage()
 }
 void Controler::execution()
 {
+	programManager->execute();
     cout<<"j'execute le prog" <<endl;
 }
 
