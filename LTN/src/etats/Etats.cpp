@@ -99,6 +99,9 @@ bool E2::transition(Automate &a, Symbole* s)
 		case I_D:
 			a.decalageSansConsommation(new E38);
 			break;
+		case I_DOLLAR:
+			a.decalageSansConsommation(new E17);
+			break;
 		default:
 			break;
 	}
@@ -458,11 +461,13 @@ bool E17::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E35);
 			break;
 		case I_DOLLAR:
+			a.reduction(12); // A VERIFIER
 			a.reduction(2);
 			break;
 		case I_I:
 			a.decalageSansConsommation(new E40);
 			break;
+
 		default:
 			break;
 	}

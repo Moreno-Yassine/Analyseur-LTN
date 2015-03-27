@@ -32,6 +32,8 @@ class Automate
 
         vector<Etat*>* getPileEtats();
 
+        vector<Symbole*>* getPileSymboles();
+
         bool addDeclaration(std::string name, Declaration* declaration);
 
         void displayMap();

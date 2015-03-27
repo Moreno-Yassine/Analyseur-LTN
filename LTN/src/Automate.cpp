@@ -24,6 +24,11 @@ vector<Etat*>* Automate::getPileEtats()
     return pileEtats;
 }
 
+vector<Symbole*>* Automate::getPileSymboles()
+{
+    return pileSymboles;
+}
+
 // Add declaration
 bool Automate::addDeclaration(std::string name, Declaration* declaration)
 {
@@ -437,7 +442,7 @@ Programme* Automate::lecture(vector<string> fluxEntrantP)
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
 		// TEST JULIEN
-        this->affichageEtatAutomate(ptSymboleSuivant);
+        //this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 
