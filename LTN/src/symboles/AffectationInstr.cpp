@@ -19,7 +19,7 @@ AffectationInstr::~AffectationInstr()
 
 double AffectationInstr::eval()
 {
-	variableSeFaisantAffecter->eval();
+	return variableSeFaisantAffecter->eval();
 }
 
 bool AffectationInstr::executer()

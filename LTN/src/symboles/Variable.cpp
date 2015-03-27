@@ -36,7 +36,7 @@ bool Variable::setParam(Symbole* symbole, int place)
 
 void Variable::vider()
 {
-	for(int i=0;i<listeValeurs.size();i++)
+	for(int i=0;i<(int)listeValeurs.size();i++)
 		delete listeValeurs[i].second;
 	listeValeurs.clear();
 }

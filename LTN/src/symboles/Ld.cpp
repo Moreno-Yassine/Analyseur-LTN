@@ -9,7 +9,7 @@ Ld::Ld()  : Symbole(I_LD, "I_LD")
 
 Ld::~Ld()
 {
-	for(int i = 0; i<listeDeclarations.size() ;i++)
+	for(int i = 0; i<(int)listeDeclarations.size() ;i++)
 	{
 		delete listeDeclarations[i];
 	}
@@ -23,7 +23,7 @@ bool Ld::setParam(Symbole* s, int place)
 
 bool Ld::executer()
 {
-	for(int i=0;i<listeDeclarations.size();i++)
+	for(int i=0;i<(int)listeDeclarations.size();i++)
 		if(!listeDeclarations[i]->executer())
 			return false;
 	

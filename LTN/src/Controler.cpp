@@ -145,32 +145,37 @@ void Controler::enable_a ()
 
 void Controler::analyse_lexsyn()
 {
-    cout<< "je debute l'execution de l'analyse lexsyn :" <<endl;
+    cout<< "Je debute l'execution de l'analyse lexsyn :" <<endl;
+    //La lecture de l'automate ne devrait pas etre là
 	programManager->setProgram(automate->lecture(input_file->getContinueParsedFile()));
 	cout<< "lexsyn termine" <<endl;
 }
 
 void Controler::memload()
 {
-    cout<<"j'execute la representation mémoire" <<endl;
+    cout<<"J'execute la representation mémoire" <<endl;
+    //C'est plutot ici qu'on devrait appeler automate->lecture
 }
 
 void Controler::transformation()
 {
-    cout<<"j'execute la transformation" <<endl;
+    cout<<"J'execute la transformation" <<endl;
+    programManager->optimise();
 }
 
 void Controler::affichage()
 {
-    cout<<"j'execute l'affichage" <<endl;
+    cout<<"J'execute l'affichage" <<endl;
+    programManager->displayProgram();
 }
 void Controler::execution()
 {
-	programManager->execute();
-    cout<<"j'execute le prog" <<endl;
+    cout<<"J'execute le programme" <<endl;
+    programManager->execute();
 }
 
 void Controler::analyse_statique()
 {
-    cout<<"j'execute l'analyse syn" <<endl;
+    cout<<"J'execute l'analyse statique" <<endl;
+    programManager->analyseStatique();
 }

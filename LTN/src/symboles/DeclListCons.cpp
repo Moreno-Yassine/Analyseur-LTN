@@ -14,13 +14,13 @@ DeclListCons::DeclListCons()
 
 DeclListCons::~DeclListCons()
 {
-	for(int i=0; i<listeConstDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 		delete listeConstDeclareesIci[i];
 }
 
 bool DeclListCons::executer()
 {
-	for(int i=0; i<listeConstDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 		listeConstDeclareesIci[i]->executer();
 	return true;
 }
@@ -32,7 +32,7 @@ bool DeclListCons::setParam(Symbole* symbole, int noPlace)
 
 Variable* DeclListCons::trouver(string nomConstiable)
 {
-	for(int i=0; i<listeConstDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 		if(listeConstDeclareesIci[i]->getVariable()->getNom() == nomConstiable)
 			return listeConstDeclareesIci[i]->getVariable();
 	return NULL;
@@ -41,7 +41,7 @@ Variable* DeclListCons::trouver(string nomConstiable)
 string DeclListCons::print()
 {
 	stringstream valeur;
-	for(int i=0; i<listeConstDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 	{
 		valeur<<"const ";
 		valeur<<listeConstDeclareesIci[i]->getVariable()->getNom();
