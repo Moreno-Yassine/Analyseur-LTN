@@ -45,7 +45,7 @@ void Automate::decalageSansConsommation(Etat* etat)
 
 void Automate::reduction(int numeroRegle)
 {
-    Symbole* symbole;
+    Symbole* symbole = NULL;
     IdSymbole idSymbole;
     int nombreADepiler;
     if(numeroRegle > 0 && numeroRegle <= (int)pileReductions->size())
@@ -477,7 +477,7 @@ Variable* Automate::associerIdVariable(Variable* var)
 
 		Variable* newVar = new Variable(var->getNom());
 		pointeurDeclarations->ajouterVariableNonDeclaree(newVar);
-		return ;
+		return newVar;
 	}
 
 	Variable* ptVar = pointeurDeclarations->trouver(var->getNom());

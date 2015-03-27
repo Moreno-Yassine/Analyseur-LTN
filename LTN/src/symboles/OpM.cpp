@@ -19,4 +19,6 @@ string opM::print()
 bool opM::setParam(Symbole* symbole, int noPlace)
 {
 	operateur = symbole;
+
+	return true;
 }

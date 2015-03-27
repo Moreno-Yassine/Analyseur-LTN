@@ -11,13 +11,13 @@ DeclListVar::DeclListVar()
 
 DeclListVar::~DeclListVar()
 {
-	for(int i=0; i<listeVarDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 		delete listeVarDeclareesIci[i];
 }
 
 bool DeclListVar::executer()
 {
-	for(int i=0; i<listeVarDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 		listeVarDeclareesIci[i]->executer();
 	return true;
 }
@@ -29,7 +29,7 @@ bool DeclListVar::setParam(Symbole* symbole, int noPlace)
 
 Variable* DeclListVar::trouver(string nomVariable)
 {
-	for(int i=0; i<listeVarDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 		if(listeVarDeclareesIci[i]->getVariable()->getNom() == nomVariable)
 			return listeVarDeclareesIci[i]->getVariable();
 	return NULL;
@@ -38,7 +38,7 @@ Variable* DeclListVar::trouver(string nomVariable)
 string DeclListVar::print()
 {
 	stringstream valeur;
-	for(int i=0; i<listeVarDeclareesIci.size(); i++)
+	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 	{
 		valeur<<"var ";
 		valeur<<listeVarDeclareesIci[i]->getVariable()->getNom();

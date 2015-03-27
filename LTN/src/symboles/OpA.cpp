@@ -19,4 +19,6 @@ string opA::print()
 bool opA::setParam(Symbole* symbole, int noPlace)
 {
 	operateur = symbole;
+
+	return true;
 }
