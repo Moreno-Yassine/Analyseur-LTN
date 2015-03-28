@@ -27,7 +27,7 @@ void ProgramManager::execute()
 
 void ProgramManager::displayProgram()
 {
-    cout << "--------Begin ProgramManager::displayProgram()" << endl;
+    //cout << "--------Begin ProgramManager::displayProgram()" << endl;
     (this->program)->display();
 }
 

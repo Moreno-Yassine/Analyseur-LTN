@@ -7,7 +7,7 @@
 
 AffectationInstr::AffectationInstr()
 {
-	expressionAffectee = new E();
+	expressionAffectee = NULL;
 	variableSeFaisantAffecter = NULL;
 }
 
@@ -16,10 +16,23 @@ AffectationInstr::~AffectationInstr()
 
 }
 
-
 double AffectationInstr::eval()
 {
 	return variableSeFaisantAffecter->eval();
+}
+
+bool AffectationInstr::setParam(Symbole* symbole, int place)
+{
+	switch(place)
+	{
+		case 1:
+			variableSeFaisantAffecter = (Variable*)symbole;
+			break;
+		case 2:
+			expressionAffectee = (E*)symbole;
+			break;
+	}
+	return true;
 }
 
 bool AffectationInstr::executer()
@@ -30,4 +43,13 @@ bool AffectationInstr::executer()
 	Valeur* val = new Valeur(ss.str());
 	variableSeFaisantAffecter->affecter(val,this);
 	return true;
+}
+
+string AffectationInstr::print()
+{
+	stringstream valeur;
+
+	cout << "------ AffectationInstr::print()" << endl;
+
+	return valeur.str();
 }

@@ -54,13 +54,11 @@ bool Ld::ajouterVariableNonDeclaree(Variable* var)
 
 bool Ld::display()
 {
-	cout << "--------Begin Ld::display()" << endl;
-	cout << "--------Ld::display()::listeDeclarations size : " << endl;
-	if (listeDeclarations.empty()) {
-		cout << "IS EMPTY" << endl;
-	}
+	//cout << "--------Begin Ld::display()" << endl;
+	//cout << "--------Ld::display()::listeDeclarations size : " << (int)listeDeclarations.size() << endl;
 	for(int i=0;i<(int)listeDeclarations.size();i++)
-		//cout << listeDeclarations[i]->print() <<endl;
+		cout << listeDeclarations[i]->print() <<endl;
 
+	cout << endl;
 	return true;
 }

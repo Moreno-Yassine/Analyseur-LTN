@@ -145,7 +145,7 @@ void Controler::enable_a ()
 
 void Controler::analyse_lexsyn()
 {
-    cout << endl << "##################" << endl;
+    cout << endl << "##################" << endl << endl;
     cout << "Je debute l'execution de l'analyse lexico-synthaxique..." <<endl;
 	automate->setFile(input_file->getContinueParsedFile());
 	cout<< "L'analyse est terminée." <<endl;
@@ -170,7 +170,7 @@ void Controler::transformation()
 
 void Controler::affichage()
 {
-    cout<<"J'execute l'affichage..." <<endl;
+    cout << "J'execute l'affichage..." << endl << endl;
     programManager->displayProgram();
     cout<<"Affichage du programme terminée." <<endl;
     cout << endl << "##################" << endl << endl;

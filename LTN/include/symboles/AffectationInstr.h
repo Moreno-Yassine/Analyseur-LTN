@@ -2,6 +2,7 @@
 #define AffectationINSTRUCTION_H
 
 #include "Symbole.h"
+
 class Instruction;
 class Variable;
 class E;
@@ -13,6 +14,9 @@ class AffectationInstr : public Instruction
         virtual ~AffectationInstr();
 		double eval();
 		bool executer();
+		string print();
+		bool setParam(Symbole* symbole, int place);
+
     private:
 		Variable* variableSeFaisantAffecter;
 		E* expressionAffectee;

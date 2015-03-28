@@ -14,6 +14,7 @@ class LectureInstr : public Instruction
 		string print();
 		double eval();
 		bool executer();
+
     private:
 		Variable* variableLue;
 };

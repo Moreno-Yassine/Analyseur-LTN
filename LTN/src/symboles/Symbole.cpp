@@ -38,7 +38,7 @@ void Symbole::setId(IdSymbole idSymP, string stringIDP)
 
 bool Symbole::setParam(Symbole* symbole, int place)
 {
-
+	cout << "NON DEVO PASSARE DA QUI" << endl;
 	return false;
 }
 

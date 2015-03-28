@@ -12,7 +12,7 @@ class Programme : public Symbole
         virtual ~Programme();
 		Li* getLi();
 		Ld* getLd();
-		bool setParam(Symbole* symbole, int place);
+		bool setParam(Symbole* symbole, int placeSymbole);
 		/* setParam de Programme :
 		 *		place 1 : Ld,
 		 *		place 2 : Li

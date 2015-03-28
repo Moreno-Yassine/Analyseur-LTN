@@ -5,7 +5,7 @@
 
 EcritureInstr::EcritureInstr()
 {
-	expressionAEcrire = new E();
+	expressionAEcrire = NULL;
 }
 
 EcritureInstr::~EcritureInstr()
@@ -18,6 +18,11 @@ double EcritureInstr::eval()
 	
 }
 
+bool EcritureInstr::setParam(Symbole* symbole, int place)
+{
+	expressionAEcrire = (E*)symbole;
+	return true;
+}
 
 bool EcritureInstr::executer()
 {
@@ -26,4 +31,16 @@ bool EcritureInstr::executer()
 		<<expressionAEcrire->eval()
 		<<endl;
 	return true;
+}
+
+string EcritureInstr::print()
+{
+
+	cout << "------ EcritureInstr::print()" << endl;
+
+	string retour ="ecrire ";
+	//retour.append(expressionAEcrire->print());
+	retour.append(";");
+
+	return retour;
 }

@@ -20,7 +20,7 @@ class Symbole
 		IdSymbole getIdSymbole();
 		string toString();
 		void setId(IdSymbole idSymP, string stringIDP);
-		bool setParam(Symbole* symbole, int placeSymbole);
+		virtual bool setParam(Symbole* symbole, int placeSymbole);
 		vector<Symbole*>* getContenu();
 
     protected:

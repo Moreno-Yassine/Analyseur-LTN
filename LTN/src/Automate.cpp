@@ -61,10 +61,14 @@ void Automate::reduction(int numeroRegle)
         switch(idSymbole)
         {
             case I_Pprime : symbole = NULL; break;
-            case I_P : 
-				symbole = new Programme(); 
+            case I_P :
+            	//cout << "Je crée le programme" << endl;
+				symbole = new Programme();
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+				/*cout << pileSymboles->at(pileSymboles->size() - 2)->getIdSymbole() << endl;
+				cout << pileSymboles->at(pileSymboles->size() - 1)->getIdSymbole() << endl;
+				cout << "Création terminée" << endl;*/
 				break;
             case I_LD : 
 				switch(numeroRegle)
