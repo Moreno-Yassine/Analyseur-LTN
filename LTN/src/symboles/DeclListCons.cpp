@@ -45,6 +45,7 @@ string DeclListCons::print()
 	{
 		valeur<<"const ";
 		valeur<<listeConstDeclareesIci[i]->getVariable()->getNom();
+		valeur<<" = ";
 		valeur<<listeConstDeclareesIci[i]->getValeur()->eval();
 		valeur<<";";
 	}
