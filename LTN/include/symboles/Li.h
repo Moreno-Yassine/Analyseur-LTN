@@ -12,6 +12,7 @@ class Li : public Symbole
         virtual ~Li();
 		bool setParam(Symbole* symbole, int noPlace);
 		bool executer();
+		bool display();
 
     private:
 		vector<Instruction*> listeInstructions;

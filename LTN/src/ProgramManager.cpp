@@ -27,7 +27,8 @@ void ProgramManager::execute()
 
 void ProgramManager::displayProgram()
 {
-
+    cout << "--------Begin ProgramManager::displayProgram()" << endl;
+    (this->program)->display();
 }
 
 void ProgramManager::optimise()

@@ -37,6 +37,7 @@ Variable* DeclListVar::trouver(string nomVariable)
 
 string DeclListVar::print()
 {
+	cout << "--------Begin DeclListVar::print()" << endl;
 	stringstream valeur;
 	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 	{

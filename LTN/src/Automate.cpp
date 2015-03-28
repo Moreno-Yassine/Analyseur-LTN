@@ -285,18 +285,6 @@ void Automate::reduction(int numeroRegle)
     }
 }
 
-// Display Map Contents
-void Automate::displayMap()
-{
-    cout << "###################### Mappe des declarations: " << endl;
-    cout << "Const size: " << tableSymboles.size() << endl;
-    for (StringDeclarationMapIterator iter = tableSymboles.begin(); iter != tableSymboles.end(); iter++)
-    {
-        cout << "Name Value: " << iter->first << endl << "Value:" /*<< iter->second */<< endl;
-    }
-        cout << "###################### END Mappe des variables: " << endl;
-}
-
 void Automate::constructionPileReductions()
 {
     pileReductions->clear();
@@ -424,8 +412,14 @@ void Automate::constructionPileReductions()
     pileReductions->push_back(reduction);
 }
 
+bool Automate::setFile(vector<string> fileVector)
+{
+	this->fluxEntrantP = fileVector;
 
-Programme* Automate::lecture(vector<string> fluxEntrantP)
+	return true;
+}
+
+Programme* Automate::lecture()
 /* Fonction lecture :
  * 
  */
@@ -446,8 +440,9 @@ Programme* Automate::lecture(vector<string> fluxEntrantP)
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 
+	//std::cout << typeid(pileSymboles->back()).name() << '\n';
+
 	return (Programme*)pileSymboles->back();
-	cout << "TERMINE" <<endl;
 
 }
 

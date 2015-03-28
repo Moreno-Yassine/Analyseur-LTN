@@ -782,7 +782,7 @@ E26::~E26()
  */
 bool E27::transition(Automate &a, Symbole* s)
 {
-	cout<<"symbole ============="<<s->getIdSymbole() << endl;
+	//cout<<"symbole ============="<<s->getIdSymbole() << endl;
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:

@@ -5,6 +5,8 @@
 #include "Declaration.h"
 #include <vector>
 #include <map>
+#include <iostream>
+
 class Variable;
 
 class Ld : public Symbole
@@ -14,6 +16,7 @@ class Ld : public Symbole
         virtual ~Ld();
 		bool setParam(Symbole* symbole, int place);
 		bool executer();
+		bool display();
 		Variable* trouver(string nomVariable);
 
 		bool ajouterVariableNonDeclaree(Variable* newVar);

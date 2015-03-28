@@ -7,8 +7,6 @@ Programme::Programme() : Symbole(I_P, "I_P")
 
 Programme::~Programme()
 {
-	delete ptLd;
-	delete ptLi;
 }
 
 bool Programme::setParam(Symbole* symbole, int place)
@@ -29,5 +27,17 @@ bool Programme::executer()
 		return false;
 	if(!ptLi->executer())
 		return false;
+	return true;
+}
+
+bool Programme::display()
+{
+	cout << "--------Begin Programme::display()" << endl;
+	if(ptLd==NULL)
+		cout << "NULL" << endl;
+	if(!ptLd->display())
+		return false;
+	/*if(!ptLi->display())
+		return false;*/
 	return true;
 }

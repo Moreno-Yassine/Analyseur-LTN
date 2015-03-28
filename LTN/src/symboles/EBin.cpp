@@ -3,8 +3,8 @@
 
 EBin::EBin()
 {
-	exprGauche = new E();
-	exprDroite = new E();
+	exprGauche = NULL;
+	exprDroite = NULL;
 }
 
 EBin::~EBin()

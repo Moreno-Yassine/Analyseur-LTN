@@ -4,9 +4,9 @@
 
 EPlus::EPlus()
 {
-	exprGauche = new E();
-	exprDroite = new E();
-	operateurArithm = new opA();
+	exprGauche = NULL;
+	exprDroite = NULL;
+	operateurArithm = NULL;
 }
 
 EPlus::~EPlus()

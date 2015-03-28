@@ -3,6 +3,7 @@
 
 #include "ID_Symboles.h"
 #include "Symbole.h"
+#include <iostream>
 
 class Variable;
 
@@ -18,6 +19,7 @@ class Declaration : public Symbole
 		virtual IdSymbole getIdSymbole();
 
 		virtual bool executer() = 0;
+		virtual string print() = 0;
 		virtual Variable* trouver(string nomVariable) = 0;
     
 	private:

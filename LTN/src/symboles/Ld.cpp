@@ -36,7 +36,7 @@ Variable* Ld::trouver(string nomVariable)
 	if(val!=listeVariablesNonDeclarees.end())
 		return val->second;
 
-	for(int i=0;i<listeDeclarations.size();i++)
+	for(int i=0;i<(int)listeDeclarations.size();i++)
 		if(listeDeclarations[i]->trouver(nomVariable)!=NULL)
 			return listeDeclarations[i]->trouver(nomVariable);
 	return NULL;
@@ -50,4 +50,17 @@ bool Ld::ajouterVariableNonDeclaree(Variable* var)
 		return true;
 	else
 		return false;
+}
+
+bool Ld::display()
+{
+	cout << "--------Begin Ld::display()" << endl;
+	cout << "--------Ld::display()::listeDeclarations size : " << endl;
+	if (listeDeclarations.empty()) {
+		cout << "IS EMPTY" << endl;
+	}
+	for(int i=0;i<(int)listeDeclarations.size();i++)
+		//cout << listeDeclarations[i]->print() <<endl;
+
+	return true;
 }

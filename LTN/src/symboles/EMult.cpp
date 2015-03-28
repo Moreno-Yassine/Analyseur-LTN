@@ -4,9 +4,9 @@
 
 EMult::EMult()
 {
-	exprGauche = new E();
-	exprDroite = new E();
-	operateurMult = new opM();
+	exprGauche = NULL;
+	exprDroite = NULL;
+	operateurMult = NULL;
 }
 
 EMult::~EMult()
@@ -16,7 +16,21 @@ EMult::~EMult()
 
 double EMult::eval()
 {
-	//TODO
+	double valGauche = exprGauche->eval();
+	double valDroite = exprDroite->eval();
+	switch(operateurMult->getOperateur()->getIdSymbole())
+	{
+	case I_mul:
+		return valGauche*valDroite;
+		break;
+	case I_div:
+		return valGauche/valDroite;
+		break;
+	default:
+		return 0;
+		break;
+	}
+
 }
 
 string EMult::print()

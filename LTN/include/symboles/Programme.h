@@ -18,6 +18,7 @@ class Programme : public Symbole
 		 *		place 2 : Li
 		 **/
 		bool executer();
+		bool display();
 
     private:
 		Ld* ptLd;

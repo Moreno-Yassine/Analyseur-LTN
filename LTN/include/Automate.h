@@ -9,6 +9,7 @@
 #include <map>
 #include <vector>
 #include <cstdio>
+#include <typeinfo>
 using namespace std;
 
 // typedef pour la map des variables
@@ -31,13 +32,9 @@ class Automate
         virtual ~Automate();
 
         vector<Etat*>* getPileEtats();
-
-        vector<Symbole*>* getPileSymboles();
-
-        bool addDeclaration(std::string name, Declaration* declaration);
-
-        void displayMap();
-
+		vector<Symbole*>* getPileSymboles();
+		bool addDeclaration(std::string name, Declaration* declaration);
+		bool setFile(vector<string> fileVector);
 		void decalage(Symbole* symbole, Etat* etat);
 		/* Permet d'empiler le symbole et l'etat dans la pile de l'automate
 		 * @param : symbole, pointeur sur le symbole qui permet la transition
@@ -55,10 +52,9 @@ class Automate
 
 		void constructionPileReductions();
 
-		Programme* lecture(vector<string> fluxEntrant);
+		Programme* lecture();
 		/* Permet de faire l'analyse syntaxique d'un liste de string et de
 		 * charger sa repr�sentation en memoire
-		 * @param : fluxEntrant, contient l'ensemble de l'expression a evaluer
 		 * @return : La répresentation mémoire du programme
 		 */
 
@@ -76,7 +72,7 @@ class Automate
 
     private:
         MapStringDeclaration tableSymboles;
-
+		vector<string> fluxEntrantP;
         vector<Symbole*>* pileSymboles;
         vector<Etat*>* pileEtats;
         vector<Reduction>* pileReductions;

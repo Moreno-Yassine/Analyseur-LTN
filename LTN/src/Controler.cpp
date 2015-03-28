@@ -145,16 +145,21 @@ void Controler::enable_a ()
 
 void Controler::analyse_lexsyn()
 {
-    cout<< "Je debute l'execution de l'analyse lexsyn :" <<endl;
-    //La lecture de l'automate ne devrait pas etre là
-	programManager->setProgram(automate->lecture(input_file->getContinueParsedFile()));
-	cout<< "lexsyn termine" <<endl;
+    cout << endl << "##################" << endl;
+    cout << "Je debute l'execution de l'analyse lexico-synthaxique..." <<endl;
+	automate->setFile(input_file->getContinueParsedFile());
+	cout<< "L'analyse est terminée." <<endl;
+	cout << endl << "##################" << endl << endl;
 }
 
 void Controler::memload()
 {
-    cout<<"J'execute la representation mémoire" <<endl;
+    cout<<"J'execute la representation mémoire..." <<endl;
     //C'est plutot ici qu'on devrait appeler automate->lecture
+    programManager->setProgram(automate->lecture());
+    cout<<"Répresentation mémoire terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
+
 }
 
 void Controler::transformation()
@@ -165,9 +170,12 @@ void Controler::transformation()
 
 void Controler::affichage()
 {
-    cout<<"J'execute l'affichage" <<endl;
+    cout<<"J'execute l'affichage..." <<endl;
     programManager->displayProgram();
+    cout<<"Affichage du programme terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }
+
 void Controler::execution()
 {
     cout<<"J'execute le programme" <<endl;

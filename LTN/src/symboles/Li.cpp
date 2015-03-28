@@ -25,3 +25,10 @@ bool Li::executer()
 	
 	return true;
 }
+
+bool Li::display()
+{
+	// TODO
+
+	return true;
+}
