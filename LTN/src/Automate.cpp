@@ -126,10 +126,12 @@ void Automate::reduction(int numeroRegle)
 					case 9:												
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
+						cout<<"case 10"<<endl;
 						break;
 					case 10:
 						symbole = new Idv(); 
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);				
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						cout<<"case 10"<<endl;
 						break;
 					default:
 						break;
@@ -440,7 +442,7 @@ Programme* Automate::lecture()
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
 		// TEST JULIEN
-        //this->affichageEtatAutomate(ptSymboleSuivant);
+        this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 

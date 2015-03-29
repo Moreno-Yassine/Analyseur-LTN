@@ -17,7 +17,7 @@ void ProgramManager::setProgram(Programme* programme)
 
 void ProgramManager::analyseStatique()
 {
-
+    cout << "--------Begin ProgramManager::analyseStatique()" << endl;
 }
 
 void ProgramManager::execute()

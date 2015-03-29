@@ -58,7 +58,7 @@ bool EcritureInstr::executer()
 string EcritureInstr::print()
 {
 
-	cout << "------ EcritureInstr::print()" << endl;
+	//cout << "------ EcritureInstr::print()" << endl;
 
 	string retour ="ecrire ";
 	retour.append(expressionAEcrire->print());

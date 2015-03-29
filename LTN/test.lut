@@ -1,6 +1,5 @@
-var z;
-const n3 = 321 ;
-var x , y , f ;
-const n = 10 , n2 = 100, h = 1 ;
-lire f ;
-ecrire f ;
+var x , y , t ;
+const n = 10 , n2 = 100 ;
+lire y;
+ecrire n / y;
+
