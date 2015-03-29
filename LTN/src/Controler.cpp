@@ -156,7 +156,15 @@ void Controler::memload()
 {
     cout<<"J'execute la representation mémoire..." <<endl;
     //C'est plutot ici qu'on devrait appeler automate->lecture
-    programManager->setProgram(automate->lecture());
+    try
+    {
+        programManager->setProgram(automate->lecture());
+    }
+    catch(int i)
+    {
+        throw SymboleSuivantNonConformeException;
+    }
+    
     cout<<"Répresentation mémoire terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 

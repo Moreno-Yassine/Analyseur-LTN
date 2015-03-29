@@ -442,10 +442,16 @@ Programme* Automate::lecture()
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
 		// TEST JULIEN
-        this->affichageEtatAutomate(ptSymboleSuivant);
-		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
-	}
-
+        //this->affichageEtatAutomate(ptSymboleSuivant);
+        try
+        {
+            expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
+    	}
+        catch(int i)
+        {
+            throw 0; // On lève une exception de Symbole Suivant non Conforme
+        }
+    }
 	//std::cout << typeid(pileSymboles->back()).name() << '\n';
 
 	return (Programme*)pileSymboles->back();
