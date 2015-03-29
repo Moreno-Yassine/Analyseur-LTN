@@ -47,9 +47,8 @@ bool AffectationInstr::executer()
 
 string AffectationInstr::print()
 {
-	stringstream valeur;
 
 	cout << "------ AffectationInstr::print()" << endl;
 
-	return valeur.str();
+	return "ciao";
 }

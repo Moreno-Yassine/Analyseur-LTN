@@ -2,6 +2,8 @@
 #define LECTUREINSTRUCTION_H
 
 #include "Symbole.h"
+#include "Valeur.h"
+
 class Instruction;
 class Variable;
 
@@ -14,6 +16,7 @@ class LectureInstr : public Instruction
 		string print();
 		double eval();
 		bool executer();
+		bool is_number(const std::string& s);
 
     private:
 		Variable* variableLue;
