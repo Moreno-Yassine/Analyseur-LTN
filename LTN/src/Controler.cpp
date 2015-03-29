@@ -75,10 +75,6 @@ void Controler::run(char* path)
     analyse_lexsyn();
     memload();
 
-    if (option_o)
-    {
-        transformation();
-    }
     if (option_p)
     {
         affichage();
@@ -90,6 +86,10 @@ void Controler::run(char* path)
     if (option_e)
     {
         execution();
+    }
+    if (option_o)
+    {
+        transformation();
     }
 }
 
@@ -164,8 +164,10 @@ void Controler::memload()
 
 void Controler::transformation()
 {
-    cout<<"J'execute la transformation" <<endl;
+    cout<<"J'execute l'optimisation..." <<endl;
     programManager->optimise();
+    cout<<"Optimisation terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }
 
 void Controler::affichage()
@@ -186,6 +188,8 @@ void Controler::execution()
 
 void Controler::analyse_statique()
 {
-    cout<<"J'execute l'analyse statique" <<endl;
+    cout<<"J'execute l'analyse statique..." << endl << endl;
     programManager->analyseStatique();
+    cout<<"Analyse terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }
