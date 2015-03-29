@@ -29,6 +29,7 @@ bool AffectationInstr::setParam(Symbole* symbole, int place)
 			variableSeFaisantAffecter = (Variable*)symbole;
 			break;
 		case 2:
+			cout << symbole->getIdSymbole() << endl;
 			expressionAffectee = (E*)symbole;
 			break;
 	}
