@@ -129,7 +129,7 @@ void Automate::reduction(int numeroRegle)
 						break;
 					case 10:
 						symbole = new Idv(); 
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);				
 						break;
 					default:
 						break;

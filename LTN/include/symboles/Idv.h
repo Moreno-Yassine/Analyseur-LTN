@@ -13,9 +13,11 @@ class Idv : public Symbole
 		bool executer();
 		Variable* getVariable();
 		bool setParam(Symbole* symbole, int noPlace);
+		string print();
 
     private:
 		Variable* variable;
+		vector<Variable*> listeVariables;
 
 };
 

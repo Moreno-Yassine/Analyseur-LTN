@@ -30,6 +30,21 @@ Valeur* Idc::getValeur()
 {
 	return valeur;
 }
+
+string  Idc::print()
+{
+	stringstream resultat;
+	for(int i=0; i<(int)listeVariables.size(); i++)
+	{	
+		resultat<<"const ";
+		resultat<<listeVariables[i]->getNom();
+		resultat<<" = ";
+		resultat<<listeValeurs[i]->eval();
+		resultat<<";"<<endl;
+	}
+	
+	return resultat.str(); 
+}
 		
 bool Idc::setParam(Symbole* symbole, int noPlace)
 {
@@ -40,9 +55,11 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 			if(variable != NULL)
 			{
 				variable = (Variable*)symbole;
+				listeVariables.push_back((Variable*)symbole);
 				//RAISE EXCEPTION
 				return false;
 			}
+			listeVariables.push_back((Variable*)symbole);
 			variable = (Variable*)symbole;
 			variable->setConst();
 			break;
@@ -51,9 +68,11 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 			if(valeur != NULL)
 			{
 				valeur = (Valeur*)symbole;
+				listeValeurs.push_back((Valeur*)symbole);
 				//RAISE EXCEPTION
 				return false;
 			}
+			listeValeurs.push_back((Valeur*)symbole);
 			valeur = (Valeur*)symbole;
 			break;
 		default:

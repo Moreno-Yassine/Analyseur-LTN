@@ -57,7 +57,7 @@ bool Ld::display()
 	//cout << "--------Begin Ld::display()" << endl;
 	//cout << "--------Ld::display()::listeDeclarations size : " << (int)listeDeclarations.size() << endl;
 	for(int i=0;i<(int)listeDeclarations.size();i++)
-		cout << listeDeclarations[i]->print() <<endl;
+		cout << listeDeclarations[i]->print();
 
 	cout << endl;
 	return true;

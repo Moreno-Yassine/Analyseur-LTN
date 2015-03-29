@@ -43,11 +43,7 @@ string DeclListCons::print()
 	stringstream valeur;
 	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 	{
-		valeur<<"const ";
-		valeur<<listeConstDeclareesIci[i]->getVariable()->getNom();
-		valeur<<" = ";
-		valeur<<listeConstDeclareesIci[i]->getValeur()->eval();
-		valeur<<";";
+		valeur<<listeConstDeclareesIci[i]->print();
 	}
 
 	return valeur.str(); 

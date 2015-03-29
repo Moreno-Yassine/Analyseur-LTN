@@ -39,10 +39,11 @@ string DeclListVar::print()
 {
 	stringstream valeur;
 	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
-	{
-		valeur<<"var ";
+	{	
+		valeur<<listeVarDeclareesIci[i]->print();
+		/*valeur<<"var ";
 		valeur<<listeVarDeclareesIci[i]->getVariable()->getNom();
-		valeur<<";";
+		valeur<<";";*/
 	}
 
 	return valeur.str(); 
