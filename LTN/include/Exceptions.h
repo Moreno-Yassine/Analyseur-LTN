@@ -44,5 +44,13 @@ class Exception_Five : public exception
   }
 } DictionnaryException;
 
+class Exception_Six : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Erreur Symbole Suivant Non Conforme à la Grammaire";
+  }
+} SymboleSuivantNonConformeException;
+
 
 #endif // EXCEPTIONS_H
