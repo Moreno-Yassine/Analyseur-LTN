@@ -51,3 +51,12 @@ bool Idv::setParam(Symbole* symbole, int noPlace)
 	variable = (Variable*)symbole;
 	return true;
 }
+
+Variable* Idv::trouver(string nomVariable)
+{
+	for(int i=0; i<(int)listeVariables.size(); i++)
+	{
+		if(listeVariables[i]->print() == nomVariable)
+			return listeVariables[i];
+	}
+}

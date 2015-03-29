@@ -36,11 +36,11 @@ Variable* Ld::trouver(string nomVariable)
 	if(val!=listeVariablesNonDeclarees.end())
 		return val->second;
 
-	cout << "Declarations size : " << (int)listeDeclarations.size() << endl;
-
 	for(int i=0;i<(int)listeDeclarations.size();i++)
+	{
 		if(listeDeclarations[i]->trouver(nomVariable)!=NULL)
 			return listeDeclarations[i]->trouver(nomVariable);
+	}
 	return NULL;
 }
 

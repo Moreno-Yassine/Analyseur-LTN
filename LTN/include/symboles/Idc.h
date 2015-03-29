@@ -18,11 +18,12 @@ class Idc : public Symbole
 		Valeur* getValeur();
 		bool setParam(Symbole* symbole, int noPlace);
 		string print();
+		Variable* trouver(string nomConstante);
 
     private:
 		Variable* variable;
 		Valeur* valeur;
-		vector<Variable*> listeVariables;
+		vector<Variable*> listeConstantes;
 		vector<Valeur*> listeValeurs;
 };
 

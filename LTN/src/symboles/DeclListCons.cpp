@@ -30,11 +30,13 @@ bool DeclListCons::setParam(Symbole* symbole, int noPlace)
 	listeConstDeclareesIci.push_back((Idc*)symbole);
 }
 
-Variable* DeclListCons::trouver(string nomConstiable)
+Variable* DeclListCons::trouver(string nomConstante)
 {
 	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
-		if(listeConstDeclareesIci[i]->getVariable()->getNom() == nomConstiable)
-			return listeConstDeclareesIci[i]->getVariable();
+	{
+		if(listeConstDeclareesIci[i]->trouver(nomConstante)!=NULL)
+			return listeConstDeclareesIci[i]->trouver(nomConstante);
+	}
 	return NULL;
 }
 

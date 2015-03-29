@@ -66,9 +66,9 @@ void Automate::reduction(int numeroRegle)
 				symbole = new Programme();
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
-				/*cout << pileSymboles->at(pileSymboles->size() - 2)->getIdSymbole() << endl;
-				cout << pileSymboles->at(pileSymboles->size() - 1)->getIdSymbole() << endl;
-				cout << "Création terminée" << endl;*/
+				//cout << pileSymboles->at(pileSymboles->size() - 2)->getIdSymbole() << endl;
+				//cout << pileSymboles->at(pileSymboles->size() - 1)->getIdSymbole() << endl;
+				//cout << "Création terminée" << endl;
 				break;
             case I_LD : 
 				switch(numeroRegle)
@@ -78,6 +78,7 @@ void Automate::reduction(int numeroRegle)
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
 						//La liste de declaration est le symbole courant
 						pointeurDeclarations = (Ld*)symbole;
+						pointeurDeclarations -> display();
 					   break;
 					case 4:
 						symbole = new Ld(); 
@@ -131,7 +132,7 @@ void Automate::reduction(int numeroRegle)
 					case 10:
 						symbole = new Idv(); 
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
-						cout<<"case 10"<<endl;
+						//cout<<"case 10"<<endl;
 						break;
 					default:
 						break;
@@ -488,6 +489,7 @@ void Automate::affichageEtatAutomate(Symbole* symbole)
 Variable* Automate::associerIdVariable(Variable* var)
 {
 	cout << var->getNom() << endl;
+	pointeurDeclarations->display();
 	if(pointeurDeclarations==NULL)
 	{
 		cout << "No declarations" << endl;

@@ -11,7 +11,7 @@ class DeclListCons : public Declaration
         virtual ~DeclListCons();
 		bool executer();
 		bool setParam(Symbole* symbole, int noPlace);
-		Variable* trouver(string nomVariable);
+		Variable* trouver(string nomConstante);
 		string print();
 
     private:
