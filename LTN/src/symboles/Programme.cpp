@@ -9,11 +9,11 @@ Programme::~Programme()
 {
 }
 
-bool Programme::setParam(Symbole* symbole, int place)
+bool Programme::setParam(Symbole* symbole, int placeSymbole)
 {
-	if(place==1)
+	if(placeSymbole==1)
 		ptLd = (Ld*)symbole;
-	else if(place==2)
+	else if(placeSymbole==2)
 		ptLi = (Li*)symbole;
 	else
 		return false;
@@ -23,6 +23,7 @@ bool Programme::setParam(Symbole* symbole, int place)
 
 bool Programme::executer()
 {
+	cout << "--------Begin Programme::execute()" << endl;
 	if(!ptLd->executer())
 		return false;
 	if(!ptLi->executer())
@@ -32,12 +33,16 @@ bool Programme::executer()
 
 bool Programme::display()
 {
-	cout << "--------Begin Programme::display()" << endl;
+	//cout << "--------Begin Programme::display()" << endl;
 	if(ptLd==NULL)
-		cout << "NULL" << endl;
+		cout << "Attention : AUCUNE DECLARATION" << endl;
+
+	if(ptLi==NULL)
+		cout << "Attention : AUCUNE INSTRUCTION" << endl;
+
 	if(!ptLd->display())
 		return false;
-	/*if(!ptLi->display())
-		return false;*/
+	if(!ptLi->display())
+		return false;
 	return true;
 }

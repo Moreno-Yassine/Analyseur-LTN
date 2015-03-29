@@ -1,12 +1,12 @@
 #include "../../include/symboles/Variable.h"
 #include "../../include/symboles/Valeur.h"
 
-Variable::Variable(): Symbole(I_ID, "I_ID")
+Variable::Variable(): E(I_ID, "I_ID")
 {
 
 }
 
-Variable::Variable(string mot): Symbole(I_ID, "I_ID")
+Variable::Variable(string mot): E(I_ID, "I_ID")
 {
 	nom = mot;
 }

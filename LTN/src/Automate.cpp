@@ -61,10 +61,14 @@ void Automate::reduction(int numeroRegle)
         switch(idSymbole)
         {
             case I_Pprime : symbole = NULL; break;
-            case I_P : 
-				symbole = new Programme(); 
+            case I_P :
+            	//cout << "Je crée le programme" << endl;
+				symbole = new Programme();
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+				/*cout << pileSymboles->at(pileSymboles->size() - 2)->getIdSymbole() << endl;
+				cout << pileSymboles->at(pileSymboles->size() - 1)->getIdSymbole() << endl;
+				cout << "Création terminée" << endl;*/
 				break;
             case I_LD : 
 				switch(numeroRegle)
@@ -125,7 +129,7 @@ void Automate::reduction(int numeroRegle)
 						break;
 					case 10:
 						symbole = new Idv(); 
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);				
 						break;
 					default:
 						break;
@@ -148,30 +152,30 @@ void Automate::reduction(int numeroRegle)
 						//On change bien l'Id du symbole de la declaration (lié à IdV ou IdC)
 						//mais comme il ne passera plus dans l'automate (à part dans notre cas)
 						//ce n'est pas grave
-						symbole->setId(I_E,"I_E");
+						symbole->setId(I_E,"I_ID");
 						break;
 					case 17:
 						symbole = new Valeur();
-						symbole->setId(I_E,"I_E");
+						symbole->setId(I_E,"I_NB");
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 18:
 						symbole = new EPlus();
-						symbole->setId(I_E,"I_E");
+						symbole->setId(I_E,"I_EPlus");
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 3);					
 						break;
 					case 19:
 						symbole = new EMult();
-						symbole->setId(I_E,"I_E");
+						symbole->setId(I_E,"I_EMult");
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 3);
 						break;
 					case 20:
 						symbole = new EParantheses();
-						symbole->setId(I_E,"I_E");
+						symbole->setId(I_E,"I_EPar");
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
 						break;
 					default:

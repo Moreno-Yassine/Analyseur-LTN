@@ -75,10 +75,6 @@ void Controler::run(char* path)
     analyse_lexsyn();
     memload();
 
-    if (option_o)
-    {
-        transformation();
-    }
     if (option_p)
     {
         affichage();
@@ -90,6 +86,10 @@ void Controler::run(char* path)
     if (option_e)
     {
         execution();
+    }
+    if (option_o)
+    {
+        transformation();
     }
 }
 
@@ -145,7 +145,7 @@ void Controler::enable_a ()
 
 void Controler::analyse_lexsyn()
 {
-    cout << endl << "##################" << endl;
+    cout << endl << "##################" << endl << endl;
     cout << "Je debute l'execution de l'analyse lexico-synthaxique..." <<endl;
 	automate->setFile(input_file->getContinueParsedFile());
 	cout<< "L'analyse est terminée." <<endl;
@@ -164,26 +164,32 @@ void Controler::memload()
 
 void Controler::transformation()
 {
-    cout<<"J'execute la transformation" <<endl;
+    cout<<"J'execute l'optimisation..." <<endl;
     programManager->optimise();
+    cout<<"Optimisation terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }
 
 void Controler::affichage()
 {
-    cout<<"J'execute l'affichage..." <<endl;
+    cout << "-----J'affiche le programme..." << endl << endl;
     programManager->displayProgram();
-    cout<<"Affichage du programme terminée." <<endl;
+    cout<< endl << "----Affichage du programme terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 }
 
 void Controler::execution()
 {
-    cout<<"J'execute le programme" <<endl;
+    cout << "J'execute le programme..." << endl << endl;
     programManager->execute();
+    cout<<"Execution terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }
 
 void Controler::analyse_statique()
 {
-    cout<<"J'execute l'analyse statique" <<endl;
+    cout<<"J'execute l'analyse statique..." << endl << endl;
     programManager->analyseStatique();
+    cout<<"Analyse terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }

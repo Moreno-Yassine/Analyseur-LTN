@@ -5,7 +5,7 @@ string opM::print()
 	switch(operateur->getIdSymbole())
 	{
 	case I_mul:
-		return "x";
+		return "*";
 		break;
 	case I_div:
 		return "/";

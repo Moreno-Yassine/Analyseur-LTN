@@ -2,12 +2,13 @@
 #define VARIABLE_H
 #include <string>
 #include "Symbole.h"
+#include "E.h"
 #include <map>
 
 using namespace std;
 class Valeur;
 
-class Variable : public Symbole
+class Variable : public E
 {
     public:
         Variable();

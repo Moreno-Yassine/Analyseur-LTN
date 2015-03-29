@@ -3,11 +3,11 @@
 #include <string> 
 using namespace std;
 
-Valeur::Valeur(): Symbole(I_NB, "I_NB")
+Valeur::Valeur(): E(I_NB, "I_NB")
 {
 }
 
-Valeur::Valeur(string valeurP): Symbole(I_NB, "I_NB")
+Valeur::Valeur(string valeurP): E(I_NB, "I_NB")
 {
 	valeur = stoi(valeurP);
 }
@@ -27,4 +27,11 @@ bool Valeur::setParam(Symbole* symbole,int noPlace)
 {
 	valeur = ((Valeur*)symbole)->eval();
 	return true;
+}
+
+string Valeur::print()
+{
+	stringstream resultat;
+	resultat<<this->valeur;
+	return resultat.str();
 }

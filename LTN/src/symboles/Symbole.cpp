@@ -36,9 +36,9 @@ void Symbole::setId(IdSymbole idSymP, string stringIDP)
 	stringID = stringIDP;
 }
 
+
 bool Symbole::setParam(Symbole* symbole, int place)
 {
-
 	return false;
 }
 

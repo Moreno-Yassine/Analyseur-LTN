@@ -28,7 +28,10 @@ bool Li::executer()
 
 bool Li::display()
 {
-	// TODO
+	//cout << "--------Begin Li::display()" << endl;
+	//cout << "--------Li::display()::listeInstructions size : " << (int)listeInstructions.size() << endl;
+	for(int i=0;i<(int)listeInstructions.size();i++)
+		cout << listeInstructions[i]->print() <<endl;
 
 	return true;
 }

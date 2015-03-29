@@ -2,3 +2,5 @@ var z;
 const n3 = 321 ;
 var x , y ;
 const n = 10 , n2 = 100 ;
+lire f;
+ecrire f + n * n2;

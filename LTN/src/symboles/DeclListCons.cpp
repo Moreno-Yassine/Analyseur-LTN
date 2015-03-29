@@ -40,14 +40,10 @@ Variable* DeclListCons::trouver(string nomConstiable)
 
 string DeclListCons::print()
 {
-	cout << "--------Begin DeclListCons::print()" << endl;
 	stringstream valeur;
 	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 	{
-		valeur<<"const ";
-		valeur<<listeConstDeclareesIci[i]->getVariable()->getNom();
-		valeur<<listeConstDeclareesIci[i]->getValeur()->eval();
-		valeur<<";";
+		valeur<<listeConstDeclareesIci[i]->print();
 	}
 
 	return valeur.str(); 

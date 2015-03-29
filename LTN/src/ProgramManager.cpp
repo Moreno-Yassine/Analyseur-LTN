@@ -17,17 +17,18 @@ void ProgramManager::setProgram(Programme* programme)
 
 void ProgramManager::analyseStatique()
 {
-
+    cout << "--------Begin ProgramManager::analyseStatique()" << endl;
 }
 
 void ProgramManager::execute()
 {
+    cout << "--------Begin ProgramManager::execute()" << endl;
 	(this->program)->executer();
 }
 
 void ProgramManager::displayProgram()
 {
-    cout << "--------Begin ProgramManager::displayProgram()" << endl;
+    //cout << "--------Begin ProgramManager::displayProgram()" << endl;
     (this->program)->display();
 }
 

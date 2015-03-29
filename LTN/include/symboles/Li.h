@@ -3,6 +3,7 @@
 
 #include "Symbole.h"
 #include <vector>
+#include <iostream>
 #include "Instruction.h"
 
 class Li : public Symbole

@@ -2,6 +2,12 @@
 #define EcritureINSTRUCTION_H
 
 #include "Symbole.h"
+#include "EParantheses.h"
+#include "EMult.h"
+#include "EPlus.h"
+#include "Variable.h"
+#include "Valeur.h"
+
 class Instruction;
 class E;
 
@@ -12,6 +18,9 @@ class EcritureInstr : public Instruction
         virtual ~EcritureInstr();
 		double eval();
 		bool executer();
+		string print();
+        bool setParam(Symbole* symbole, int place);
+
     private:
 		E* expressionAEcrire;
 };
