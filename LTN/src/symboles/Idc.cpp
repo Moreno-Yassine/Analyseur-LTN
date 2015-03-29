@@ -52,11 +52,13 @@ string  Idc::print()
 	return resultat.str(); 
 }
 
-Variable* Idc::trouver(string nomConstante)
+Variable* Idc::trouver(string nomVariable)
 {
+	//cout << "Begin Idc::trouver SIZE : " << (int)listeConstantes.size() << endl;
 	for(int i=0; i<(int)listeConstantes.size(); i++)
 	{
-		if(listeConstantes[i]->print() == nomConstante)
+		//cout << "Idc::trouver nomVariable :" << listeConstantes[i]->print() << endl;
+		if(listeConstantes[i]->print() == nomVariable)
 			return listeConstantes[i];
 	}
 	return NULL;

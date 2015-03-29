@@ -78,7 +78,7 @@ void Automate::reduction(int numeroRegle)
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
 						//La liste de declaration est le symbole courant
 						pointeurDeclarations = (Ld*)symbole;
-						pointeurDeclarations -> display();
+						//pointeurDeclarations -> display();
 					   break;
 					case 4:
 						symbole = new Ld(); 
@@ -127,7 +127,7 @@ void Automate::reduction(int numeroRegle)
 					case 9:												
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
-						cout<<"case 9"<<endl;
+						//cout<<"case 9"<<endl;
 						break;
 					case 10:
 						symbole = new Idv(); 
@@ -488,11 +488,9 @@ void Automate::affichageEtatAutomate(Symbole* symbole)
 
 Variable* Automate::associerIdVariable(Variable* var)
 {
-	cout << var->getNom() << endl;
-	pointeurDeclarations->display();
+
 	if(pointeurDeclarations==NULL)
 	{
-		cout << "No declarations" << endl;
 		//RAISE EXCEPTION
 		pointeurDeclarations = new Ld();
 		pointeurDeclarations->setLdNonPresent();
@@ -503,12 +501,13 @@ Variable* Automate::associerIdVariable(Variable* var)
 	}
 
 	Variable* ptVar = pointeurDeclarations->trouver(var->getNom());
+
 	if(ptVar == NULL)
 	{
-		cout << "New variable" << endl;
+		//cout << "New variable" << endl;
 		//RAISE EXCEPTION
 		return new Variable(var->getNom());
 	}
-	cout << "variable found" << endl;
+
 	return ptVar;
 }
