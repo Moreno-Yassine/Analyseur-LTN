@@ -98,7 +98,6 @@ void Automate::reduction(int numeroRegle)
 						symbole = new DeclListVar();
 						symbole->setId(I_D,"I_D");
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
-						cout<<"case 6"<<endl;
 						break;
 					default:
 						break;
@@ -127,12 +126,10 @@ void Automate::reduction(int numeroRegle)
 					case 9:												
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
-						cout<<"Automate :case 9"<<endl;
 						break;
 					case 10:
 						symbole = new Idv(); 
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);				
-						cout<<"Automate : case 10"<<endl;
 						break;
 					default:
 						break;

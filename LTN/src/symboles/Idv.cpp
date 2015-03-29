@@ -32,7 +32,7 @@ string  Idv::print()
 	{	
 		resultat<<"var ";
 		resultat<<listeVariables[i]->getNom();
-		resultat<<";";
+		resultat<<";"<<endl;
 	}
 	
 	return resultat.str(); 
