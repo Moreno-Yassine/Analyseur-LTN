@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Etat.h"
 #include "../symboles/SymbolesComplexes.h"
+#include "../Exceptions.h"
 
 
 using namespace std;

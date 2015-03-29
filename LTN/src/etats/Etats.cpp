@@ -1,7 +1,6 @@
 #include "../../include/etats/Etats.h"
 #include "../../include/Automate.h"
 #include "../../include/symboles/ID_Symboles.h"
-#include "../../include/Exceptions.h"
 
 /* --------------- ETAT 0 ------------------
  *
