@@ -65,7 +65,7 @@ void File::openParse()
         } 
 	    myfile.close();
 		cleaning();
-		ParsingTest();
+		// FOR TEST PURPOSE ParsingTest();
 	  }
 	else
 	{
