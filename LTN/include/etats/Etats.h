@@ -5,9 +5,9 @@
 #include "Etat.h"
 #include "../symboles/SymbolesComplexes.h"
 
-
 using namespace std;
 class Automate;
+
 /* ------- Etat 0  --------
  * 
  * ------------------------
