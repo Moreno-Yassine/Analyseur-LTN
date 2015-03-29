@@ -48,7 +48,6 @@ bool EcritureInstr::setParam(Symbole* symbole, int place)
 
 bool EcritureInstr::executer()
 {
-	cout << "-----EcritureInstr::executer()" << endl;
 	cout<<expressionAEcrire->print()
 		<<" vaut "
 		<<expressionAEcrire->eval()
