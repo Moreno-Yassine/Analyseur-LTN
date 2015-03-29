@@ -246,6 +246,8 @@ bool E8::transition(Automate &a, Symbole* s)
 		case I_pvrg:
 			a.reduction(9);
 			break;
+		case I_vrg:
+			a.reduction(9);
 		default:
 			break;
 	}

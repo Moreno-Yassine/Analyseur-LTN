@@ -98,9 +98,9 @@ void File::ParsingTest()
 		for (unsigned int j=0;j<parsedFiles[i].size();j++)
 		{
 			if (parsedFiles[i][j] != "")
-			cout << parsedFiles[i][j] << endl;
+				cout << parsedFiles[i][j] << endl;
 			else
-			cout << "NULL" << endl;
+				cout << "NULL" << endl;
 		}
 	}
 }
