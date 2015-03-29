@@ -1,9 +1,4 @@
-#include "../../include/symboles/Instruction.h"
 #include "../../include/symboles/AffectationInstr.h"
-#include "../../include/symboles/Variable.h"
-#include "../../include/symboles/Valeur.h"
-#include "../../include/symboles/E.h"
-#include <sstream>
 
 AffectationInstr::AffectationInstr()
 {
@@ -29,8 +24,28 @@ bool AffectationInstr::setParam(Symbole* symbole, int place)
 			variableSeFaisantAffecter = (Variable*)symbole;
 			break;
 		case 2:
-			cout << symbole->getIdSymbole() << endl;
-			expressionAffectee = (E*)symbole;
+			if(symbole->toString()== "I_ID")
+			{
+				expressionAffectee = (Variable*)symbole;
+				
+			}else if (symbole->toString()== "I_NB")
+			{
+				expressionAffectee = (Valeur*)symbole;
+				
+			}else if (symbole->toString()== "I_EPlus")
+			{
+				expressionAffectee = (EPlus*)symbole;
+				
+			}else if (symbole->toString()== "I_EMult")
+			{	
+				expressionAffectee = (EMult*)symbole;
+				
+			}else if (symbole->toString()== "I_EPar")
+			{
+				expressionAffectee = (EParantheses*)symbole;
+				
+			}else
+				expressionAffectee = (E*)symbole;
 			break;
 	}
 	return true;
@@ -53,7 +68,7 @@ string AffectationInstr::print()
 
 	string retour = variableSeFaisantAffecter->print();
 	retour.append(" := ");
-	//retour.append(expressionAffectee->print());
+	retour.append(expressionAffectee->print());
 	retour.append(";");
 	return retour;
 }

@@ -2,6 +2,15 @@
 #define AffectationINSTRUCTION_H
 
 #include "Symbole.h"
+#include "Instruction.h"
+#include "Variable.h"
+#include "Valeur.h"
+#include "E.h"
+#include <sstream>
+#include "EParantheses.h"
+#include "EMult.h"
+#include "EPlus.h"
+
 
 class Instruction;
 class Variable;
