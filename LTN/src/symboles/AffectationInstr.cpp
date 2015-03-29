@@ -50,5 +50,9 @@ string AffectationInstr::print()
 
 	cout << "------ AffectationInstr::print()" << endl;
 
-	return "ciao";
+	string retour = variableSeFaisantAffecter->print();
+	retour.append(" := ");
+	//retour.append(expressionAffectee->print());
+	retour.append(";");
+	return retour;
 }
