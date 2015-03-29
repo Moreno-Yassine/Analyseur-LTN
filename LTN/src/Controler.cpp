@@ -172,15 +172,15 @@ void Controler::transformation()
 
 void Controler::affichage()
 {
-    cout << "J'execute l'affichage..." << endl << endl;
+    cout << "-----J'affiche le programme..." << endl << endl;
     programManager->displayProgram();
-    cout<<"Affichage du programme terminée." <<endl;
+    cout<< endl << "----Affichage du programme terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 }
 
 void Controler::execution()
 {
-    cout << "J'execute l'affichage..." << endl << endl;
+    cout << "J'execute le programme..." << endl << endl;
     programManager->execute();
     cout<<"Execution terminée." <<endl;
     cout << endl << "##################" << endl << endl;

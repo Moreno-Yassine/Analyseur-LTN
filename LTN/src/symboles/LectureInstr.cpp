@@ -27,7 +27,7 @@ bool LectureInstr::setParam(Symbole* symbole, int place)
 string LectureInstr::print()
 {
 
-	cout << "------ LectureInstr::print()" << endl;
+	//cout << "------ LectureInstr::print()" << endl;
 
 	string retour ="lire ";
 	retour.append(variableLue->print());
