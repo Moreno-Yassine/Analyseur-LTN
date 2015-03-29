@@ -2,6 +2,11 @@
 #define EcritureINSTRUCTION_H
 
 #include "Symbole.h"
+#include "EParantheses.h"
+#include "EMult.h"
+#include "EPlus.h"
+#include "Variable.h"
+#include "Valeur.h"
 
 class Instruction;
 class E;

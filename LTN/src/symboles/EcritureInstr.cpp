@@ -20,7 +20,29 @@ double EcritureInstr::eval()
 
 bool EcritureInstr::setParam(Symbole* symbole, int place)
 {
-	expressionAEcrire = (E*)symbole;
+	if(symbole->toString()== "I_ID")
+	{
+		expressionAEcrire = (Variable*)symbole;
+		
+	}else if (symbole->toString()== "I_NB")
+	{
+		expressionAEcrire = (Valeur*)symbole;
+		
+	}else if (symbole->toString()== "I_EPlus")
+	{
+		expressionAEcrire = (EPlus*)symbole;
+		
+	}else if (symbole->toString()== "I_EMult")
+	{	
+		expressionAEcrire = (EMult*)symbole;
+		
+	}else if (symbole->toString()== "I_EPar")
+	{
+		expressionAEcrire = (EParantheses*)symbole;
+		
+	}else
+		expressionAEcrire = (E*)symbole;
+	
 	return true;
 }
 
@@ -40,7 +62,7 @@ string EcritureInstr::print()
 	cout << "------ EcritureInstr::print()" << endl;
 
 	string retour ="ecrire ";
-	//retour.append(expressionAEcrire->print());
+	retour.append(expressionAEcrire->print());
 	retour.append(";");
 
 	return retour;

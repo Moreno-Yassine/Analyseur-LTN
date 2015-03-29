@@ -3,7 +3,7 @@
 
 EParantheses::EParantheses()
 {
-	expression = new E();
+	expression = NULL;
 }
 
 EParantheses::~EParantheses()

@@ -3,16 +3,19 @@
 
 #include "Symbole.h"
 #include <string>
+#include <sstream>
+#include "E.h"
 
 using namespace std;
 
-class Valeur : public Symbole
+class Valeur : public E
 {
     public:
         Valeur();
         Valeur(string valeur);
         virtual ~Valeur();
 		double eval();
+		string print();
 		bool setParam(Symbole* symbole,int noPlace);
 
     private:
