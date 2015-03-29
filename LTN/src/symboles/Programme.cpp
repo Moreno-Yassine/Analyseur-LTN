@@ -23,7 +23,7 @@ bool Programme::setParam(Symbole* symbole, int placeSymbole)
 
 bool Programme::executer()
 {
-	cout << "--------Begin Programme::execute()" << endl;
+	//cout << "--------Begin Programme::execute()" << endl;
 	if(!ptLd->executer())
 		return false;
 	if(!ptLi->executer())

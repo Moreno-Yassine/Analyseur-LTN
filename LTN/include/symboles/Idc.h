@@ -4,6 +4,7 @@
 #include "Symbole.h"
 #include <iostream>
 #include <sstream>
+
 class Variable;
 class Valeur;
 

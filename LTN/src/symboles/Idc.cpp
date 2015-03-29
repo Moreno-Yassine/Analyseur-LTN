@@ -16,8 +16,14 @@ Idc::~Idc()
 
 
 bool Idc::executer()
-{
-	variable->affecter(valeur,this);
+{	
+	for(int i=0; i<(int)listeVariables.size(); i++)
+	{
+		listeVariables[i]->affecter(listeValeurs[i],this);
+
+		//cout << "Variable : " << listeVariables[i]->getNom() << ". Value : " << listeValeurs[i]->eval();
+	}
+	//variable->affecter(valeur,this);
 	return true;
 }
 		
@@ -59,9 +65,10 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 				//RAISE EXCEPTION
 				return false;
 			}
-			listeVariables.push_back((Variable*)symbole);
+			
 			variable = (Variable*)symbole;
 			variable->setConst();
+			listeVariables.push_back((Variable*)symbole);
 			break;
 		case 2:
 			//Le second element lu est la valeur

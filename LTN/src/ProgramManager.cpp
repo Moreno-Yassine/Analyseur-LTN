@@ -22,7 +22,7 @@ void ProgramManager::analyseStatique()
 
 void ProgramManager::execute()
 {
-    cout << "--------Begin ProgramManager::execute()" << endl;
+    //cout << "--------Begin ProgramManager::execute()" << endl;
 	(this->program)->executer();
 }
 

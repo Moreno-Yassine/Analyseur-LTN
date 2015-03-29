@@ -23,9 +23,11 @@ Valeur::~Valeur()
 	
 }
 
-bool Valeur::setParam(Symbole* symbole,int noPlace)
+bool Valeur::setParam(Symbole* symbole,int placeSymbole)
 {
 	valeur = ((Valeur*)symbole)->eval();
+	cout << "SYMBOLE NB : " << symbole->getIdSymbole() << endl;;
+	cout << "SYMBOLE VALUE : " << valeur << endl;
 	return true;
 }
 

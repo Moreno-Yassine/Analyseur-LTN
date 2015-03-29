@@ -16,7 +16,7 @@ class Valeur : public E
         virtual ~Valeur();
 		double eval();
 		string print();
-		bool setParam(Symbole* symbole,int noPlace);
+		bool setParam(Symbole* symbole,int placeSymbole);
 
     private:
     	double valeur;

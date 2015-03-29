@@ -126,7 +126,7 @@ void Automate::reduction(int numeroRegle)
 					case 9:												
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
-						cout<<"case 10"<<endl;
+						cout<<"case 9"<<endl;
 						break;
 					case 10:
 						symbole = new Idv(); 
@@ -442,7 +442,8 @@ Programme* Automate::lecture()
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
 		// TEST JULIEN
-        this->affichageEtatAutomate(ptSymboleSuivant);
+
+        //this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 
@@ -480,8 +481,10 @@ void Automate::affichageEtatAutomate(Symbole* symbole)
 
 Variable* Automate::associerIdVariable(Variable* var)
 {
+	cout << var->getNom() << endl;
 	if(pointeurDeclarations==NULL)
 	{
+		cout << "No declarations" << endl;
 		//RAISE EXCEPTION
 		pointeurDeclarations = new Ld();
 		pointeurDeclarations->setLdNonPresent();
@@ -494,8 +497,10 @@ Variable* Automate::associerIdVariable(Variable* var)
 	Variable* ptVar = pointeurDeclarations->trouver(var->getNom());
 	if(ptVar == NULL)
 	{
+		cout << "New variable" << endl;
 		//RAISE EXCEPTION
 		return new Variable(var->getNom());
 	}
+	cout << "variable found" << endl;
 	return ptVar;
 }

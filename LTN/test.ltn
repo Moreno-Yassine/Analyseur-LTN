@@ -1,16 +1,4 @@
-var var;
-var s;
-
-
-
-
-
-
-
-
-const p = 2;
-exp := 3;
-s := p+exp;
-lire exp;
-ecrire ( exp1 + ( exp2 + exp3 ) ) ;
-a := a1 + a2 * a3 + a4 + a5 * a6 * a7 ;
+const a=1, b=2, c=3;
+ecrire a;
+ecrire b;
+ecrire c;

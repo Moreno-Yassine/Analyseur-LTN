@@ -1,6 +1,8 @@
 #include "../../include/symboles/Variable.h"
 #include "../../include/symboles/Valeur.h"
 
+#include <iostream>
+
 Variable::Variable(): E(I_ID, "I_ID")
 {
 
@@ -23,6 +25,8 @@ string Variable::print()
 
 double Variable::eval()
 {
+	cout << "Valeurs size : " << listeValeurs.size() << endl;
+	cout << "Value name : " << nom << endl;
 	if(listeValeurs.size()>0)
 		return listeValeurs.back().second->eval();
 	else
@@ -43,6 +47,8 @@ void Variable::vider()
 
 bool Variable::affecter(Valeur* valeur,Symbole* lieuAffectation)
 {
+	cout << "Value name : " << nom << endl;
+	cout << "Value value mmm :" << valeur->eval() << endl;
 	listeValeurs.push_back(pair<Symbole*,Valeur*>(lieuAffectation,valeur));
 	return true;
 }
