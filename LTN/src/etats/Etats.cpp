@@ -257,6 +257,7 @@ bool E8::transition(Automate &a, Symbole* s)
 			break;
 		case I_vrg:
 			a.reduction(9);
+			break;
 		default:
 			throw 0;
 			break;
@@ -1276,6 +1277,7 @@ bool E40::transition(Automate &a, Symbole* s)
 	 {
 		case I_pvrg:
 			a.decalage(s,new E41);
+			break;
 		default:
 			throw 0;
 			break;
