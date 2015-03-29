@@ -32,14 +32,22 @@ string  Idv::print()
 	{	
 		resultat<<"var ";
 		resultat<<listeVariables[i]->getNom();
-		resultat<<";"<<endl;
+		resultat<<";";
 	}
 	
 	return resultat.str(); 
 }
 		
 bool Idv::setParam(Symbole* symbole, int noPlace)
-{	
+{
+	if(variable != NULL)
+	{
+		variable = (Variable*)symbole;
+		listeVariables.push_back((Variable*)symbole);
+		//RAISE EXCEPTION
+		return false;
+	}
 	listeVariables.push_back((Variable*)symbole);
+	variable = (Variable*)symbole;
 	return true;
 }
