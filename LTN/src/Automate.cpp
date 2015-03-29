@@ -60,7 +60,8 @@ void Automate::reduction(int numeroRegle)
 
         switch(idSymbole)
         {
-            case I_Pprime : symbole = NULL; break;
+            case I_Pprime : symbole = NULL;
+            	break;
             case I_P :
             	//cout << "Je crée le programme" << endl;
 				symbole = new Programme();

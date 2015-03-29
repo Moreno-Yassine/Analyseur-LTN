@@ -178,8 +178,10 @@ void Controler::affichage()
 
 void Controler::execution()
 {
-    cout<<"J'execute le programme" <<endl;
+    cout << "J'execute l'affichage..." << endl << endl;
     programManager->execute();
+    cout<<"Execution terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
 }
 
 void Controler::analyse_statique()

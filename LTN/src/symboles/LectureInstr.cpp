@@ -37,6 +37,28 @@ string LectureInstr::print()
 
 bool LectureInstr::executer()
 {
-	//TODO
+	string value;
+	cout << "Rentrez une valeur numérique pour la variable " << variableLue->print() << " : " << endl;
+	cin >> value;
+	while (!is_number(value))
+	{
+		cout << "Erreur : La valeur rentrée n'est pas numérique." << endl;
+		cout << "Rentrez une valeur numérique pour la variable " << variableLue->print() << " : " << endl;
+		cin.ignore();
+		cin >> value;
+	}
+
+	variableLue->affecter(new Valeur(value), this);
+
+	//cout << variableLue->print() << " = ";
+	//cout << variableLue->eval() << endl;
+
 	return true;
+}
+
+bool LectureInstr::is_number(const std::string& s)
+{
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it)) ++it;
+    return !s.empty() && it == s.end();
 }
