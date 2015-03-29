@@ -442,7 +442,7 @@ Programme* Automate::lecture()
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
 		// TEST JULIEN
-        //this->affichageEtatAutomate(ptSymboleSuivant);
+        this->affichageEtatAutomate(ptSymboleSuivant);
 		expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
 	}
 

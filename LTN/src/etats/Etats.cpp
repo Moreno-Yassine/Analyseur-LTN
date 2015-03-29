@@ -1,6 +1,7 @@
 #include "../../include/etats/Etats.h"
 #include "../../include/Automate.h"
 #include "../../include/symboles/ID_Symboles.h"
+#include "../../include/Exceptions.h"
 
 /* --------------- ETAT 0 ------------------
  *
@@ -35,6 +36,7 @@ bool E0::transition(Automate &a, Symbole* s)
 			a.reduction(4);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 
@@ -59,6 +61,7 @@ bool E1::transition(Automate &a, Symbole* s)
 			return true;
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -103,6 +106,7 @@ bool E2::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E17);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -128,6 +132,7 @@ bool E3::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E9);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -153,6 +158,7 @@ bool E4::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E6);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -178,6 +184,7 @@ bool E5::transition(Automate &a, Symbole* s)
 			a.reduction(10);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -203,6 +210,7 @@ bool E6::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E7);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -225,6 +233,7 @@ bool E7::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E8);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -249,6 +258,7 @@ bool E8::transition(Automate &a, Symbole* s)
 		case I_vrg:
 			a.reduction(9);
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -274,6 +284,7 @@ bool E9::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E10);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -296,6 +307,7 @@ bool E10::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E11);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -318,6 +330,7 @@ bool E11::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E12);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -340,6 +353,7 @@ bool E12::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E13);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -365,6 +379,7 @@ bool E13::transition(Automate &a, Symbole* s)
 			a.reduction(7);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -387,6 +402,7 @@ bool E14::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E15);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -409,6 +425,7 @@ bool E15::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E16);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -434,6 +451,7 @@ bool E16::transition(Automate &a, Symbole* s)
 			a.reduction(8);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -475,6 +493,7 @@ bool E17::transition(Automate &a, Symbole* s)
 			break;
 
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -498,6 +517,7 @@ bool E18::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E19);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -521,6 +541,7 @@ bool E19::transition(Automate &a, Symbole* s)
 			a.reduction(13);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -544,6 +565,7 @@ bool E20::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E21);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -576,6 +598,7 @@ bool E21::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E27);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -615,6 +638,7 @@ bool E22::transition(Automate &a, Symbole* s)
 			a.reduction(17);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -653,6 +677,7 @@ bool E23::transition(Automate &a, Symbole* s)
 			a.reduction(16);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -686,6 +711,7 @@ bool E24::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E25);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -728,6 +754,7 @@ bool E25::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E33);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -766,6 +793,7 @@ bool E26::transition(Automate &a, Symbole* s)
 			a.reduction(20);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -809,6 +837,7 @@ bool E27::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E33);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -838,6 +867,7 @@ bool E28::transition(Automate &a, Symbole* s)
 			a.reduction(23);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -867,6 +897,7 @@ bool E29::transition(Automate &a, Symbole* s)
 			a.reduction(24);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -896,6 +927,7 @@ bool E30::transition(Automate &a, Symbole* s)
 			a.reduction(22);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -925,6 +957,7 @@ bool E31::transition(Automate &a, Symbole* s)
 			a.reduction(21);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -957,6 +990,7 @@ bool E32::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E24);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -989,6 +1023,7 @@ bool E33::transition(Automate &a, Symbole* s)
 			a.decalage(s,new E24);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1034,6 +1069,7 @@ bool E34::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E33);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1067,6 +1103,7 @@ bool E35::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E24);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1108,6 +1145,7 @@ bool E36::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E33);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1152,6 +1190,7 @@ bool E37::transition(Automate &a, Symbole* s)
 			a.decalageSansConsommation(new E33);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1176,6 +1215,7 @@ bool E38::transition(Automate &a, Symbole* s)
 			a.decalage(s, new E39);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1213,6 +1253,7 @@ bool E39::transition(Automate &a, Symbole* s)
 			a.reduction(3);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1236,6 +1277,7 @@ bool E40::transition(Automate &a, Symbole* s)
 		case I_pvrg:
 			a.decalage(s,new E41);
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
@@ -1268,6 +1310,7 @@ bool E41::transition(Automate &a, Symbole* s)
 			a.reduction(11);
 			break;
 		default:
+			throw SymboleSuivantNonConformeException;
 			break;
 	}
 	
