@@ -1,3 +1,5 @@
 const a=3, b=5, d=0;
-var res, cane;
+var giuseppe, cane;
 ecrire a;
+lire giuseppe;
+ecrire giuseppe / a;

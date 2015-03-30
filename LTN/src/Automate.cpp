@@ -4,7 +4,7 @@
 #include "../include/symboles/Variable.h"
 #include "../include/symboles/Valeur.h"
 
-Automate::Automate()
+Automate::Automate(map<int, string> &Erreurs) : erreurs(Erreurs)
 {
     pileSymboles = new vector<Symbole*>();
     pileEtats = new vector<Etat*>();
@@ -12,6 +12,7 @@ Automate::Automate()
     currentLexer = Lexer();
     this->constructionPileReductions();
 	pointeurDeclarations = NULL;
+	erreurNb = 0;
 }
 
 Automate::~Automate()
@@ -451,7 +452,24 @@ Programme* Automate::lecture()
     	}
         catch(int i)
         {
-            throw 0; // On lève une exception de Symbole Suivant non Conforme
+        	cerr << endl << "--------Attention------" << endl;
+        	switch(ptSymboleSuivant->getIdSymbole())
+        	{
+        		case 25:
+        			cerr << "Le nom de la variable (ou constante) : \"" << currentLexer.getTextLu();
+        			cerr << "\" ne respecte pas la bonne synthaxe." << endl;
+        			break;
+        		 case 26:
+        			cerr << "Le nom de la variable (ou constante) : \"" << currentLexer.getTextLu();
+        			cerr << "\" ne respecte pas la bonne synthaxe." << endl;
+        			break;
+        		default :
+        			cerr << "Le symbole : \"" << currentLexer.getTextLu();
+        			cerr << "\" ne respecte pas la grammaire." << endl;
+					break;
+        	}
+
+        	throw 0; // On lève une exception de Symbole Suivant non Conforme
         }
     }
 	//std::cout << typeid(pileSymboles->back()).name() << '\n';
@@ -506,9 +524,8 @@ Variable* Automate::associerIdVariable(Variable* var)
 	{
 		//cout << "New variable" << endl;
 		//RAISE EXCEPTION
-		cerr << endl << "----------Attention /!\\----" << endl;
-		cerr<< "La variable \"" << var->getNom() << "\" n'est pas déclarée." << endl;
-		cerr << "------------" << endl << endl;
+		erreurs.insert(std::pair<int,string>(erreurNb, var->getNom()));
+		erreurNb++;
 		return new Variable(var->getNom());
 	}
 

@@ -6,6 +6,7 @@ using namespace std;
 Lexer::Lexer()
 {
 	noLigneCourant = 1;
+	motSuivant = "";
 }
 
 Lexer::~Lexer()
@@ -14,8 +15,7 @@ Lexer::~Lexer()
 
 //TODO
 Symbole* Lexer::getNext()
-{	
-	string motSuivant = "";
+{
 	IdSymbole idSymbole = I_NULL;
     //cout<<"position : "<<position<<endl;
 	if(position >= (int)fluxCourant.size())
@@ -65,3 +65,4 @@ void Lexer::shift()
 {
 	position++;
 }
+

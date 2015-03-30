@@ -41,11 +41,14 @@ class Lexer
 
 		int getNoLigneCourant() { return noLigneCourant; };
 
+		string getTextLu() { return motSuivant; };
+
     private:
 		vector<string> fluxCourant;
 		Dictionary* rulesDictionary;
 		int position;
 		int noLigneCourant;
+		string motSuivant;
 };
 
 #endif // LEXER_H

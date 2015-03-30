@@ -28,7 +28,7 @@ struct Reduction
 class Automate
 {
     public:
-        Automate();
+        Automate(map<int, string> &Erreurs);
         virtual ~Automate();
 
         vector<Etat*>* getPileEtats();
@@ -78,6 +78,8 @@ class Automate
         vector<Reduction>* pileReductions;
         Lexer currentLexer;
 		Ld* pointeurDeclarations;
+		map<int, string> &erreurs;
+		int erreurNb;
 
 };
 

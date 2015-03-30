@@ -15,9 +15,9 @@ void ProgramManager::setProgram(Programme* programme)
     this->program = programme;
 }
 
-void ProgramManager::analyseStatique()
+void ProgramManager::analyseStatique(map<int,string> &erreurs)
 {
-    cout << "--------Begin ProgramManager::analyseStatique()" << endl;
+    afficheVariablesPasDecl(erreurs);
 }
 
 void ProgramManager::execute()
@@ -34,6 +34,20 @@ void ProgramManager::displayProgram()
 
 void ProgramManager::optimise()
 {
+
+}
+
+void ProgramManager::afficheVariablesPasDecl(map<int,string> &erreurs)
+{
+    cerr << erreurs.size() << " variables (ou constantes) pas déclarées : " << endl;
+
+    for(int i=0; i< erreurs.size(); i++)
+    {
+		cerr << "\"" << erreurs[i] << "\"" << endl;
+    }
+
+    cerr << "------------" << endl;
+
 
 }
 
