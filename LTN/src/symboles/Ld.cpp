@@ -32,9 +32,9 @@ bool Ld::executer()
 
 Variable* Ld::trouver(string nomVariable)
 {
-	/*map<string, Variable*>::iterator val = listeVariablesNonDeclarees.find(nomVariable);
+	map<string, Variable*>::iterator val = listeVariablesNonDeclarees.find(nomVariable);
 	if(val!=listeVariablesNonDeclarees.end())
-		return val->second;*/
+		return val->second;
 	//cout << "Begin Ld::trouver " << endl;
 	for(int i=0;i<(int)listeDeclarations.size();i++)
 	{

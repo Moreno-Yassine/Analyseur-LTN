@@ -506,6 +506,9 @@ Variable* Automate::associerIdVariable(Variable* var)
 	{
 		//cout << "New variable" << endl;
 		//RAISE EXCEPTION
+		cerr << endl << "----------Attention /!\\----" << endl;
+		cerr<< "La variable \"" << var->getNom() << "\" n'est pas déclarée." << endl;
+		cerr << "------------" << endl << endl;
 		return new Variable(var->getNom());
 	}
 

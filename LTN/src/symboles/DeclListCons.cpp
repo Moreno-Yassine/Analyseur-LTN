@@ -28,6 +28,8 @@ bool DeclListCons::executer()
 bool DeclListCons::setParam(Symbole* symbole, int noPlace)
 {
 	listeConstDeclareesIci.push_back((Idc*)symbole);
+
+	return true;
 }
 
 Variable* DeclListCons::trouver(string nomVariable)

@@ -3,5 +3,5 @@ var x , y , t ;
 ecrire n2;
 lire x;
 ecrire x;
-ecrire x*n2;
+ecrire x+f*asama+5;
 
