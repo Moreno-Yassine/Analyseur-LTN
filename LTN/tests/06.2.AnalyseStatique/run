@@ -1,1 +1,1 @@
-../../bin/LTN ../files/static2.lt
+../../bin/LTN -a ../files/static2.lt
