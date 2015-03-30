@@ -20,6 +20,7 @@ class EcritureInstr : public Instruction
 		bool executer();
 		string print();
         bool setParam(Symbole* symbole, int place);
+        bool checkModifiedConst();
 
     private:
 		E* expressionAEcrire;

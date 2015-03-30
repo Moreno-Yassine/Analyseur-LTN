@@ -46,3 +46,13 @@ bool Programme::display()
 		return false;
 	return true;
 }
+
+bool Programme::checkModifiedConst()
+{
+	if(ptLi!=NULL)
+	{
+		return ptLi->checkModifiedConst();
+	}
+
+	return false;
+}

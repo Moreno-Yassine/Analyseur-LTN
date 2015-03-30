@@ -66,3 +66,8 @@ string EcritureInstr::print()
 
 	return retour;
 }
+
+bool EcritureInstr::checkModifiedConst()
+{
+	return false;
+}

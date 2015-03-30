@@ -19,6 +19,7 @@ class Programme : public Symbole
 		 **/
 		bool executer();
 		bool display();
+		bool checkModifiedConst();
 
     private:
 		Ld* ptLd;

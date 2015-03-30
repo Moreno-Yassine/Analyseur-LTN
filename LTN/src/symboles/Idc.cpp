@@ -73,14 +73,16 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 			if(variable != NULL)
 			{
 				variable = (Variable*)symbole;
-				listeConstantes.push_back((Variable*)symbole);
+				variable->setConst();
+				listeConstantes.push_back(variable);
+
 				//RAISE EXCEPTION
 				return false;
 			}
 			
 			variable = (Variable*)symbole;
 			variable->setConst();
-			listeConstantes.push_back((Variable*)symbole);
+			listeConstantes.push_back((Variable*)variable);
 			break;
 		case 2:
 			//Le second element lu est la valeur

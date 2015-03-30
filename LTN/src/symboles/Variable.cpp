@@ -52,3 +52,5 @@ bool Variable::affecter(Valeur* valeur,Symbole* lieuAffectation)
 	listeValeurs.push_back(pair<Symbole*,Valeur*>(lieuAffectation,valeur));
 	return true;
 }
+
+

@@ -17,6 +17,7 @@ class LectureInstr : public Instruction
 		double eval();
 		bool executer();
 		bool is_number(const std::string& s);
+		bool checkModifiedConst();
 
     private:
 		Variable* variableLue;

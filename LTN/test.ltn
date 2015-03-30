@@ -1,5 +1,7 @@
-const a=3, b=5, d=0;
-var giuseppe, cane;
-ecrire a;
-lire giuseppe;
-ecrire giuseppe / a;
+const constante = 5, casa = 10;
+var gatto;
+ecrire a + z + 8 + casa + cane;
+lire casa;
+ecrire casa;
+casa := 5*8;
+ecrire a / f / zitto;

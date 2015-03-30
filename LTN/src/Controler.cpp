@@ -74,7 +74,7 @@ void Controler::run(char* path)
 
     memload();
 
-    if (option_p)
+    if (option_p && !option_o)
     {
         affichage();
     }
@@ -165,15 +165,25 @@ void Controler::memload()
 
 void Controler::transformation()
 {
+    cout << endl << "##################" << endl << endl;
     cout<<"-----J'execute l'optimisation..." <<endl;
     programManager->optimise();
     cout<<endl<<"-----Optimisation terminée." <<endl;
     cout << endl << "##################" << endl << endl;
+
+    if(option_p)
+    {
+        affichage();
+    }
+
 }
 
 void Controler::affichage()
 {
-    analyse_statique();
+    if(!option_o)
+    {
+        analyse_statique();
+    }
     cout << "-----J'affiche le programme..." << endl << endl;
 
     programManager->displayProgram();

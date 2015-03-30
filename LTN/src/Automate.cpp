@@ -506,7 +506,6 @@ void Automate::affichageEtatAutomate(Symbole* symbole)
 
 Variable* Automate::associerIdVariable(Variable* var)
 {
-
 	if(pointeurDeclarations==NULL)
 	{
 		//RAISE EXCEPTION
@@ -515,6 +514,8 @@ Variable* Automate::associerIdVariable(Variable* var)
 
 		Variable* newVar = new Variable(var->getNom());
 		pointeurDeclarations->ajouterVariableNonDeclaree(newVar);
+		erreurs.insert(std::pair<int,string>(erreurNb, var->getNom()));
+		erreurNb++;
 		return newVar;
 	}
 
