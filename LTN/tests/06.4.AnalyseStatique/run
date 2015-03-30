@@ -1,1 +1,1 @@
-../../bin/LTN ../files/nondeclared.lt
+../../bin/LTN -a ../files/nondeclared.lt
