@@ -59,8 +59,8 @@ bool Programme::checkModifiedConst()
 
 bool Programme::checkVarPasAffectées()
 {
-	if(!ptLd->executer())
-		return false;
+	/*if(!ptLd->executer())
+		return false;*/
 	if(ptLi!=NULL)
 	{
 		return ptLi->checkVarPasAffectées();

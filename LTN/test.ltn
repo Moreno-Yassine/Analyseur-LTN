@@ -1,3 +1,2 @@
-const gatto = 10;
-lire gatto;
-ecrire gatto;
+const constante = 5;
+lire constante;
