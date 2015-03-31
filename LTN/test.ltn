@@ -1,7 +1,3 @@
-const constante = 5, casa = 10;
-var gatto;
-ecrire a + z + 8 + casa + cane;
-lire casa;
-ecrire casa;
-casa := 5*8;
-ecrire a / f / zitto;
+const gatto = 10;
+lire gatto;
+ecrire gatto;

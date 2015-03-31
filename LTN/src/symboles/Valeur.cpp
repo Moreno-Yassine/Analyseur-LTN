@@ -35,3 +35,8 @@ string Valeur::print()
 	resultat<<this->valeur;
 	return resultat.str();
 }
+
+bool Valeur::checkVarPasAffectees()
+{
+	return false;
+}

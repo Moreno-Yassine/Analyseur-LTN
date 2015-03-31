@@ -204,7 +204,15 @@ void Controler::execution()
 void Controler::analyse_statique()
 {
     cout<<"-----J'execute l'analyse statique..." << endl << endl;
-    programManager->analyseStatique(erreurs);
+    try
+    {
+        programManager->analyseStatique(erreurs);
+    }
+    catch(int i)
+    {
+        throw SymbolePasDeclarée;
+    }
+
     cout<<endl<<"-----Analyse terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 }

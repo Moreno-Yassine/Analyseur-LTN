@@ -15,6 +15,7 @@ class Li : public Symbole
 		bool executer();
 		bool display();
 		bool checkModifiedConst();
+		bool checkVarPasAffectées();
 
     private:
 		vector<Instruction*> listeInstructions;

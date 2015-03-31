@@ -77,3 +77,8 @@ bool LectureInstr::checkModifiedConst()
 
 	return false;
 }
+
+bool LectureInstr::checkVarPasAffectees()
+{
+	return false;
+}

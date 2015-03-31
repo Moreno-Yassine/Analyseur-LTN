@@ -91,3 +91,13 @@ bool AffectationInstr::checkModifiedConst()
 
 	return false;
 }
+
+bool AffectationInstr::checkVarPasAffectees()
+{
+	if(expressionAffectee->checkVarPasAffectees())
+	{
+		return true;
+	}
+
+	return false;
+}

@@ -17,11 +17,12 @@ class Variable : public E
 		string getNom()		{ return nom; };
 		bool estAffecte()	{ return (listeValeurs.size()>0); };
 		bool affecter(Valeur* valeur,Symbole* lieuAffectation);
-		bool estConst()		{ return constante; };
-		void setConst()		{ constante=true; };
+		bool estConst();
+		void setConst();
 		void vider();
 		double eval();
 		string print();
+		bool checkVarPasAffectees();
         virtual ~Variable();
 
     private:

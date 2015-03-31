@@ -11,6 +11,7 @@ class EBin : public E
         virtual ~EBin();
 		virtual string print();
 		double eval();
+		bool checkVarPasAffectees();
 		virtual bool setParam(Symbole* symbole, int noPlace);
 
     private:

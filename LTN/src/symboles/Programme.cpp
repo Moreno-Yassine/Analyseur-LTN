@@ -56,3 +56,25 @@ bool Programme::checkModifiedConst()
 
 	return false;
 }
+
+bool Programme::checkVarPasAffectées()
+{
+	if(!ptLd->executer())
+		return false;
+	if(ptLi!=NULL)
+	{
+		return ptLi->checkVarPasAffectées();
+	}
+
+	return false;
+}
+
+bool Programme::checkDoublons()
+{
+	if(ptLd!=NULL)
+	{
+		return ptLd->checkDoublons();
+	}
+
+	return false;
+}

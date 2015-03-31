@@ -47,3 +47,17 @@ bool Li::checkModifiedConst()
 
 	return constModified;
 }
+
+bool Li::checkVarPasAffectées()
+{
+	bool varPasAffect;
+	for(int i=0;i<(int)listeInstructions.size();i++)
+	{
+		if(listeInstructions[i]->checkVarPasAffectees())
+		{
+			varPasAffect = true;
+		}
+	}
+
+	return varPasAffect;
+}

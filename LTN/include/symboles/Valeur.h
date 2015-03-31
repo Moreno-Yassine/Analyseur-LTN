@@ -17,6 +17,7 @@ class Valeur : public E
 		double eval();
 		string print();
 		bool setParam(Symbole* symbole,int placeSymbole);
+		bool checkVarPasAffectees();
 
     private:
     	double valeur;

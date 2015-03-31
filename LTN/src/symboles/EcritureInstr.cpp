@@ -71,3 +71,12 @@ bool EcritureInstr::checkModifiedConst()
 {
 	return false;
 }
+
+bool EcritureInstr::checkVarPasAffectees()
+{
+	if(expressionAEcrire->checkVarPasAffectees())
+	{
+		return true;
+	}
+	return false;
+}

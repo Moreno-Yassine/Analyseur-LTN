@@ -12,6 +12,7 @@ class EParantheses : public E
 		string print();
 		double eval();
 		bool setParam(Symbole* symbole, int noPlace);
+		bool checkVarPasAffectees();
     private:
 		E* expression;
 

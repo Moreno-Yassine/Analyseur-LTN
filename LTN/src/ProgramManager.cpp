@@ -21,7 +21,19 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
     if(program -> checkModifiedConst())
     {
         cerr << "------------" << endl;
+
+        // Peut etre throw?
     }
+
+    /*if(program -> checkVarPasAffectées())
+    {
+        //cerr << "------------" << endl;
+    }*/
+
+    /*if(program -> checkDoublons())
+    {
+
+    }*/
 }
 
 void ProgramManager::execute()
@@ -43,6 +55,7 @@ void ProgramManager::optimise()
 
 void ProgramManager::afficheVariablesPasDecl(map<int,string> &erreurs)
 {
+    bool err = false;
     int varPasDecl = 0;
     vector<string> names;
 
@@ -50,6 +63,7 @@ void ProgramManager::afficheVariablesPasDecl(map<int,string> &erreurs)
     {
         names.push_back(erreurs[0]);
         varPasDecl++;
+        err = true;
     }
 
     bool trouve = false;
@@ -81,6 +95,8 @@ void ProgramManager::afficheVariablesPasDecl(map<int,string> &erreurs)
 
     cerr << "------------" << endl;
 
+    if (err)
+        throw 0;
 
 }
 

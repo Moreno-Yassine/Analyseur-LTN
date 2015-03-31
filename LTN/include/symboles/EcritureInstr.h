@@ -21,6 +21,7 @@ class EcritureInstr : public Instruction
 		string print();
         bool setParam(Symbole* symbole, int place);
         bool checkModifiedConst();
+        bool checkVarPasAffectees();
 
     private:
 		E* expressionAEcrire;

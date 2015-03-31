@@ -527,7 +527,8 @@ Variable* Automate::associerIdVariable(Variable* var)
 		//RAISE EXCEPTION
 		erreurs.insert(std::pair<int,string>(erreurNb, var->getNom()));
 		erreurNb++;
-		return new Variable(var->getNom());
+		var->affecter(new Valeur("50"), var);
+		return var;
 	}
 
 	return ptVar;

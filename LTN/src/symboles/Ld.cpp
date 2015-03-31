@@ -68,3 +68,19 @@ bool Ld::display()
 	cout << endl;
 	return true;
 }
+
+bool Ld::checkDoublons()
+{
+	/*int found = 0;
+
+	for(int i=0;i<(int)listeDeclarations.size();i++)
+	{
+		if(listeDeclarations[i]->trouver(listeDeclarations[i])!=NULL)
+		{
+			//cout << "End Ld::trouver " << endl;
+			return listeDeclarations[i]->trouver(nomVariable);
+		}
+	}*/
+
+	return false;
+}

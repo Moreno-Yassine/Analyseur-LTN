@@ -52,5 +52,13 @@ class Exception_Six : public exception
   }
 } SymboleSuivantNonConformeException;
 
+class Exception_Seven : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Erreur Symbole Pas Déclaré - Le programme ne peut pas continuer \n\n##################\n";
+  }
+} SymbolePasDeclarée;
+
 
 #endif // EXCEPTIONS_H

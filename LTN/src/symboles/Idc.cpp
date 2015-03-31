@@ -69,6 +69,7 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 	switch(noPlace)
 	{
 		case 1:
+
 			//Le premier element lu est l'id
 			if(variable != NULL)
 			{

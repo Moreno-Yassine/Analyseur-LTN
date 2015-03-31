@@ -33,6 +33,20 @@ double EPlus::eval()
 
 }
 
+bool EPlus::checkVarPasAffectees()
+{
+	if(exprGauche->checkVarPasAffectees())
+	{
+		return true;
+	}
+	if(exprDroite->checkVarPasAffectees())
+	{
+		return true;
+	}
+
+	return false;
+}
+
 string EPlus::print()
 {
 	string valeur(exprGauche->print());
