@@ -26,6 +26,11 @@ string E::print()
 	//TODO
 }
 
+bool E::checkVarPasAffectees()
+{
+	//TODO
+}
+
 void E::setId(IdSymbole idSymP, string stringIDP)
 {
 	idSym = idSymP;

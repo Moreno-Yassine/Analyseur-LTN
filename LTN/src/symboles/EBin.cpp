@@ -22,6 +22,11 @@ double EBin::eval()
 	
 }
 
+bool EBin::checkVarPasAffectees()
+{
+
+}
+
 
 bool EBin::setParam(Symbole* symbole, int noPlace)
 {

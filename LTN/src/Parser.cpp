@@ -19,10 +19,10 @@ void Parser::show_options()
 {
 	cout << "Options disponibles : " <<endl;
 	cout << "----------------------" <<endl;
-	cout << options->at(0)+" : desc" << endl;
-	cout << options->at(1)+" : desc" << endl;
-	cout << options->at(2)+" : desc" << endl;
-	cout << options->at(3)+" : desc" << endl;
+	cout << options->at(0)+" : optimisation" << endl;
+	cout << options->at(1)+" : analyse statique" << endl;
+	cout << options->at(2)+" : affichage" << endl;
+	cout << options->at(3)+" : execution" << endl;
 	cout << "Sans argument : description des options disponibles"<<endl;
 }
 

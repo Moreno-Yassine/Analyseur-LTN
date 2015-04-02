@@ -36,6 +36,11 @@ class Automate
 		 */
         Automate();
 
+		/* Constructeur Personalisé de la Classe Automate
+		 * @return : N/A
+		 */
+		Automate(map<int, string> &Erreurs);
+
 		/* Destructeur de la Classe Automate
 		 * @return : N/A
 		 */
@@ -127,6 +132,8 @@ class Automate
         vector<Reduction>* pileReductions;
         Lexer currentLexer;
 		Ld* pointeurDeclarations;
+		map<int, string> &erreurs;
+		int erreurNb;
 
 };
 

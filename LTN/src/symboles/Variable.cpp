@@ -5,12 +5,12 @@
 
 Variable::Variable(): E(I_ID, "I_ID")
 {
-
 }
 
 Variable::Variable(string mot): E(I_ID, "I_ID")
 {
 	nom = mot;
+	this->constante = false;
 }
 
 Variable::~Variable()
@@ -25,8 +25,6 @@ string Variable::print()
 
 double Variable::eval()
 {
-	//cout << "Valeurs size : " << listeValeurs.size() << endl;
-	//cout << "Value name : " << nom << endl;
 	if(listeValeurs.size()>0)
 		return listeValeurs.back().second->eval();
 	else
@@ -47,8 +45,22 @@ void Variable::vider()
 
 bool Variable::affecter(Valeur* valeur,Symbole* lieuAffectation)
 {
-	//cout << "Value name : " << nom << endl;
-	//cout << "Value value mmm :" << valeur->eval() << endl;
 	listeValeurs.push_back(pair<Symbole*,Valeur*>(lieuAffectation,valeur));
 	return true;
+}
+
+bool Variable::checkVarPasAffectees()
+{
+	cerr << endl << "------La variable \"" << this->print() << "\" est utilisée avant d'etre affectée." << endl;
+	return estAffecte();
+}
+
+bool Variable::estConst()
+{
+	return this->constante;
+}
+
+void Variable::setConst()
+{
+	this->constante=true;
 }

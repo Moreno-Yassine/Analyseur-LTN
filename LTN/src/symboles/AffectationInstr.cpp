@@ -53,12 +53,22 @@ bool AffectationInstr::setParam(Symbole* symbole, int place)
 
 bool AffectationInstr::executer()
 {
-	double valeurCourante = expressionAffectee->eval();
-	stringstream ss;
-	ss<<valeurCourante;
-	Valeur* val = new Valeur(ss.str());
-	variableSeFaisantAffecter->affecter(val,this);
-	return true;
+	if(!variableSeFaisantAffecter->estConst())
+	{
+		double valeurCourante = expressionAffectee->eval();
+		stringstream ss;
+		ss<<valeurCourante;
+		Valeur* val = new Valeur(ss.str());
+		variableSeFaisantAffecter->affecter(val,this);
+		return true;
+
+	}else
+	{
+		cerr << "###Interdit -> \"" << this->print() << "\" - Le programme continue et la constante reste invariée.";
+		cerr << endl;
+
+		return false;
+	}
 }
 
 string AffectationInstr::print()
@@ -68,4 +78,26 @@ string AffectationInstr::print()
 	retour.append(expressionAffectee->print());
 	retour.append(";");
 	return retour;
+}
+
+bool AffectationInstr::checkModifiedConst()
+{
+	if(variableSeFaisantAffecter->estConst())
+	{
+		cerr << endl << "-------Attention /!\\-----" << endl;
+		cerr << "La ligne : \"" << this->print() << "\" cherche à modifier une constante." << endl;
+		return true;
+	}
+
+	return false;
+}
+
+bool AffectationInstr::checkVarPasAffectees()
+{
+	if(expressionAffectee->checkVarPasAffectees())
+	{
+		return true;
+	}
+
+	return false;
 }

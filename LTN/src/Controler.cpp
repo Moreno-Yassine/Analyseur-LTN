@@ -12,7 +12,7 @@ Controler::Controler()
     input_file = new File();
     rules = new Dictionary();
 	com_parser = new Parser();
-	automate = new Automate();
+	automate = new Automate(erreurs);
 	programManager = new ProgramManager();
 }
 
@@ -72,10 +72,9 @@ void Controler::run(char* path)
 		throw BadFileException;
 	}
 
-    analyse_lexsyn();
     memload();
 
-    if (option_p)
+    if (option_p && !option_o)
     {
         affichage();
     }
@@ -143,19 +142,13 @@ void Controler::enable_a ()
     }
 }
 
-void Controler::analyse_lexsyn()
-{
-    cout << endl << "##################" << endl << endl;
-    cout << "Je debute l'execution de l'analyse lexico-synthaxique..." <<endl;
-	automate->setFile(input_file->getContinueParsedFile());
-	cout<< "L'analyse est terminée." <<endl;
-	cout << endl << "##################" << endl << endl;
-}
-
 void Controler::memload()
 {
-    cout<<"J'execute la representation mémoire..." <<endl;
-    //C'est plutot ici qu'on devrait appeler automate->lecture
+    cout << endl << "##################" << endl << endl;
+    cout<<"-----J'execute la representation mémoire..." <<endl;
+
+    automate->setFile(input_file->getContinueParsedFile());
+
     try
     {
         programManager->setProgram(automate->lecture());
@@ -165,39 +158,61 @@ void Controler::memload()
         throw SymboleSuivantNonConformeException;
     }
     
-    cout<<"Répresentation mémoire terminée." <<endl;
+    cout<< endl << "-----Répresentation mémoire terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 
 }
 
 void Controler::transformation()
 {
-    cout<<"J'execute l'optimisation..." <<endl;
-    programManager->optimise();
-    cout<<"Optimisation terminée." <<endl;
     cout << endl << "##################" << endl << endl;
+    cout<<"-----J'execute l'optimisation..." <<endl;
+    programManager->optimise();
+    cout<<endl<<"-----Optimisation terminée." <<endl;
+    cout << endl << "##################" << endl << endl;
+
+    if(option_p)
+    {
+        affichage();
+    }
+
 }
 
 void Controler::affichage()
 {
+    if(!option_o)
+    {
+        analyse_statique();
+    }
     cout << "-----J'affiche le programme..." << endl << endl;
+
     programManager->displayProgram();
-    cout<< endl << "----Affichage du programme terminée." <<endl;
+    cout<< endl << "-----Affichage du programme terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 }
 
 void Controler::execution()
 {
-    cout << "J'execute le programme..." << endl << endl;
+    analyse_statique();
+    cout << "-----J'execute le programme..." << endl << endl;
+
     programManager->execute();
-    cout<<"Execution terminée." <<endl;
+    cout<<endl<<"-----Execution terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 }
 
 void Controler::analyse_statique()
 {
-    cout<<"J'execute l'analyse statique..." << endl << endl;
-    programManager->analyseStatique();
-    cout<<"Analyse terminée." <<endl;
+    cout<<"-----J'execute l'analyse statique..." << endl << endl;
+    try
+    {
+        programManager->analyseStatique(erreurs);
+    }
+    catch(int i)
+    {
+        throw SymbolePasDeclarée;
+    }
+
+    cout<<endl<<"-----Analyse terminée." <<endl;
     cout << endl << "##################" << endl << endl;
 }

@@ -19,6 +19,9 @@ class Programme : public Symbole
 		 **/
 		bool executer();
 		bool display();
+		bool checkModifiedConst();
+		bool checkVarPasAffectées();
+		bool checkDoublons();
 
     private:
 		Ld* ptLd;

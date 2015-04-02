@@ -1,3 +1,2 @@
-const a=3, b=5, d=0;
-var res, cane;
-ecrire a;
+const constante = 5;
+lire constante;

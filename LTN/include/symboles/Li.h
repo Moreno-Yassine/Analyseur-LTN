@@ -14,6 +14,8 @@ class Li : public Symbole
 		bool setParam(Symbole* symbole, int noPlace);
 		bool executer();
 		bool display();
+		bool checkModifiedConst();
+		bool checkVarPasAffectées();
 
     private:
 		vector<Instruction*> listeInstructions;

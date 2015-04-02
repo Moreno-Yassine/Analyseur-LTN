@@ -28,10 +28,36 @@ bool Li::executer()
 
 bool Li::display()
 {
-	//cout << "--------Begin Li::display()" << endl;
-	//cout << "--------Li::display()::listeInstructions size : " << (int)listeInstructions.size() << endl;
 	for(int i=0;i<(int)listeInstructions.size();i++)
 		cout << listeInstructions[i]->print() <<endl;
 
 	return true;
+}
+
+bool Li::checkModifiedConst()
+{
+	bool constModified;
+	for(int i=0;i<(int)listeInstructions.size();i++)
+	{
+		if(listeInstructions[i]->checkModifiedConst())
+		{
+			constModified = true;
+		}
+	}
+
+	return constModified;
+}
+
+bool Li::checkVarPasAffectées()
+{
+	bool varPasAffect;
+	for(int i=0;i<(int)listeInstructions.size();i++)
+	{
+		if(listeInstructions[i]->checkVarPasAffectees())
+		{
+			varPasAffect = true;
+		}
+	}
+
+	return varPasAffect;
 }

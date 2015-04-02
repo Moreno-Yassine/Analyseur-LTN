@@ -3,6 +3,7 @@
 
 #include "symboles/Symbole.h"
 #include "symboles/SymbolesComplexes.h"
+#include <map>
 
 class ProgramManager
 {
@@ -13,7 +14,8 @@ class ProgramManager
         void execute();
         void displayProgram();
         void optimise();
-        void analyseStatique();
+        void analyseStatique(map<int,string> &erreurs);
+        void afficheVariablesPasDecl(map<int, string> &erreurs);
 
 
     private:

@@ -36,6 +36,8 @@ class Controler
         Automate* automate;
         // Le gestionnaire du programme
         ProgramManager* programManager;
+        // La map des erreurs statiques
+        map <int, string> erreurs;
 
         // Les options
         static bool option_o;

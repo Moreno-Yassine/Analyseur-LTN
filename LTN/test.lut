@@ -1,7 +1,3 @@
-const n=20, n2=100;
-var x , y , t ;
-ecrire n2;
-lire x;
-ecrire x;
-ecrire x+f*asama+5;
-
+const constante = 2;
+var b;
+lire constante;

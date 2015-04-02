@@ -12,6 +12,8 @@ class Instruction : public Symbole
 		virtual double eval() = 0;
 		virtual bool executer() = 0;
 		virtual string print() = 0;
+		virtual bool checkModifiedConst() = 0;
+		virtual bool checkVarPasAffectees() = 0;
 
     private:
 

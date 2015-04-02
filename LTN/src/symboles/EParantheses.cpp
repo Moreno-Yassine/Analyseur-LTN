@@ -16,6 +16,17 @@ double EParantheses::eval()
 	expression->eval();
 }
 
+bool EParantheses::checkVarPasAffectees()
+{
+	if(expression->checkVarPasAffectees())
+	{
+		return true;
+	}
+
+	return false;
+}
+
+
 string EParantheses::print()
 {
 	string valeurPrint("(");

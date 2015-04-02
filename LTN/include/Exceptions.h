@@ -48,9 +48,17 @@ class Exception_Six : public exception
 {
   virtual const char* what() const throw()
   {
-    return "Erreur Symbole Suivant Non Conforme à la Grammaire";
+    return "Erreur Symbole Inattendu - Le programme ne peut pas continuer \n\n##################\n";
   }
 } SymboleSuivantNonConformeException;
+
+class Exception_Seven : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Erreur Symbole Pas Déclaré - Le programme ne peut pas continuer \n\n##################\n";
+  }
+} SymbolePasDeclarée;
 
 
 #endif // EXCEPTIONS_H

@@ -33,6 +33,20 @@ double EMult::eval()
 
 }
 
+bool EMult::checkVarPasAffectees()
+{
+	if(exprGauche->checkVarPasAffectees())
+	{
+		return true;
+	}
+	if(exprDroite->checkVarPasAffectees())
+	{
+		return true;
+	}
+
+	return false;
+}
+
 string EMult::print()
 {
 	string valeur(exprGauche->print());

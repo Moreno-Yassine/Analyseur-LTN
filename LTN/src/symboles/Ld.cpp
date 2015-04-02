@@ -35,7 +35,7 @@ Variable* Ld::trouver(string nomVariable)
 	map<string, Variable*>::iterator val = listeVariablesNonDeclarees.find(nomVariable);
 	if(val!=listeVariablesNonDeclarees.end())
 		return val->second;
-	//cout << "Begin Ld::trouver " << endl;
+
 	for(int i=0;i<(int)listeDeclarations.size();i++)
 	{
 		if(listeDeclarations[i]->trouver(nomVariable)!=NULL)
@@ -44,7 +44,7 @@ Variable* Ld::trouver(string nomVariable)
 			return listeDeclarations[i]->trouver(nomVariable);
 		}
 	}
-	//cout << "End Ld::trouver NULL " << endl;
+
 	return NULL;
 }
 
@@ -67,4 +67,20 @@ bool Ld::display()
 
 	cout << endl;
 	return true;
+}
+
+bool Ld::checkDoublons()
+{
+	/*int found = 0;
+
+	for(int i=0;i<(int)listeDeclarations.size();i++)
+	{
+		if(listeDeclarations[i]->trouver(listeDeclarations[i])!=NULL)
+		{
+			//cout << "End Ld::trouver " << endl;
+			return listeDeclarations[i]->trouver(nomVariable);
+		}
+	}*/
+
+	return false;
 }
