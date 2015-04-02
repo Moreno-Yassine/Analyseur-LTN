@@ -29,7 +29,6 @@ vector<Symbole*>* Automate::getPileSymboles()
     return pileSymboles;
 }
 
-// Add declaration
 bool Automate::addDeclaration(std::string name, Declaration* declaration)
 {
     return (tableSymboles.insert(std::pair<std::string, Declaration*>(name, declaration))).second;
@@ -62,13 +61,9 @@ void Automate::reduction(int numeroRegle)
         {
             case I_Pprime : symbole = NULL; break;
             case I_P :
-            	//cout << "Je crée le programme" << endl;
 				symbole = new Programme();
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 2), 1);
 				symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
-				//cout << pileSymboles->at(pileSymboles->size() - 2)->getIdSymbole() << endl;
-				//cout << pileSymboles->at(pileSymboles->size() - 1)->getIdSymbole() << endl;
-				//cout << "Création terminée" << endl;
 				break;
             case I_LD : 
 				switch(numeroRegle)
@@ -76,9 +71,9 @@ void Automate::reduction(int numeroRegle)
 					case 3:					
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
+						
 						//La liste de declaration est le symbole courant
 						pointeurDeclarations = (Ld*)symbole;
-						//pointeurDeclarations -> display();
 					   break;
 					case 4:
 						symbole = new Ld(); 
@@ -127,12 +122,10 @@ void Automate::reduction(int numeroRegle)
 					case 9:												
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
-						//cout<<"case 9"<<endl;
 						break;
 					case 10:
 						symbole = new Idv(); 
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
-						//cout<<"case 10"<<endl;
 						break;
 					default:
 						break;
@@ -142,19 +135,12 @@ void Automate::reduction(int numeroRegle)
 				switch(numeroRegle)
 				{
 					case 16:
-						//Modification Damien
-						/* ancien code
-						symbole = new Variable();
-						symbole->setId(I_E,"I_E");
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
-						*/
 						//On reduit un id, donc le dernier element de la pile est une variable
 						// On recupere la variable associee, qui est notre nouvelle variable
 						// donc notre nouveau symbole
 						symbole = associerIdVariable((Variable*)pileSymboles->at(pileSymboles->size()-1));
 						//On change bien l'Id du symbole de la declaration (lié à IdV ou IdC)
 						//mais comme il ne passera plus dans l'automate (à part dans notre cas)
-						//ce n'est pas grave
 						symbole->setId(I_E,"I_ID");
 						break;
 					case 17:
@@ -188,7 +174,6 @@ void Automate::reduction(int numeroRegle)
             case I_Li : 
 				switch(numeroRegle)
 				{
-                    //A VERIFIER => Ludmila tu dois valider mais c'est bon normalement (signé Julien)
 					case 11:
 						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 2), 2);
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
@@ -205,7 +190,6 @@ void Automate::reduction(int numeroRegle)
 				switch(numeroRegle)
 				{
 					case 13:
-						//Modif Damien
 						ptVarReelle = associerIdVariable((Variable*)pileSymboles->at(pileSymboles->size()-1));
 						symbole = new LectureInstr();
 						symbole->setId(I_I,"I_I");
@@ -217,7 +201,6 @@ void Automate::reduction(int numeroRegle)
 						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
 						break;
 					case 15:
-						//Modif Damien
 						ptVarReelle = associerIdVariable((Variable*)pileSymboles->at(pileSymboles->size()-3));
 						symbole = new AffectationInstr();
 						symbole->setId(I_I,"I_I");
@@ -427,9 +410,6 @@ bool Automate::setFile(vector<string> fileVector)
 }
 
 Programme* Automate::lecture()
-/* Fonction lecture :
- * 
- */
 {
 	currentLexer = Lexer(fluxEntrantP);
 	bool expressionAcceptee = false;
@@ -442,9 +422,7 @@ Programme* Automate::lecture()
 	while(!expressionAcceptee)
 	{  
 		ptSymboleSuivant = currentLexer.getNext();
-		// TEST JULIEN
 
-        //this->affichageEtatAutomate(ptSymboleSuivant);
         try
         {
             expressionAcceptee = pileEtats->back()->transition(*this, ptSymboleSuivant);
@@ -454,7 +432,6 @@ Programme* Automate::lecture()
             throw 0; // On lève une exception de Symbole Suivant non Conforme
         }
     }
-	//std::cout << typeid(pileSymboles->back()).name() << '\n';
 
 	return (Programme*)pileSymboles->back();
 
@@ -504,7 +481,6 @@ Variable* Automate::associerIdVariable(Variable* var)
 
 	if(ptVar == NULL)
 	{
-		//cout << "New variable" << endl;
 		//RAISE EXCEPTION
 		cerr << endl << "----------Attention /!\\----" << endl;
 		cerr<< "La variable \"" << var->getNom() << "\" n'est pas déclarée." << endl;

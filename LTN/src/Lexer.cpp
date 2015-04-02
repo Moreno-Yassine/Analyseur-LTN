@@ -12,12 +12,11 @@ Lexer::~Lexer()
 {
 }
 
-//TODO
 Symbole* Lexer::getNext()
 {	
 	string motSuivant = "";
 	IdSymbole idSymbole = I_NULL;
-    //cout<<"position : "<<position<<endl;
+
 	if(position >= (int)fluxCourant.size())
 	{
 		return new Dollar();
@@ -28,14 +27,14 @@ Symbole* Lexer::getNext()
 	{
 		
 		motSuivant = fluxCourant[position];
-		//cout << "Mot Suivant = " << motSuivant << endl;
 		idSymbole = rulesDictionary->checkWord(motSuivant);
-		//cout << "Id Symbole = " << idSymbole <<endl;
+
 		if(idSymbole == I_NULL)
 		{
 			position++;
 		}
 	}
+	
 	//Création du symbole à partir du Symbole déterminé
 	switch(idSymbole)
 	{
@@ -57,7 +56,7 @@ Symbole* Lexer::getNext()
 		case I_ecrire: return new Ecrire(); break;
 		case I_ID: return new Variable(motSuivant); break;
 		case I_NB: return new Valeur(motSuivant); break;
-		default: return NULL; break; //Il faudra gérer le cas du NULL Pointer
+		default: return NULL; break;
 	}
 }
 

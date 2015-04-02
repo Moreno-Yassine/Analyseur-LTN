@@ -15,30 +15,50 @@ using namespace std;
 class Lexer
 {
     public:
+
+        /* Constructeur par Défaut de la Classe Lexer
+         * @return : N/A
+         */
     	Lexer();
+
+        /* Constructeur par Personnalisé de la Classe Lexer
+         * @param : 
+         *          fluxCourantP(vector<string>) : Correcpond au mots lu dans le fichier à analyser ;
+         * @return : N/A
+         */
 		Lexer(vector<string> fluxCourantP) 
 			:	fluxCourant(fluxCourantP), 
 				position(0) 
 			{
 				rulesDictionary = new Dictionary();
 			};
-		/* Prend en parametre le flux que l'on veut analyser
-		 */
 
+     	 /* Destructeur de la Classe Lexer
+         * @return : N/A
+         */
         virtual ~Lexer();
 
-        Symbole* getNext();
-		/*	Retourne le POINTEUR SUR (????) symbole terminal suivant (prochain item du flux)
+		/*	Retourne le pointeur sur un symbole terminal suivant (prochain item du flux)
 		 *	sans passer au suivant => la lecture n'est pas consommatrice d'un symbole
+         * @return : Symbole*
 		 */
+        Symbole* getNext();
 
+		/*	Passe au symbole suivant dans le flux (Peut eventuellement retourner le symbole)
+         * @return : N/A
+		 */
 		void shift();
-		/*	Passe au symbole suivant dans le flux
-		 *	(Peut eventuellement retourner le symbole)
-		 */
 
+        /* Permet de retourner un symbole à partir d'une chaine de caractère
+         * @param : 
+         *          entree(string) : Mot à parser en symbole ;
+         * @return : N/A
+         */
 		Symbole* getSymbole(string entree);
 
+        /* Permet de retourner le numéri de la ligne courante
+         * @return : Integer
+         */
 		int getNoLigneCourant() { return noLigneCourant; };
 
     private:

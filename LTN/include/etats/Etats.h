@@ -8,10 +8,8 @@
 using namespace std;
 class Automate;
 
-/* ------- Etat 0  --------
- * 
- * ------------------------
- */
+//Déclaration de tous les  Etats de l'Automate
+
 class E0 : public Etat
 {
     public:
