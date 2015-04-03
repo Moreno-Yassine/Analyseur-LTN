@@ -1,6 +1,3 @@
-const c=5, co=6;
-var f;
-lire c;
-ecrire f;
-lire co;
-ecrire f*co;
+const c=5, c=5;
+var a, a;
+ecrire c;
