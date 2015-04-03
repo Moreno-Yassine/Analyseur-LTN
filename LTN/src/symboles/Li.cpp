@@ -48,8 +48,7 @@ bool Li::checkModifiedConst()
 	return constModified;
 }
 
-
-bool Li::checkVarPasAffectees()
+bool Li::checkVarPasAffectees(vector<Variable*> variables)
 {
 	bool varPasAffect;
 	for(int i=0;i<(int)listeInstructions.size();i++)

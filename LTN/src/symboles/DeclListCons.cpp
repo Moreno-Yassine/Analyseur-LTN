@@ -34,16 +34,13 @@ bool DeclListCons::setParam(Symbole* symbole, int noPlace)
 
 Variable* DeclListCons::trouver(string nomVariable)
 {
-	//cout << "Begin DeclListCons::trouver SIZE : " << (int)listeConstDeclareesIci.size() << endl;
 	for(int i=0; i<(int)listeConstDeclareesIci.size(); i++)
 	{
 		if(listeConstDeclareesIci[i]->trouver(nomVariable)!=NULL)
 		{
-			//cout << "End DeclListCons::trouver " << endl;
 			return listeConstDeclareesIci[i]->trouver(nomVariable);
 		}
 	}
-	//cout << "End DeclListCons::trouver NULL" << endl;
 	return NULL;
 }
 

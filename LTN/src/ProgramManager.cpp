@@ -22,7 +22,7 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
     {
         cerr << "------------" << endl;
 
-        // Peut etre throw?
+        // On peut faire throw 0 pour déclancher une exception
     }
     /*if(program -> checkVarPasAffectees())
     {
@@ -37,13 +37,11 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
 
 void ProgramManager::execute()
 {
-    //cout << "--------Begin ProgramManager::execute()" << endl;
 	(this->program)->executer();
 }
 
 void ProgramManager::displayProgram()
 {
-    //cout << "--------Begin ProgramManager::displayProgram()" << endl;
     (this->program)->display();
 }
 

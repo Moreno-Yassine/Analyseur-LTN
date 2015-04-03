@@ -98,12 +98,9 @@ bool AffectationInstr::checkVarPasAffectees(vector<Variable*> variables)
 	{
 		if(variableSeFaisantAffecter==variables[i])
 		{
-			cout << "var Affectee" << endl;
 			return true;
 		}
 	}
-
-	cout <<"var pas affectee" << endl;
 
 	return false;
 }

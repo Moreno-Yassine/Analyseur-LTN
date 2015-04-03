@@ -2,10 +2,10 @@
 #define LI_H
 
 #include "Symbole.h"
-#include <vector>
-#include <iostream>
 #include "Instruction.h"
 #include "Variable.h"
+#include <vector>
+#include <iostream>
 
 class Li : public Symbole
 {
@@ -16,7 +16,7 @@ class Li : public Symbole
 		bool executer();
 		bool display();
 		bool checkModifiedConst();
-		bool checkVarPasAffectees();
+		bool checkVarPasAffectees(vector<Variable*> variables);
 
     private:
 		vector<Instruction*> listeInstructions;

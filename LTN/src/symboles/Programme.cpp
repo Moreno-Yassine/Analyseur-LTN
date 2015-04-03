@@ -23,7 +23,6 @@ bool Programme::setParam(Symbole* symbole, int placeSymbole)
 
 bool Programme::executer()
 {
-	//cout << "--------Begin Programme::execute()" << endl;
 	if(!ptLd->executer())
 		return false;
 	if(!ptLi->executer())
@@ -33,7 +32,6 @@ bool Programme::executer()
 
 bool Programme::display()
 {
-	//cout << "--------Begin Programme::display()" << endl;
 	if(ptLd==NULL)
 		cout << "Attention : AUCUNE DECLARATION" << endl;
 
@@ -63,7 +61,7 @@ bool Programme::checkVarPasAffectees()
 
 	if(ptLi!=NULL)
 	{
-		return ptLi->checkVarPasAffectees();
+		return ptLi->checkVarPasAffectees(variables);
 	}
 
 	return false;

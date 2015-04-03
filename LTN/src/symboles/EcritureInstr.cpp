@@ -57,9 +57,6 @@ bool EcritureInstr::executer()
 
 string EcritureInstr::print()
 {
-
-	//cout << "------ EcritureInstr::print()" << endl;
-
 	string retour ="ecrire ";
 	retour.append(expressionAEcrire->print());
 	retour.append(";");
