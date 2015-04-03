@@ -6,6 +6,9 @@
 class opA : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe opA
+         * @return : N/A
+         */
 		opA() : Symbole(I_opA, "I_opA") {};
 		virtual ~opA() { delete operateur; };
 		string print();

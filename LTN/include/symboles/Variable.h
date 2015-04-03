@@ -11,6 +11,9 @@ class Valeur;
 class Variable : public E
 {
     public:
+        /* Constructeur par Défaut de la Classe Variable
+         * @return : N/A
+         */
         Variable();
         Variable(string nom);
 		bool setParam(Symbole* symbole, int place);
@@ -23,6 +26,8 @@ class Variable : public E
 		double eval();
 		string print();
 		bool checkVarPasAffectees();
+
+
         virtual ~Variable();
 
     private:

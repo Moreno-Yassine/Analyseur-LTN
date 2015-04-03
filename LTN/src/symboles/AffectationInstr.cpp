@@ -92,11 +92,14 @@ bool AffectationInstr::checkModifiedConst()
 	return false;
 }
 
-bool AffectationInstr::checkVarPasAffectees()
+bool AffectationInstr::checkVarPasAffectees(vector<Variable*> variables)
 {
-	if(expressionAffectee->checkVarPasAffectees())
+	for(int i=0; i<(int)variables.size(); i++)
 	{
-		return true;
+		if(variableSeFaisantAffecter==variables[i])
+		{
+			return true;
+		}
 	}
 
 	return false;

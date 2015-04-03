@@ -8,6 +8,9 @@
 class Programme : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Programme
+         * @return : N/A
+         */
         Programme();
         virtual ~Programme();
 		Li* getLi();

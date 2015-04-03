@@ -11,6 +11,9 @@ using namespace std;
 class Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Symbole
+         * @return : N/A
+         */
         Symbole();
         Symbole(IdSymbole id, string idStr);
         virtual ~Symbole();

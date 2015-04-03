@@ -13,7 +13,14 @@ using namespace std;
 class Controler
 {
     public:
+		/* Constructeur par Défaut de la Classe Controler
+		 * @return : N/A
+		 */
         Controler();
+
+        /* Destructeur de la Classe Controler
+		 * @return : N/A
+		 */
         virtual ~Controler();
 
 		void configurate (int argc, char ** argv);

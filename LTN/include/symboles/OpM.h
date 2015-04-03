@@ -6,6 +6,9 @@
 class opM : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe opM
+         * @return : N/A
+         */
 		opM() : Symbole(I_opM, "I_opM") {};
 		virtual ~opM() {};
 		string print();

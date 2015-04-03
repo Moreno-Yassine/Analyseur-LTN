@@ -39,10 +39,7 @@ class Dictionary
          */
 		IdSymbole checkWord(string word);
 
-    protected:
-    
     private:
-        
 		bool checkWordRegex(string word, boost::regex match);
         map<string,boost::regex> mapRegex;
         map<string, IdSymbole> mapStringIdSymbole;

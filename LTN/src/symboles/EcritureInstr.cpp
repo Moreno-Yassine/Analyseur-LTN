@@ -57,9 +57,6 @@ bool EcritureInstr::executer()
 
 string EcritureInstr::print()
 {
-
-	//cout << "------ EcritureInstr::print()" << endl;
-
 	string retour ="ecrire ";
 	retour.append(expressionAEcrire->print());
 	retour.append(";");
@@ -72,11 +69,11 @@ bool EcritureInstr::checkModifiedConst()
 	return false;
 }
 
-bool EcritureInstr::checkVarPasAffectees()
+bool EcritureInstr::checkVarPasAffectees(vector<Variable*> variables)
 {
-	if(expressionAEcrire->checkVarPasAffectees())
+	/*if(expressionAEcrire->checkVarPasAffectees())
 	{
 		return true;
-	}
+	}*/
 	return false;
 }

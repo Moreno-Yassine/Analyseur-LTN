@@ -8,6 +8,9 @@ class Symbole;
 class EMult : public EBin
 {
     public:
+        /* Constructeur par Défaut de la Classe EMult
+         * @return : N/A
+         */
         EMult();
         virtual ~EMult();
 		string print();

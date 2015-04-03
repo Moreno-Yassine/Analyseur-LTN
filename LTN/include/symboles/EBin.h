@@ -7,6 +7,9 @@ class Symbole;
 class EBin : public E
 {
     public:
+        /* Constructeur par Défaut de la Classe EBin
+         * @return : N/A
+         */
         EBin();
         virtual ~EBin();
 		virtual string print();

@@ -40,7 +40,6 @@ Variable* Ld::trouver(string nomVariable)
 	{
 		if(listeDeclarations[i]->trouver(nomVariable)!=NULL)
 		{
-			//cout << "End Ld::trouver " << endl;
 			return listeDeclarations[i]->trouver(nomVariable);
 		}
 	}
@@ -60,8 +59,6 @@ bool Ld::ajouterVariableNonDeclaree(Variable* var)
 
 bool Ld::display()
 {
-	//cout << "--------Begin Ld::display()" << endl;
-	//cout << "--------Ld::display()::listeDeclarations size : " << (int)listeDeclarations.size() << endl;
 	for(int i=0;i<(int)listeDeclarations.size();i++)
 		cout << listeDeclarations[i]->print();
 
@@ -83,4 +80,20 @@ bool Ld::checkDoublons()
 	}*/
 
 	return false;
+}
+
+vector<Variable*> Ld::getVariables()
+{
+	vector<Variable*> variables;
+	for(int i=0; i<(int)listeDeclarations.size(); i++)
+	{
+		vector<Variable*> temp = listeDeclarations[i]->getVariables();
+
+		for(int j=0; j<temp.size(); j++)
+		{
+			variables.push_back(temp[j]);
+		}
+	}
+
+	return variables;
 }

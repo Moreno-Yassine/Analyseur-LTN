@@ -14,6 +14,9 @@ class E;
 class EcritureInstr : public Instruction
 {
     public:
+        /* Constructeur par Défaut de la Classe EcritureInstr
+         * @return : N/A
+         */
         EcritureInstr();
         virtual ~EcritureInstr();
 		double eval();
@@ -21,7 +24,7 @@ class EcritureInstr : public Instruction
 		string print();
         bool setParam(Symbole* symbole, int place);
         bool checkModifiedConst();
-        bool checkVarPasAffectees();
+        bool checkVarPasAffectees(vector<Variable*> variables);
 
     private:
 		E* expressionAEcrire;

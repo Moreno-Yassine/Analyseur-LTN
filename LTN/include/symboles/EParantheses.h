@@ -7,6 +7,9 @@ class Symbole;
 class EParantheses : public E
 {
     public:
+        /* Constructeur par Défaut de la Classe EParantheses
+         * @return : N/A
+         */
         EParantheses();
         virtual ~EParantheses();
 		string print();

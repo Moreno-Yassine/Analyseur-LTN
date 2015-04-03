@@ -29,7 +29,6 @@ bool DeclListVar::setParam(Symbole* symbole, int noPlace)
 
 Variable* DeclListVar::trouver(string nomVariable)
 {
-	//cout << " DeclListVar::trouver SIZE : " << (int)listeVarDeclareesIci.size() << endl;
 	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 	{
 		if(listeVarDeclareesIci[i]->trouver(nomVariable)!=NULL)
@@ -44,10 +43,23 @@ string DeclListVar::print()
 	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
 	{	
 		valeur<<listeVarDeclareesIci[i]->print();
-		/*valeur<<"var ";
-		valeur<<listeVarDeclareesIci[i]->getVariable()->getNom();
-		valeur<<";";*/
 	}
 
 	return valeur.str(); 
+}
+
+vector<Variable*> DeclListVar::getVariables()
+{
+	vector<Variable*> variables;
+	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
+	{
+		vector<Variable*> temp = listeVarDeclareesIci[i]->getVariables();
+
+		for(int j=0; j<temp.size(); j++)
+		{
+			variables.push_back(temp[j]);
+		}
+	}
+
+	return variables;
 }

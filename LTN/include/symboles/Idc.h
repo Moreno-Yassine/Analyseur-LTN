@@ -11,6 +11,9 @@ class Valeur;
 class Idc : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Idc
+         * @return : N/A
+         */
         Idc();
         virtual ~Idc();
 		bool executer();

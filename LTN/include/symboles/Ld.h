@@ -12,6 +12,9 @@ class Variable;
 class Ld : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Ld
+         * @return : N/A
+         */
         Ld();
         virtual ~Ld();
 		bool setParam(Symbole* symbole, int place);
@@ -30,6 +33,7 @@ class Ld : public Symbole
 		void setLdNonPresent() { nonPresent = true; };
 		bool ldNonPresent() {return nonPresent; };
 		bool checkDoublons();
+		vector<Variable*> getVariables();
 
 
     private:
