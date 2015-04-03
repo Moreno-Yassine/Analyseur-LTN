@@ -10,6 +10,9 @@ class Variable;
 class LectureInstr : public Instruction
 {
     public:
+        /* Constructeur par Défaut de la Classe LectureInstr
+         * @return : N/A
+         */
         LectureInstr();
         virtual ~LectureInstr();
 		bool setParam(Symbole* symbole, int place);

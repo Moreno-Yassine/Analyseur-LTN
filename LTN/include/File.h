@@ -13,7 +13,14 @@ using namespace std;
 class File
 {
     public:
+        /* Constructeur par Défaut de la Classe File
+         * @return : N/A
+         */
         File();
+
+        /* Destructeur de la Classe File
+		 * @return : N/A
+		 */
         virtual ~File();
 		void openParse();
 		void setPath(string link);

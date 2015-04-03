@@ -14,6 +14,9 @@ class E;
 class EcritureInstr : public Instruction
 {
     public:
+        /* Constructeur par Défaut de la Classe EcritureInstr
+         * @return : N/A
+         */
         EcritureInstr();
         virtual ~EcritureInstr();
 		double eval();

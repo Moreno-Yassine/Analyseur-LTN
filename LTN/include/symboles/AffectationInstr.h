@@ -19,6 +19,9 @@ class E;
 class AffectationInstr : public Instruction
 {
     public:
+        /* Constructeur par Défaut de la Classe AffectationInstr
+         * @return : N/A
+         */
         AffectationInstr();
         virtual ~AffectationInstr();
 		double eval();

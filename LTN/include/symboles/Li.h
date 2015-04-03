@@ -10,6 +10,9 @@
 class Li : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Li
+         * @return : N/A
+         */
         Li();
         virtual ~Li();
 		bool setParam(Symbole* symbole, int noPlace);

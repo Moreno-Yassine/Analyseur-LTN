@@ -7,6 +7,9 @@ class Idc;
 class DeclListCons : public Declaration
 {
     public:
+        /* Constructeur par Défaut de la Classe DeclListCons
+         * @return : N/A
+         */
         DeclListCons();
         virtual ~DeclListCons();
 		bool executer();

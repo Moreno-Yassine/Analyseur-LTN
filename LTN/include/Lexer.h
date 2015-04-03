@@ -15,7 +15,6 @@ using namespace std;
 class Lexer
 {
     public:
-
         /* Constructeur par Défaut de la Classe Lexer
          * @return : N/A
          */
@@ -33,7 +32,7 @@ class Lexer
 				rulesDictionary = new Dictionary();
 			};
 
-     	 /* Destructeur de la Classe Lexer
+     	/* Destructeur de la Classe Lexer
          * @return : N/A
          */
         virtual ~Lexer();

@@ -11,6 +11,9 @@ class Variable;
 class Declaration : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Declaration
+         * @return : N/A
+         */
         Declaration();
         virtual ~Declaration();
 		virtual operator int() const { return idSym; }

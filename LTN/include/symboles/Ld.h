@@ -12,6 +12,9 @@ class Variable;
 class Ld : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Ld
+         * @return : N/A
+         */
         Ld();
         virtual ~Ld();
 		bool setParam(Symbole* symbole, int place);

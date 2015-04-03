@@ -7,6 +7,9 @@ class Idv;
 class DeclListVar : public Declaration
 {
     public:
+        /* Constructeur par Défaut de la Classe DeclListVar
+         * @return : N/A
+         */
         DeclListVar();
         virtual ~DeclListVar();
 		bool executer();
