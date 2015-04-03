@@ -4,6 +4,7 @@
 #include "symboles/Symbole.h"
 #include "symboles/SymbolesComplexes.h"
 #include <map>
+#include <vector>
 
 class ProgramManager
 {
@@ -46,19 +47,22 @@ class ProgramManager
                     détectées en phase de répresentation mémoire
          * @return : N/A
 		 */
-        void analyseStatique(map<int,string> &erreurs);
+        bool analyseStatique(map<int,string> &erreurs);
 
         /*	Permet d'afficher les variables pas déclarées du programme
          * @param :
                     erreurs (map<int,string>&) : reference vers la structure contenant les erreurs
                     détectées en phase de répresentation mémoire
-         * @return : N/A
+         * @return : un boolean qui indique si l'analyse s'est passé correctement (true) ou false sinon
 		 */
         void afficheVariablesPasDecl(map<int, string> &erreurs);
-
+		void setDoublons(vector<string> listeDoublons) {doublons = listeDoublons;};
+		void afficheDoublesDecl();
 
     private:
         Programme* program;
+		vector<string> doublons;
+		bool constModif;
 };
 
 #endif // PROGRAMMANAGER_H

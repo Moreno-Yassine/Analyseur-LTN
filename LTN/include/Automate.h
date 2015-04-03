@@ -123,6 +123,18 @@ class Automate
 		 */
 		Variable* associerIdVariable(Variable* currentVar);
 
+		/* Permet de récupérer la liste des doublons construite lors de la construction
+		 * @param : N/A
+		 * @return: le vector contenant le nom de l'ensemble des variables en double
+		 */
+		vector<string> getListeDoublons() { return listeDoublons; };
+
+		bool isDoublon(string nomVar);
+
+		void setDoublon(string nomVar);
+
+
+
 
     private:
         MapStringDeclaration tableSymboles;
@@ -134,6 +146,8 @@ class Automate
 		Ld* pointeurDeclarations;
 		map<int, string> &erreurs;
 		int erreurNb;
+		vector<string> listeDoublons;
+		vector<string> listeVarDeclarees;
 
 };
 

@@ -103,15 +103,26 @@ void Automate::reduction(int numeroRegle)
             case I_Idc : 
 				switch(numeroRegle)
 				{
-					case 7:						
-						pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
-						pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+					case 7:
+						if(isDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom()))
+							setDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
+						else{
+							listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
+							pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+							pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+						}
+						
 						symbole = pileSymboles->at(pileSymboles->size() - 5);
 						break;
 					case 8:
 						symbole = new Idc(); 
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+						if(isDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom()))
+							setDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom());
+						else {
+							listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
+							symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+							symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+						}
 						break;
 					default:
 						break;
@@ -120,13 +131,22 @@ void Automate::reduction(int numeroRegle)
            case I_Idv : 
 				switch(numeroRegle)
 				{
-					case 9:												
-						pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+					case 9:
+						if(isDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom()))
+							setDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom());															else {
+							listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom());
+							pileSymboles->at(pileSymboles->size() - 3)->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						}
 						symbole = pileSymboles->at(pileSymboles->size() - 3);
 						break;
 					case 10:
 						symbole = new Idv(); 
-						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						if(isDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom()))
+							setDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom());
+						else {
+							listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom());
+							symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 1);
+						}
 						break;
 					default:
 						break;
@@ -508,4 +528,22 @@ Variable* Automate::associerIdVariable(Variable* var)
 	}
 
 	return ptVar;
+}
+
+
+bool Automate::isDoublon(string nomVar)
+{
+	for(int i=0; i<listeVarDeclarees.size(); i++)
+	{
+		if(listeVarDeclarees[i] == nomVar)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void Automate::setDoublon(string nomDoublon)
+{
+	listeDoublons.push_back(nomDoublon);
 }

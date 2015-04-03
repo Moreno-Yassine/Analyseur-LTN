@@ -2,7 +2,7 @@
 
 ProgramManager::ProgramManager()
 {
-
+    constModif = false;
 }
 
 ProgramManager::~ProgramManager()
@@ -15,24 +15,25 @@ void ProgramManager::setProgram(Programme* programme)
     this->program = programme;
 }
 
-void ProgramManager::analyseStatique(map<int,string> &erreurs)
+bool ProgramManager::analyseStatique(map<int,string> &erreurs)
 {
     afficheVariablesPasDecl(erreurs);
+    afficheDoublesDecl();
     if(program -> checkModifiedConst())
-    {
-        cerr << "------------" << endl;
+        constModif = true;
 
-        // On peut faire throw 0 pour déclancher une exception
-    }
-    /*if(program -> checkVarPasAffectees())
+    /* if(program -> checkVarPasAffectees())
     {
         //cerr << "------------" << endl;
-    }
-
-    /*if(program -> checkDoublons())
-    {
-
     }*/
+
+    if(erreurs.size()>0)
+        throw 0;
+
+    if(doublons.size()>0 || constModif)
+        return true;
+
+    return false;
 }
 
 void ProgramManager::execute()
@@ -83,7 +84,15 @@ void ProgramManager::afficheVariablesPasDecl(map<int,string> &erreurs)
         trouve = false;
     }
 
-    cerr << varPasDecl << " variables (ou constantes) pas déclarées : " << endl;
+    cerr << varPasDecl << " variables (ou constantes) pas déclarées";
+
+    if(err)
+    {
+       cerr << ": ";
+    }
+
+    cerr << endl;
+
 
     for(int i=0; i<(int)names.size(); i++)
     {
@@ -91,9 +100,55 @@ void ProgramManager::afficheVariablesPasDecl(map<int,string> &erreurs)
     }
 
     cerr << "------------" << endl;
+}
 
-    if (err)
-        throw 0;
+void ProgramManager::afficheDoublesDecl()
+{
+    bool err = false;
+    int varDeclMult = 0;
+	vector<string> names;
 
+    if(doublons.size()>0)
+    {
+        names.push_back(doublons[0]);
+        varDeclMult++;
+        err = true;
+    }
+
+    bool trouve = false;
+
+    for(int i=1; i<(int)doublons.size(); i++)
+    {
+        for(int j=0; j<(int)names.size(); j++)
+        {
+            if(doublons[i] == names[j])
+            {
+                trouve = true;
+            }
+        }
+        if(!trouve)
+        {
+            names.push_back(doublons[i]);
+            varDeclMult++;
+        }
+
+        trouve = false;
+    }
+
+    cerr << varDeclMult << " variables (ou constantes) ayant une déclaration multiple";
+
+    if(err)
+    {
+       cerr << ": ";
+    }
+
+    cerr << endl;
+
+    for(int i=0; i<(int)names.size(); i++)
+    {
+		cerr << "\"" << names[i] << "\"" << endl;
+    }
+
+    cerr << "------------" << endl;
 }
 

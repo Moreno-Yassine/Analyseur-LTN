@@ -45,6 +45,10 @@ class Controler
         ProgramManager* programManager;
         // La map des erreurs statiques
         map <int, string> erreurs;
+		// Liste des doublons uniquement
+		vector<string> listeDoublons;
+        // Boolean qui indique la presence d'un erreur statique
+        bool erreurStatique;
 
         // Les options
         static bool option_o;
