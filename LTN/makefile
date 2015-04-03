@@ -30,3 +30,6 @@ clean:
 	rm $(LIBDIR)/*/*.o
 	rm $(LIBDIR)/*/*/*.o
 	rm $(BINDIR)/*
+
+test:
+	sh ./mktest.sh
