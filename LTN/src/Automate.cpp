@@ -530,10 +530,9 @@ Variable* Automate::associerIdVariable(Variable* var)
 	return ptVar;
 }
 
-
 bool Automate::isDoublon(string nomVar)
 {
-	for(int i=0; i<listeVarDeclarees.size(); i++)
+	for(int i=0; i<(int)listeVarDeclarees.size(); i++)
 	{
 		if(listeVarDeclarees[i] == nomVar)
 		{

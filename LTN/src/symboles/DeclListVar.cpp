@@ -55,7 +55,7 @@ vector<Variable*> DeclListVar::getVariables()
 	{
 		vector<Variable*> temp = listeVarDeclareesIci[i]->getVariables();
 
-		for(int j=0; j<temp.size(); j++)
+		for(int j=0; j<(int)temp.size(); j++)
 		{
 			variables.push_back(temp[j]);
 		}
