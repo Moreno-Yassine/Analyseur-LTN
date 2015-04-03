@@ -10,12 +10,14 @@
 #include <vector>
 #include <cstdio>
 #include <typeinfo>
+
 using namespace std;
 
-// typedef pour la map des variables
+// Typedef pour la map des variables
 typedef std::map<std::string, Declaration*> MapStringDeclaration;
 typedef map<std::string, Declaration*>::const_iterator StringDeclarationMapIterator;
 
+//Prédéclaration des classes Etat et Variable (pour l'Edition des Liens)
 class Etat;
 class Variable;
 
@@ -28,46 +30,98 @@ struct Reduction
 class Automate
 {
     public:
-        Automate(map<int, string> &Erreurs);
-        virtual ~Automate();
 
-        vector<Etat*>* getPileEtats();
-		vector<Symbole*>* getPileSymboles();
-		bool addDeclaration(std::string name, Declaration* declaration);
-		bool setFile(vector<string> fileVector);
-		void decalage(Symbole* symbole, Etat* etat);
-		/* Permet d'empiler le symbole et l'etat dans la pile de l'automate
-		 * @param : symbole, pointeur sur le symbole qui permet la transition
-		 *			etat,	pointeur vers l'etat dans lequel "on va" (on 
-		 *					l'empile seulement)
+		/* Constructeur par Défaut de la Classe Automate
 		 * @return : N/A
 		 */
+        Automate();
 
+		/* Constructeur Personalisé de la Classe Automate
+		 * @return : N/A
+		 */
+		Automate(map<int, string> &Erreurs);
+
+		/* Destructeur de la Classe Automate
+		 * @return : N/A
+		 */
+        virtual ~Automate();
+
+		/* Permet de récupérer la pile des Etats
+		 * @return : vector<Etat*>*
+		 */
+        vector<Etat*>* getPileEtats();
+
+		/* Permet de récupérer la pile des Symboles
+		 * @return : vector<Symbole*>*
+		 */
+		vector<Symbole*>* getPileSymboles();
+
+		/* Permet d'ajouter des Déclaration
+		 * @param : 
+		 *			name(String) : Nom de la Déclaration ;
+		 *			declaration(Declaration*) : Pointeur vers un tableau de Déclarations;
+		 * @return : Boolean
+		 */
+		bool addDeclaration(std::string name, Declaration* declaration);
+
+		/* Permet de définir le flux qu'on a lu à l'aide de la Classe File.h
+		 * @param : 
+		 *			fileVector(vector<string>) : Pointeur sur ce qu'on a lu dans le fichier en entrée ;
+		 * @return : Boolean
+		 */
+		bool setFile(vector<string> fileVector);
+
+		/* Permet d'empiler le symbole et l'etat dans la pile de l'automate
+		 * @param : 
+		 *			symbole(Symbole*) : Pointeur sur le symbole qu'on va étudier en vue d'un décalage ou une réduction ;
+		 *			etat(Etat*) : Pointeur vers l'état courant pour savoir quelle transition on va effectuer ;
+		 * @return : N/A
+		 */
+		void decalage(Symbole* symbole, Etat* etat);
+
+		/* Permet d'empiler l'état suivant dans la pile de l'automate sans pour autant consommer un symbole
+		 * @param : 
+		 *			symbole(Symbole*) : Pointeur sur le symbole qu'on va étudier en vue d'un décalage ou une réduction ;
+		 *			etat(Etat*) : Pointeur vers l'état courant pour savoir quelle transition on va effectuer ;
+		 * @return : N/A
+		 */
 		void decalageSansConsommation(Etat* etat);
 
-		void reduction(int numeroRegle);
 		/* Permet de réduire une règle est d'empiler le symbole et l'etat dans la pile de l'automate
-		 *
+		 * @param : 
+		 			numeroRegle (Integer) : Numéro de la règle à utiliser pour réduire ;
+		 * @return : N/A
 		 */
+		void reduction(int numeroRegle);
 
+		/* Permet de construire les règles de réduction qu'on aura à utiliser durant l'execution de l'automate
+		 * @param : 
+		 *			N/A	
+		 * @return : N/A
+		 */
 		void constructionPileReductions();
 
-		Programme* lecture();
-		/* Permet de faire l'analyse syntaxique d'un liste de string et de
-		 * charger sa repr�sentation en memoire
-		 * @return : La répresentation mémoire du programme
+		/* Permet de faire l'analyse syntaxique d'une liste de string et de charger sa représentation en memoire
+		 * @return : Programme* (La répresentation mémoire du programme)
 		 */
+		Programme* lecture();
 
+		/* Permet d'afficher le symbole passé en parmètre
+		 * @param : 
+		 *			symbole(Symbole*) : Pointeur sur le symbole qu'on va afficher;
+		 * @return : N/A
+		 */
 		void affichageEtatAutomate(Symbole* symbole);
 
-		Variable* associerIdVariable(Variable* currentVar);
 		/* Permet d'associer une variable trouvee dans une expression
 		 * a une variable precedemment declaree dans le programme
-		 * @param : currentVar, la variable nouvellement creee trouvee dans E
+		 * @param : 
+		 			currentVar (Variable*) : La variable nouvellement creee trouvee dans E
 		 * @return: un pointeur vers la variable du programme declaree
 		 *			ou vers la nouvelle variable si celle-ci n'existait pas 
 		 *			auparavent (ceci genere un warning)
 		 */
+		Variable* associerIdVariable(Variable* currentVar);
 
 
     private:

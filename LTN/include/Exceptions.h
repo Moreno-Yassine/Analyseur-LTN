@@ -58,7 +58,7 @@ class Exception_Seven : public exception
   {
     return "Erreur Symbole Pas Déclaré - Le programme ne peut pas continuer \n\n##################\n";
   }
-} SymbolePasDeclarée;
+} SymbolePasDeclaree;
 
 
 #endif // EXCEPTIONS_H

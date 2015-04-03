@@ -41,15 +41,9 @@ Dictionary::Dictionary()
 
 Dictionary::~Dictionary()
 {
-    //dtor
 }
 
-/*
-Methode pour checker SYNTAXIQUEMENT les mots composant une ligne
-exemple : waitingFor (mots[i],"const") on veut checker si le mot i correspond à "const"
-word : mot à tester
-exp : expression attendue
-*/
+
 bool Dictionary::waitingFor(string word,string exp)
 {
 	map<string,boost::regex>::iterator it;
@@ -69,6 +63,7 @@ bool Dictionary::waitingFor(string word,string exp)
 		return false;
 	}
 }
+
 bool Dictionary::checkWordRegex(string word, boost::regex match)
 {
 	try
@@ -87,13 +82,6 @@ bool Dictionary::checkWordRegex(string word, boost::regex match)
 	return false;
 }
 
-/*
-Methode pour checker LEXICALEMENT les mots composant une ligne
-exemple : waitingFor (mots[i],"const") on veut checker si le mot i correspond à "const"
-word : mot à tester
-exp : expression attendue
-*/
-
 IdSymbole Dictionary::checkWord(string word)
 {
 	try
@@ -110,7 +98,6 @@ IdSymbole Dictionary::checkWord(string word)
 	}
 	catch(std::exception e)
 	{
-		//throw DictionnaryException;
 		cout << e.what() << endl;
 	}
 

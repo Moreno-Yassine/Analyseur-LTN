@@ -57,13 +57,13 @@ bool Programme::checkModifiedConst()
 	return false;
 }
 
-bool Programme::checkVarPasAffectées()
+bool Programme::checkVarPasAffectees()
 {
 	vector<Variable*> variables = ptLd->getVariables();
 
 	if(ptLi!=NULL)
 	{
-		return ptLi->checkVarPasAffectées(variables);
+		return ptLi->checkVarPasAffectees();
 	}
 
 	return false;

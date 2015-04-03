@@ -2,8 +2,6 @@
 #include "../../include/Automate.h"
 #include "../../include/symboles/ID_Symboles.h"
 
-//#include "../../include/Exceptions.h"
-
 /* --------------- ETAT 0 ------------------
  *
  * -----------------------------------------
@@ -485,7 +483,7 @@ bool E17::transition(Automate &a, Symbole* s)
 		case I_DOLLAR:
 			if(a.getPileSymboles()->size() == 1)
 			{
-				a.reduction(12); // A VERIFIER
+				a.reduction(12);
 			}
 			
 			a.reduction(2);
@@ -613,7 +611,7 @@ E21::~E21()
 
 
 /* --------------- ETAT 22 ------------------
- * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
+ * 
  * -----------------------------------------
  */
 bool E22::transition(Automate &a, Symbole* s)
@@ -652,7 +650,7 @@ E22::~E22()
 }
 
 /* --------------- ETAT 23 ------------------
- * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
+ * 
  * -----------------------------------------
  */ 
 bool E23::transition(Automate &a, Symbole* s)
@@ -768,7 +766,7 @@ E25::~E25()
 }
 
 /* --------------- ETAT 26 ------------------
- * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 32, 33 ou 55
+ * 
  * -----------------------------------------
  */
 bool E26::transition(Automate &a, Symbole* s)
@@ -813,7 +811,6 @@ E26::~E26()
  */
 bool E27::transition(Automate &a, Symbole* s)
 {
-	//cout<<"symbole ============="<<s->getIdSymbole() << endl;
 	switch(s->getIdSymbole())
 	 {
 		case I_pls:
@@ -851,7 +848,7 @@ E27::~E27()
 }
 
 /* --------------- ETAT 28 ------------------
- *La réduction est ambigue car elle dépend si on vient de l'Etat 25, 27, 34, 36 ou 37
+ *
  * -----------------------------------------
  */
 bool E28::transition(Automate &a, Symbole* s)
@@ -859,7 +856,7 @@ bool E28::transition(Automate &a, Symbole* s)
 	switch(s->getIdSymbole())
 	 {
 		case I_ID:
-			a.reduction(23);		//A VERIFIER !!!!!
+			a.reduction(23);
 			break;
 		case I_NB:
 			a.reduction(23);
@@ -1038,7 +1035,7 @@ E33::~E33()
 
 
 /* --------------- ETAT 34 ------------------
- *La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
+ *
  * -----------------------------------------
  */
 bool E34::transition(Automate &a, Symbole* s)
@@ -1159,7 +1156,7 @@ E36::~E36()
 }
 
 /* --------------- ETAT 37 ------------------
- * La réduction est ambigue car elle dépend si on vient de l'Etat 21, 24, 32, 33 ou 35
+ * 
  * -----------------------------------------
  */
 bool E37::transition(Automate &a, Symbole* s)
