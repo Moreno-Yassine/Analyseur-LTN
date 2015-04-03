@@ -27,10 +27,10 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
     /*if(program -> checkVarPasAffectees())
     {
         //cerr << "------------" << endl;
-    }
+    }*/
 
 	for(int i=0; i<doublons.size();i++)
-		cerr << "Double déclaration de la variable : " << doublons[i] << endl;
+		cerr << "Double déclaration de la variable/constante : " << doublons[i] << endl;
     /*if(program -> checkDoublons())
     {
 
