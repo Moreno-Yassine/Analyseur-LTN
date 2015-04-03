@@ -30,6 +30,7 @@ clean:
 	rm $(LIBDIR)/*/*.o
 	rm $(LIBDIR)/*/*/*.o
 	rm $(BINDIR)/*
+	rm results.csv
 
 test:
 	sh ./mktest.sh

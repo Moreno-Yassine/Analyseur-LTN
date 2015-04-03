@@ -66,13 +66,3 @@ bool Programme::checkVarPasAffectees()
 
 	return false;
 }
-
-bool Programme::checkDoublons()
-{
-	if(ptLd!=NULL)
-	{
-		return ptLd->checkDoublons();
-	}
-
-	return false;
-}

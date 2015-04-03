@@ -106,11 +106,11 @@ void Automate::reduction(int numeroRegle)
 					case 7:
 						if(isDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom()))
 							setDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
-						else{
-							listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
-							pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
-							pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
-						}
+
+						listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
+						pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						pileSymboles->at(pileSymboles->size() - 5)->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+
 						
 						symbole = pileSymboles->at(pileSymboles->size() - 5);
 						break;
@@ -118,11 +118,11 @@ void Automate::reduction(int numeroRegle)
 						symbole = new Idc(); 
 						if(isDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom()))
 							setDoublon(((Variable*)pileSymboles->at(pileSymboles->size() - 1))->getNom());
-						else {
-							listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
-							symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
-							symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
-						}
+
+						listeVarDeclarees.push_back(((Variable*)pileSymboles->at(pileSymboles->size() - 3))->getNom());
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 3), 1);
+						symbole->setParam(pileSymboles->at(pileSymboles->size() - 1), 2);
+
 						break;
 					default:
 						break;

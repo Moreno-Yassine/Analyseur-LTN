@@ -16,6 +16,7 @@ class Programme : public Symbole
 		Li* getLi();
 		Ld* getLd();
 		bool setParam(Symbole* symbole, int placeSymbole);
+
 		/* setParam de Programme :
 		 *		place 1 : Ld,
 		 *		place 2 : Li
@@ -24,7 +25,6 @@ class Programme : public Symbole
 		bool display();
 		bool checkModifiedConst();
 		bool checkVarPasAffectees();
-		bool checkDoublons();
 
     private:
 		Ld* ptLd;
