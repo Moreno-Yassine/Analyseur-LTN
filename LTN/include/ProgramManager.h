@@ -4,6 +4,7 @@
 #include "symboles/Symbole.h"
 #include "symboles/SymbolesComplexes.h"
 #include <map>
+#include <vector>
 
 class ProgramManager
 {
@@ -16,10 +17,12 @@ class ProgramManager
         void optimise();
         void analyseStatique(map<int,string> &erreurs);
         void afficheVariablesPasDecl(map<int, string> &erreurs);
+		void setDoublons(vector<string> listeDoublons) {doublons = listeDoublons;};
 
 
     private:
         Programme* program;
+		vector<string> doublons;
 };
 
 #endif // PROGRAMMANAGER_H
