@@ -10,6 +10,9 @@ class Variable;
 class LectureInstr : public Instruction
 {
     public:
+        /* Constructeur par Défaut de la Classe LectureInstr
+         * @return : N/A
+         */
         LectureInstr();
         virtual ~LectureInstr();
 		bool setParam(Symbole* symbole, int place);
@@ -18,7 +21,7 @@ class LectureInstr : public Instruction
 		bool executer();
 		bool is_number(const std::string& s);
 		bool checkModifiedConst();
-		bool checkVarPasAffectees();
+		bool checkVarPasAffectees(vector<Variable*> variables);
 
     private:
 		Variable* variableLue;

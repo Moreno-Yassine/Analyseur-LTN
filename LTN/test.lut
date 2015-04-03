@@ -1,3 +1,8 @@
 const constante = 2;
-var b;
-lire constante;
+var b, z;
+var variable;
+lire b;
+ecrire b;
+lire z;
+ecrire z;
+ecrire constante*b*z;

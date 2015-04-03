@@ -11,6 +11,9 @@ using namespace std;
 class Valeur : public E
 {
     public:
+        /* Constructeur par Défaut de la Classe Valeur
+         * @return : N/A
+         */
         Valeur();
         Valeur(string valeur);
         virtual ~Valeur();

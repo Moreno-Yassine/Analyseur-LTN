@@ -78,7 +78,7 @@ bool LectureInstr::checkModifiedConst()
 	return false;
 }
 
-bool LectureInstr::checkVarPasAffectees()
+bool LectureInstr::checkVarPasAffectees(vector<Variable*> variables)
 {
 	return false;
 }

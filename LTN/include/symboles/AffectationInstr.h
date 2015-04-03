@@ -19,6 +19,9 @@ class E;
 class AffectationInstr : public Instruction
 {
     public:
+        /* Constructeur par Défaut de la Classe AffectationInstr
+         * @return : N/A
+         */
         AffectationInstr();
         virtual ~AffectationInstr();
 		double eval();
@@ -26,7 +29,7 @@ class AffectationInstr : public Instruction
 		string print();
 		bool setParam(Symbole* symbole, int place);
 		bool checkModifiedConst();
-		bool checkVarPasAffectees();
+		bool checkVarPasAffectees(vector<Variable*> variables);
 
     private:
 		Variable* variableSeFaisantAffecter;

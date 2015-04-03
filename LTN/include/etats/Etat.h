@@ -10,10 +10,16 @@ using namespace std;
 class Etat
 {
     public:
+        /* Constructeur par Défaut de la Classe Etat
+         * @return : N/A
+         */
 		Etat(string nomP) : nom(nomP) {};
-		virtual bool transition(Automate &automate, Symbole* symbole) = 0;
-        virtual ~Etat();
 
+        /* Destructeur de la Classe Etat
+         * @return : N/A
+         */
+		virtual ~Etat();
+		virtual bool transition(Automate &automate, Symbole* symbole) = 0;
         string getNomEtat();
 
     private:

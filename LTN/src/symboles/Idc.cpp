@@ -20,10 +20,8 @@ bool Idc::executer()
 	for(int i=0; i<(int)listeConstantes.size(); i++)
 	{
 		listeConstantes[i]->affecter(listeValeurs[i],this);
-
-		//cout << "Variable : " << listeVariables[i]->getNom() << ". Value : " << listeValeurs[i]->eval();
 	}
-	//variable->affecter(valeur,this);
+	variable->affecter(valeur,this);
 	return true;
 }
 		
@@ -54,10 +52,8 @@ string  Idc::print()
 
 Variable* Idc::trouver(string nomVariable)
 {
-	//cout << "Begin Idc::trouver SIZE : " << (int)listeConstantes.size() << endl;
 	for(int i=0; i<(int)listeConstantes.size(); i++)
 	{
-		//cout << "Idc::trouver nomVariable :" << listeConstantes[i]->print() << endl;
 		if(listeConstantes[i]->print() == nomVariable)
 			return listeConstantes[i];
 	}
@@ -76,8 +72,6 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 				variable = (Variable*)symbole;
 				variable->setConst();
 				listeConstantes.push_back(variable);
-
-				//RAISE EXCEPTION
 				return false;
 			}
 			
@@ -91,7 +85,6 @@ bool Idc::setParam(Symbole* symbole, int noPlace)
 			{
 				valeur = (Valeur*)symbole;
 				listeValeurs.push_back((Valeur*)symbole);
-				//RAISE EXCEPTION
 				return false;
 			}
 			listeValeurs.push_back((Valeur*)symbole);

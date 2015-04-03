@@ -8,6 +8,9 @@ class Variable;
 class Idv : public Symbole
 {
     public:
+        /* Constructeur par Défaut de la Classe Idv
+         * @return : N/A
+         */
         Idv();
         virtual ~Idv();
 		bool executer();
@@ -15,6 +18,7 @@ class Idv : public Symbole
 		bool setParam(Symbole* symbole, int noPlace);
 		string print();
 		Variable* trouver(string nomVariable);
+		vector<Variable*> getVariables();
 
     private:
 		Variable* variable;
