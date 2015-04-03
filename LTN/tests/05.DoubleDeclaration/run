@@ -1,1 +1,1 @@
-../../bin/LTN ../files/double.lt
+../../bin/LTN -a ../files/double.lt

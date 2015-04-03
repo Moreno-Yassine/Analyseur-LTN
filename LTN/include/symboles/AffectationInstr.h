@@ -6,11 +6,11 @@
 #include "Variable.h"
 #include "Valeur.h"
 #include "E.h"
-#include <sstream>
 #include "EParantheses.h"
 #include "EMult.h"
 #include "EPlus.h"
 
+#include <sstream>
 
 class Instruction;
 class Variable;

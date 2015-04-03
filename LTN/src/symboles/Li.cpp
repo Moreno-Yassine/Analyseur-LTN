@@ -36,7 +36,8 @@ bool Li::display()
 
 bool Li::checkModifiedConst()
 {
-	bool constModified;
+	bool constModified = false;
+
 	for(int i=0;i<(int)listeInstructions.size();i++)
 	{
 		if(listeInstructions[i]->checkModifiedConst())

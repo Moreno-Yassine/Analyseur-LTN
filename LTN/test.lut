@@ -1,8 +1,6 @@
-const constante = 2;
-var b, z;
-var variable;
-lire b;
-ecrire b;
-lire z;
-ecrire z;
-ecrire constante*b*z;
+const c=5, co=6;
+var f;
+lire c;
+ecrire f;
+lire co;
+ecrire f*co;

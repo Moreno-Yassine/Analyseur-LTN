@@ -14,6 +14,7 @@ Controler::Controler()
 	com_parser = new Parser();
 	automate = new Automate(erreurs);
 	programManager = new ProgramManager();
+	erreurStatique = false;
 }
 
 Controler::~Controler()
@@ -190,6 +191,11 @@ void Controler::affichage()
     programManager->displayProgram();
     cout<< endl << "-----Affichage du programme terminée." <<endl;
     cout << endl << "##################" << endl << endl;
+
+    if(!option_o && erreurStatique)
+    {
+        throw ErreursAnalyseStatistique;
+    }
 }
 
 void Controler::execution()
@@ -200,6 +206,11 @@ void Controler::execution()
     programManager->execute();
     cout<<endl<<"-----Execution terminée." <<endl;
     cout << endl << "##################" << endl << endl;
+
+    if(erreurStatique)
+    {
+        throw ErreursAnalyseStatistique;
+    }
 }
 
 void Controler::analyse_statique()
@@ -208,7 +219,7 @@ void Controler::analyse_statique()
     try
     {
 		programManager->setDoublons(listeDoublons);
-		programManager->analyseStatique(erreurs);
+		erreurStatique = programManager->analyseStatique(erreurs);
     }
     catch(int i)
     {
@@ -217,4 +228,9 @@ void Controler::analyse_statique()
 
     cout<<endl<<"-----Analyse terminée." <<endl;
     cout << endl << "##################" << endl << endl;
+
+    if(!option_e && !option_p && erreurStatique)
+    {
+        throw ErreursAnalyseStatistique;
+    }
 }

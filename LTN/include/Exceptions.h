@@ -56,9 +56,17 @@ class Exception_Seven : public exception
 {
   virtual const char* what() const throw()
   {
-    return "Erreur Symbole Pas Déclaré - Le programme ne peut pas continuer \n\n##################\n";
+    return "\nErreur Symbole Pas Déclaré - Le programme ne peut pas continuer \n\n##################\n";
   }
 } SymbolePasDeclaree;
+
+class Exception_Height : public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "Des erreurs ont été détectées durant l'analyse stastique. Le programme sort avec un code d'exception. \n\n##################\n";
+  }
+} ErreursAnalyseStatistique;
 
 
 #endif // EXCEPTIONS_H
