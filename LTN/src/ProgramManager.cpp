@@ -25,7 +25,7 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
         // Peut etre throw?
     }
 
-    /*if(program -> checkVarPasAffectées())
+    /*if(program -> checkVarPasAffectees())
     {
         //cerr << "------------" << endl;
     }*/

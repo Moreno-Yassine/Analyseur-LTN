@@ -57,13 +57,13 @@ bool Programme::checkModifiedConst()
 	return false;
 }
 
-bool Programme::checkVarPasAffectées()
+bool Programme::checkVarPasAffectees()
 {
 	/*if(!ptLd->executer())
 		return false;*/
 	if(ptLi!=NULL)
 	{
-		return ptLi->checkVarPasAffectées();
+		return ptLi->checkVarPasAffectees();
 	}
 
 	return false;

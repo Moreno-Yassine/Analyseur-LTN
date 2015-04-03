@@ -210,7 +210,7 @@ void Controler::analyse_statique()
     }
     catch(int i)
     {
-        throw SymbolePasDeclarée;
+        throw SymbolePasDeclaree;
     }
 
     cout<<endl<<"-----Analyse terminée." <<endl;

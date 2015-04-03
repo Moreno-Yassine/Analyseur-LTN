@@ -20,7 +20,7 @@ class Programme : public Symbole
 		bool executer();
 		bool display();
 		bool checkModifiedConst();
-		bool checkVarPasAffectées();
+		bool checkVarPasAffectees();
 		bool checkDoublons();
 
     private:
