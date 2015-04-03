@@ -30,6 +30,8 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
         //cerr << "------------" << endl;
     }*/
 
+	for(int i=0; i<doublons.size();i++)
+		cerr << "Double déclaration de la variable : " << doublons[i] << endl;
     /*if(program -> checkDoublons())
     {
 

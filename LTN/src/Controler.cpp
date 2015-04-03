@@ -152,6 +152,7 @@ void Controler::memload()
     try
     {
         programManager->setProgram(automate->lecture());
+		listeDoublons = automate->getListeDoublons();
     }
     catch(int i)
     {
@@ -206,7 +207,8 @@ void Controler::analyse_statique()
     cout<<"-----J'execute l'analyse statique..." << endl << endl;
     try
     {
-        programManager->analyseStatique(erreurs);
+		programManager->setDoublons(listeDoublons);
+		programManager->analyseStatique(erreurs);
     }
     catch(int i)
     {
