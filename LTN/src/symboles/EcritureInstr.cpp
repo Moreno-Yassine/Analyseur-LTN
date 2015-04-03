@@ -72,11 +72,11 @@ bool EcritureInstr::checkModifiedConst()
 	return false;
 }
 
-bool EcritureInstr::checkVarPasAffectees()
+bool EcritureInstr::checkVarPasAffectees(vector<Variable*> variables)
 {
-	if(expressionAEcrire->checkVarPasAffectees())
+	/*if(expressionAEcrire->checkVarPasAffectees())
 	{
 		return true;
-	}
+	}*/
 	return false;
 }

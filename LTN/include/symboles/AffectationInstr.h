@@ -26,7 +26,7 @@ class AffectationInstr : public Instruction
 		string print();
 		bool setParam(Symbole* symbole, int place);
 		bool checkModifiedConst();
-		bool checkVarPasAffectees();
+		bool checkVarPasAffectees(vector<Variable*> variables);
 
     private:
 		Variable* variableSeFaisantAffecter;

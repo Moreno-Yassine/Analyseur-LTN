@@ -57,3 +57,10 @@ string DeclListCons::print()
 
 	return valeur.str(); 
 }
+
+vector<Variable*> DeclListCons::getVariables()
+{
+	vector<Variable*> variables;
+
+	return variables;
+}

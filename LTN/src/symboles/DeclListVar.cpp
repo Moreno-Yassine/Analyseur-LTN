@@ -51,3 +51,19 @@ string DeclListVar::print()
 
 	return valeur.str(); 
 }
+
+vector<Variable*> DeclListVar::getVariables()
+{
+	vector<Variable*> variables;
+	for(int i=0; i<(int)listeVarDeclareesIci.size(); i++)
+	{
+		vector<Variable*> temp = listeVarDeclareesIci[i]->getVariables();
+
+		for(int j=0; j<temp.size(); j++)
+		{
+			variables.push_back(temp[j]);
+		}
+	}
+
+	return variables;
+}

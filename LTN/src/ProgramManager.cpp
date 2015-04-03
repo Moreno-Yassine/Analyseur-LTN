@@ -25,10 +25,10 @@ void ProgramManager::analyseStatique(map<int,string> &erreurs)
         // Peut etre throw?
     }
 
-    /*if(program -> checkVarPasAffectées())
+    if(program -> checkVarPasAffectées())
     {
         //cerr << "------------" << endl;
-    }*/
+    }
 
     /*if(program -> checkDoublons())
     {

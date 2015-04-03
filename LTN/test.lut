@@ -1,3 +1,4 @@
 const constante = 2;
-var b;
+var b, z;
+var variable;
 lire constante;

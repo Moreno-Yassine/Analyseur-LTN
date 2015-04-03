@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include "Instruction.h"
+#include "Variable.h"
 
 class Li : public Symbole
 {
@@ -15,7 +16,7 @@ class Li : public Symbole
 		bool executer();
 		bool display();
 		bool checkModifiedConst();
-		bool checkVarPasAffectées();
+		bool checkVarPasAffectées(vector<Variable*> variables);
 
     private:
 		vector<Instruction*> listeInstructions;

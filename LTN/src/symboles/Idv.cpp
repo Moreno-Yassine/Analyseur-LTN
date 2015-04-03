@@ -66,3 +66,16 @@ Variable* Idv::trouver(string nomVariable)
 
 	return NULL;
 }
+
+vector<Variable*> Idv::getVariables()
+{
+	vector<Variable*> variables;
+
+	for(int i=0; i<(int)listeVariables.size(); i++)
+	{
+		variables.push_back(listeVariables[i]);
+	}
+
+	return variables;
+
+}

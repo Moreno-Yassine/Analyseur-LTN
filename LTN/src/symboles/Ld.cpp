@@ -84,3 +84,25 @@ bool Ld::checkDoublons()
 
 	return false;
 }
+
+vector<Variable*> Ld::getVariables()
+{
+
+	vector<Variable*> variables;
+	for(int i=0; i<(int)listeDeclarations.size(); i++)
+	{
+		vector<Variable*> temp = listeDeclarations[i]->getVariables();
+
+		for(int j=0; j<temp.size(); j++)
+		{
+			variables.push_back(temp[j]);
+		}
+	}
+
+	for(int i=0;i<(int)variables.size();i++)
+	{
+		cout << variables[i]->print() << endl;
+	}
+
+	return variables;
+}

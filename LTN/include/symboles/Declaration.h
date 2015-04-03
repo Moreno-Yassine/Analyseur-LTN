@@ -21,6 +21,7 @@ class Declaration : public Symbole
 		virtual bool executer() = 0;
 		virtual string print() = 0;
 		virtual Variable* trouver(string nomVariable) = 0;
+		virtual vector<Variable*> getVariables() = 0;
     
 	private:
 		

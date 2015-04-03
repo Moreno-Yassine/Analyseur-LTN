@@ -15,6 +15,7 @@ class Idv : public Symbole
 		bool setParam(Symbole* symbole, int noPlace);
 		string print();
 		Variable* trouver(string nomVariable);
+		vector<Variable*> getVariables();
 
     private:
 		Variable* variable;

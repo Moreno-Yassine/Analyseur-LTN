@@ -30,6 +30,7 @@ class Ld : public Symbole
 		void setLdNonPresent() { nonPresent = true; };
 		bool ldNonPresent() {return nonPresent; };
 		bool checkDoublons();
+		vector<Variable*> getVariables();
 
 
     private:

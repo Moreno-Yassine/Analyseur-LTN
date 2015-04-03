@@ -18,7 +18,7 @@ class LectureInstr : public Instruction
 		bool executer();
 		bool is_number(const std::string& s);
 		bool checkModifiedConst();
-		bool checkVarPasAffectees();
+		bool checkVarPasAffectees(vector<Variable*> variables);
 
     private:
 		Variable* variableLue;
